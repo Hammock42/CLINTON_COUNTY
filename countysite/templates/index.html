@@ -1,78 +1,42 @@
 <!DOCTYPE html>
-  <html lang="en">
-<head>    
-  <title>
-    Clinton County | {% block title %}{% endblock %}
-  </title>
-  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/>
-  <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
-  <meta name="DCTERMS.created" content="2024-05-21T09:48:09-06:00"/>
-  <meta name="DCTERMS.modified" content="2024-04-12T07:30:50-06:00"/>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="Hamad Hamdi">
-        
-  {% load django_bootstrap5 %}
-  {% load static %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
-  <link rel="icon" href="{% static 'img/cc_icon.png' %}">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-	<link rel="stylesheet" href="{% static 'css/site.min.css' %}">
-	<link rel="stylesheet" href="{% static 'css/owl-carousel.min.css' %}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Petit+Formal+Script&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-  <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
-  <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
-  <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
-  <link href="{% static 'fontawesomefree/css/regular.css' %}" rel="stylesheet" type="text/css">
-
-
-    <!-- Custom styles  -->
-
-<style type="text/css">
-/*<![CDATA[*/
-
-.featured-content-1x4-component{padding:94px 30px 54px;overflow:hidden}@media (max-width:767px){.featured-content-1x4-component{padding-right:0}}.featured-content-1x4-component .featured-content-1x4-container{width:100%;max-width:1000px;margin-left:auto;margin-right:auto}.featured-content-1x4-component .featured-content-1x4-title{margin-top:20px;margin-bottom:10px;font-size:2.5rem;color:#000}.featured-content-1x4-component .featured-content-1x4-group{margin-top:80px}@media (max-width:767px){.featured-content-1x4-component .featured-content-1x4-group{margin-top:0}}.featured-content-1x4-component .featured-content-1x4-image{position:relative;display:block}.featured-content-1x4-component .featured-content-1x4-image img.fc-1x4-item-image{width:100%;height:100%;object-fit:cover}.featured-content-1x4-component .img-title{position:absolute;color:#fff}.featured-content-1x4-component .featured-content-1x4-image .img-title{bottom:60px;left:30px;width:163px}@media (min-width:768px){.featured-content-1x4-component .featured-content-1x4-group-content.owl-carousel{aspect-ratio:1000/537.8;display:grid;grid-template-columns:9fr 4fr 4fr;grid-template-rows:1fr 1fr;row-gap:11.2%;column-gap:8.33%}.featured-content-1x4-component .featured-content-1x4-image .img-title{font-size:1.5rem}.featured-content-1x4-component .featured-content-1x4-image:nth-child(1){grid-column-start:1;grid-row-start:1;grid-column-end:2;grid-row-end:3}.featured-content-1x4-component .featured-content-1x4-image:nth-child(1) .img-title{bottom:62px;left:34px;width:208px;font-size:2rem}}      
-/*]]>*/
-</style>
-<style type="text/css">
-/*<![CDATA[*/
-
-.rich-text-section{position:relative;padding:30px}.rich-text-section h2.rich-text-title{max-width:1000px;margin:0 auto;font-size:2.125rem;text-transform:uppercase;padding:0 0 25px;width:100%;color:#262726;text-shadow:none}.rich-text-section .rich-text-container{max-width:1000px;margin:auto;font-size:1rem}.rich-text-section h3{font-size:2em}.rich-text-section img{max-width:100%}      
-/*]]>*/
-</style>
-<style type="text/css">
-/*<![CDATA[*/
-
-.hero{position:relative;width:100%;overflow:visible;background-color:#000}.hero img.hero-item-image{max-width:none;width:100%;height:auto}@media (max-width:767px){.resorts-page .hero{display:none}}@media (max-width:767px){.search-main .hero{display:none}}.hero.hero-full-size .hero-content{aspect-ratio:1.5}@media (max-width:767px){.hero.hero-full-size .hero-content{aspect-ratio:.8205128205}}.hero.hero-half-size .hero-content{aspect-ratio:2.4489795918}@media (max-width:767px){.hero.hero-half-size .hero-content{aspect-ratio:.8205128205}}.hero.hero-third-size .hero-content{aspect-ratio:3.1578947368}@media (max-width:767px){.hero.hero-third-size .hero-content{aspect-ratio:1}}.hero.hero-quarter-size .hero-content,.hero.hero-quarter-size-with-text .hero-content{aspect-ratio:4.6153846154}@media (max-width:767px){.hero.hero-quarter-size .hero-content,.hero.hero-quarter-size-with-text .hero-content{aspect-ratio:1.28}}.hero>.hero-content:has(.video-wrapper){aspect-ratio:auto}.hero-overlay{position:absolute;left:0}.hero-overlay p,.hero-overlay a,.hero-overlay h1,.hero-overlay h2,.hero-overlay h3,.hero-overlay h4{color:#fff}.hero-full-size .hero-overlay{text-align:left;width:320px;margin-left:50px}@media all and (max-width:767px){.hero-full-size .hero-overlay{margin-left:34px}}.hero-half-size .hero-overlay,.hero-third-size .hero-overlay{text-align:center;width:100%;padding:0 15px}.hero-half-size .hero-overlay .overlay-button,.hero-third-size .hero-overlay .overlay-button{display:none}.hero-quarter-size .hero-overlay{display:none}.hero-quarter-size-with-text .hero-overlay{width:fit-content;width:-moz-fit-content;height:fit-content;height:-moz-fit-content;position:absolute;left:0;right:0;margin:auto;text-align:center}@media (min-width:768px){.hero-quarter-size-with-text .hero-overlay{bottom:50px}}@media (max-width:767px){.hero-quarter-size-with-text .hero-overlay{bottom:42px}}.hero-quarter-size-with-text .hero-overlay .overlay-subtitle,.hero-quarter-size-with-text .hero-overlay .overlay-button{display:none}.hero-full-size .hero-overlay{top:40vh;top:Min(40vh,40%);transform:translateY(-40%)}@media all and (min-width:768px){.hero-full-size .hero-overlay{top:60vh;top:Min(60vh,60%);transform:translateY(-60%)}}.hero-half-size .hero-overlay{top:50%;transform:translateY(-50%)}.hero-third-size .hero-overlay{top:50%;transform:translateY(-50%);margin-top:40px}.hero-third-size .hero-overlay .overlay-title{margin-bottom:0}.hero-third-size .hero-overlay .overlay-subtitle{margin:16px auto 0}.hero-overlay .overlay-title{letter-spacing:0;line-height:1;margin-bottom:16px;font-size:2.5rem}@media all and (min-width:992px){.hero-half-size .hero-overlay .overlay-title{font-size:3rem}}.hero-overlay .overlay-subtitle{margin:10px auto 30px;line-height:1;font-family:BourtonLineBold,Helvetica,Arial,sans-serif}@media all and (max-width:767px){.hero-overlay .overlay-subtitle{margin-top:15px}}@media all and (max-width:991px){.hero-overlay .overlay-subtitle{font-size:1rem}}.hero-overlay .overlay-button{margin:0;-webkit-box-shadow:1px 1px 3px rgba(0,0,0,.3),inset 1px 1px 3px rgba(0,0,0,.3);box-shadow:1px 1px 3px rgba(0,0,0,.3),inset 1px 1px 3px rgba(0,0,0,.3);width:auto;display:inline-block;border:1px solid #fff}      
-/*]]>*/
-</style>
-<style type="text/css">
-/*<![CDATA[*/
-
-.video-wrapper{aspect-ratio:1.7777777778;height:auto;margin-bottom:0;background-color:#000;overflow:hidden}.video-wrapper iframe,.video-wrapper video{width:100%;height:100%}@media all and (max-width:767px){.hero .video-wrapper{aspect-ratio:1}}@media all and (min-width:768px){.hero-half-size .video-wrapper{aspect-ratio:2.4489795918}.hero-third-size .video-wrapper{aspect-ratio:3.1578947368}.hero-quarter-size .video-wrapper{aspect-ratio:4.6153846154}.hero-quarter-size-with-text .video-wrapper{aspect-ratio:4.6153846154}}.hero .video-wrapper video{object-fit:cover}.video-wrapper .video-overlay{position:absolute;left:50%;top:51%;transform:translate(-50%,-50%);max-width:307px}@media all and (max-width:767px){.video-wrapper .video-overlay{max-width:200px}}.video-wrapper .video-overlay-image{width:100%;display:block}.video-wrapper .video-overlay-active-image{width:100%;display:none}.video-wrapper a:hover .video-overlay-image,.video-wrapper span:hover .video-overlay-image,.video-wrapper a:focus .video-overlay-image{display:none}.video-wrapper a:hover .video-overlay-active-image,.video-wrapper span:hover .video-overlay-active-image,.video-wrapper a:focus .video-overlay-active-image{display:block}      
-/*]]>*/
-</style>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      <script src="https://cdn.usefathom.com/script.js" data-site="NTXFHVPF" defer></script>
-
-</head>
-
-
-
-<body data-context-path="/site" class="">
+<html lang="en">
+  <head>
+    <title>
+      Clinton County | {% block title %}{% endblock %}
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Hamad Hamdi">
+          
+    {% load django_bootstrap5 %}
+    {% load static %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="icon" href="{% static 'img/cc_icon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/site.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl-carousel.min.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Petit+Formal+Script&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/regular.css' %}" rel="stylesheet" type="text/css">
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.usefathom.com/script.js" data-site="NTXFHVPF" defer></script>
+  </head>
+<body>
   <div class="fluid-container mtot-main-container">
     <div class="top-sticky">
       <header id="siteHeader" class="">
-        <nav role="navigation">
+        <nav>
           <div class="visitmt-nav">
             <div class="mobile-header">
               <button class="no-style hamburger">
-                <i class="hamburger-image fa-solid fa-bars" height="34" width="34"></i>
+                <i class="hamburger-image fa-solid fa-bars"></i>
                 <i class="close-image fa-solid fa-xmark"></i>
               </button>
               <div class="logo-mobile" role="banner">
@@ -104,7 +68,7 @@
                 <button class="menu-item-text lvl1"  >
                   <span class="first-word lvl1">THINGS</span>
                   <span class="non-first-words lvl1">TO DO</span>
-                  <svg fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/TR/SVG2">
+                  <svg fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
                     <path d="M128,188a11.96187,11.96187,0,0,1-8.48535-3.51465l-80-80a12.0001,12.0001,0,0,1,16.9707-16.9707L128,159.0293l71.51465-71.51465a12.0001,12.0001,0,0,1,16.9707,16.9707l-80,80A11.96187,11.96187,0,0,1,128,188Z"/>
                   </svg>
                 </button>
@@ -275,13 +239,13 @@
                           width="600" 
                           height="450" 
                           style="border:0;" 
-                          allowfullscreen="" l
-                          oading="lazy" 
+                          allowfullscreen="" 
+                          loading="lazy" 
                           referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                       </li>
                     </ul>
-                    <button class="btn btn-primary main-menu-modal-open-button" type="button" class="btn btn-primary">VIEW</button>
+                    <button class="btn btn-primary main-menu-modal-open-button" type="button">VIEW</button>
                     <div class="main-menu-open-content-container">
                       <button class="main-menu-modal-close-button" title="Close">
                         <svg class="exit-icon" viewBox="0 0 20 20" preserveAspectRatio="xMaxYMid slice">
@@ -393,13 +357,13 @@
                           width="600" 
                           height="450" 
                           style="border:0;" 
-                          allowfullscreen="" l
-                          oading="lazy" 
+                          allowfullscreen="" 
+                          loading="lazy" 
                           referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                       </li>
                     </ul>
-                    <button class="btn btn-primary main-menu-modal-open-button" type="button" class="btn btn-primary">VIEW</button>
+                    <button class="btn btn-primary main-menu-modal-open-button" type="button">VIEW</button>
                     <div class="main-menu-open-content-container">
                       <button class="main-menu-modal-close-button" title="Close">
                         <svg class="exit-icon" viewBox="0 0 20 20" preserveAspectRatio="xMaxYMid slice">
@@ -645,14 +609,7 @@
                     </span>
                     <ul class="menu lvl3 ">
                       <li class="menu-item lvl3 ">
-                        <iframe 
-                          src="https://calendar.google.com/calendar/embed?src=8ea5ad29dbabde5480b09e9e4a7ff62995fde176b25029705f1759f8b6cf5faf%40group.calendar.google.com&ctz=Europe%2FTirane" 
-                          style="border: 0" 
-                          width="600" 
-                          height="400" 
-                          frameborder="0" 
-                          scrolling="no">
-                        </iframe>
+                        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FTirane&bgcolor=%23ffffff&src=OGVhNWFkMjlkYmFiZGU1NDgwYjA5ZTllNGE3ZmY2Mjk5NWZkZTE3NmIyNTAyOTcwNWYxNzU5ZjhiNmNmNWZhZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%237CB342&color=%230B8043" style="border:solid 1px #777" width="600" height="400"></iframe>
                       </li>
                     </ul>
                   </li>
@@ -761,7 +718,7 @@
                       <span class="first-word lvl2">SECTION PLACEHOLDER</span>
                       <span class="non-first-words lvl2"></span>
                     </span>
-                    <button class="btn btn-primary main-menu-modal-open-button" type="button" class="btn btn-primary">VIEW</button>
+                    <button class="btn btn-primary main-menu-modal-open-button" type="button">VIEW</button>
                     <div class="main-menu-open-content-container">
                       <button class="main-menu-modal-close-button" title="Close">
                         <svg class="exit-icon" viewBox="0 0 20 20" preserveAspectRatio="xMaxYMid slice">
@@ -823,7 +780,7 @@
             <a href="{% url 'coming_soon' %}" target="_self" class="video-overlay link-light text-center link-underline-opacity-0" aria-label="" style="min-width: 500px;">
               <p class="amaranth-regular font-size-2">Explore, Experience, Enjoy</p>
               <p class="amaranth-regular font-size-1">Clinton County</p>
-              <p class="petit-formal-script-regular font-size-3"=>
+              <p class="petit-formal-script-regular font-size-3">
                 Plan Your Next Visit <i class="fa-regular fa-circle-right"></i>
               </p>
             </a>
@@ -1255,7 +1212,6 @@
       </div>
     </div>
   </footer>
-</div>  
 <!--fluid-container-->
 
 
