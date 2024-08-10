@@ -1,0 +1,26 @@
+{% load django_bootstrap5 %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Hamad Hamdi">
+    <link rel="icon" href="{% static 'img/cc_icon.png' %}">
+        
+	{% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Coming Soon</title>
+</head>
+<body class="container-fluid bg-warning" style="height: 100vh;">
+    <div class="row justify-content-center p-3">
+        <img class="rounded mx-auto d-block" src="{% static 'img/coming_soon.jpg' %}" alt="">
+        <a class="text-center py-1" href="{% url 'index' %}">
+            <button type="button" class="btn btn-light btn-lg">Return to Site</button>
+        </a>
+    </div>
+</body>
+</html>
