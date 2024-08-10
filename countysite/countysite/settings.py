@@ -47,7 +47,7 @@ ROOT_URLCONF = 'countysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'], # This is the directory where the templates are stored
+        'DIRS': [BASE_DIR / 'templates'], # This is the directory where the templates are stored
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
