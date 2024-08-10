@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Hamad Hamdi">
-    <link rel="icon" href="{% static 'img/cc_icon.png' %}">
     {% load django_bootstrap5 %}
     {% load static %}
         
 	{% bootstrap_css %}
     {% bootstrap_javascript %}
+    <link rel="icon" href="{% static 'img/cc_icon.png' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<div class="container-fluid bg-warning" style="height: 100vh;">
+<body class="container-fluid bg-warning" style="height: 100vh;">
     <div class="row justify-content-center p-3">
         <img class="rounded mx-auto d-block" src="{% static 'img/coming_soon.jpg' %}" alt="">
         <a class="text-center py-1" href="{% url 'index' %}">
             <button type="button" class="btn btn-light btn-lg">Return to Site</button>
         </a>
     </div>
-</div>
+</body>
 </html>
