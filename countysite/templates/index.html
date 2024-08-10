@@ -1,40 +1,33 @@
-{% load django_bootstrap5 %}
-{% load static %}
-
 <!DOCTYPE html>
   <html lang="en">
-<head>
-    
-<title>
-	Clinton County | {% block title %}{% endblock %}
-</title>
-<meta property="og:title" content="Clinton County Official Info Site"/>
-<!-- ***** IMPORTANT fill in description and meta details below -->
-<meta name="description" content="Clinton County is ..."/>
-<meta property="og:description" content="Clinton County is ..."/>
-<meta property="og:url" content="https://www.EnterWebsiteAddress.com/"/>
-<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/>
-<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
-<meta name="DCTERMS.created" content="2024-05-21T09:48:09-06:00"/>
-<meta name="DCTERMS.modified" content="2024-04-12T07:30:50-06:00"/>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Hamad Hamdi">
-    <link rel="icon" href="{% static 'img/cc_icon.png' %}">
+<head>    
+  <title>
+    Clinton County | {% block title %}{% endblock %}
+  </title>
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/>
+  <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+  <meta name="DCTERMS.created" content="2024-05-21T09:48:09-06:00"/>
+  <meta name="DCTERMS.modified" content="2024-04-12T07:30:50-06:00"/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Hamad Hamdi">
         
-	{% bootstrap_css %}
-    {% bootstrap_javascript %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  {% load django_bootstrap5 %}
+  {% load static %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  <link rel="icon" href="{% static 'img/cc_icon.png' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<link rel="stylesheet" href="{% static 'css/site.min.css' %}">
 	<link rel="stylesheet" href="{% static 'css/owl-carousel.min.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Petit+Formal+Script&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'fontawesomefree/css/regular.css' %}" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Petit+Formal+Script&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'fontawesomefree/css/regular.css' %}" rel="stylesheet" type="text/css">
 
 
     <!-- Custom styles  -->
