@@ -773,19 +773,43 @@
       </header>
     </div>
     <div id="main-content" class="xpage-container">
-      <section class="hero hero-half-size has-edit-button" aria-label="Clinton County Feature Image">
-        <div class="hero-content">
-          <div class="video-wrapper html5">
-            <img class="img-fluid" src="{% static 'img/flowers_bg.jpeg' %}" alt="">
-            <a href="{% url 'coming_soon' %}" target="_self" class="video-overlay link-light text-center link-underline-opacity-0" aria-label="" style="min-width: 500px;">
-              <p class="amaranth-regular font-size-2">Explore, Experience, Enjoy</p>
-              <p class="amaranth-regular font-size-1">Clinton County</p>
-              <p class="petit-formal-script-regular font-size-3">
-                Plan Your Next Visit <i class="fa-regular fa-circle-right"></i>
-              </p>
-            </a>
+      <section class="hero">
+        <div id="carouselExampleSlidesOnly" class="carousel carousel-fade" data-bs-interval="7000" data-bs-ride="carousel" data-bs-pause="false" style="tr">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{% static 'img/test_bg_1.jpg' %}" class="img-fluid d-block d-md-none" alt="...">
+              <img src="{% static 'img/test_bg_2.jpg' %}" class="img-fluid d-none d-md-block d-lg-none" alt="...">
+              <img src="{% static 'img/test_bg_3.jpg' %}" class="img-fluid d-none d-lg-block d-xl-none" alt="...">
+              <img src="{% static 'img/test_bg_7.png' %}" class="img-fluid d-none d-xl-block" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'img/wallace_1.jpg' %}" class="img-fluid d-block d-md-none" alt="...">
+              <img src="{% static 'img/wallace_2.jpg' %}" class="img-fluid d-none d-md-block d-lg-none" alt="...">
+              <img src="{% static 'img/wallace_3.jpg' %}" class="img-fluid d-none d-lg-block d-xl-none" alt="...">
+              <img src="{% static 'img/wallace_4.jpg' %}" class="img-fluid d-none d-xl-block" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'img/tractors_1.jpg' %}" class="img-fluid d-block d-md-none" alt="...">
+              <img src="{% static 'img/tractors_2.jpg' %}" class="img-fluid d-none d-md-block d-lg-none" alt="...">
+              <img src="{% static 'img/tractors_3.jpg' %}" class="img-fluid d-none d-lg-block d-xl-none" alt="...">
+              <img src="{% static 'img/tractors_4.jpg' %}" class="img-fluid d-none d-xl-block" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'img/christmas_lights_1.jpg' %}" class="img-fluid d-block d-md-none" alt="...">
+              <img src="{% static 'img/christmas_lights_2.jpg' %}" class="img-fluid d-none d-md-block d-lg-none" alt="...">
+              <img src="{% static 'img/christmas_lights_3.jpg' %}" class="img-fluid d-none d-lg-block d-xl-none" alt="...">
+              <img src="{% static 'img/christmas_lights_4.jpg' %}" class="img-fluid d-none d-xl-block" alt="...">
+            </div>
           </div>
         </div>
+        
+        <a href="{% url 'coming_soon' %}" target="_self" class="z-3 position-absolute link-light link-underline-opacity-0" aria-label="" style="min-width: 300px;">
+          <p class="amaranth-regular fs-2 ps-1 my-0">Discover</p>
+          <p class="amaranth-regular fs-1 my-0">Rural America</p>
+          <p class="amaranth-regular fs-4 ps-1 my-0">
+            at your doorstep <i class="fa-regular fa-circle-right"></i>
+          </p>
+        </a>
       </section>
       <div class="rich-text-section has-edit-button">
         <h2 class="rich-text-title">Ready to discover what Clinton County has to offer?</h2>
