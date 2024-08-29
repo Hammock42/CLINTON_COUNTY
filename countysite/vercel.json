@@ -7,7 +7,7 @@
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "countysite/assets/$1"
+      "dest": "countysite/static/$1"
     },
     {
       "src": "/media/(.*)",
