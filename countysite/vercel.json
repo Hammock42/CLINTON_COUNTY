@@ -6,6 +6,14 @@
   }],
   "routes": [
     {
+      "src": "/static/(.*)",
+      "dest": "countysite/assets/$1"
+    },
+    {
+      "src": "/media/(.*)",
+      "dest": "countysite/media/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "countysite/wsgi.py"
     }
