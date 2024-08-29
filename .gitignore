@@ -30,3 +30,5 @@ secrets.txt
 # Ignore specific files or directories
 /path/to/file.txt
 /path/to/directory/
+
+*.pyc
