@@ -26,4 +26,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('coming_soon/', views.coming_soon, name='coming_soon'),
+    path('place/', views.place, name='place'),
 ]

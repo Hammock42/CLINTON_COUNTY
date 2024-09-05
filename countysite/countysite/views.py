@@ -5,3 +5,6 @@ def index(request):
 
 def coming_soon(request):
     return render(request, 'coming_soon.html')
+
+def place(request):
+    return render(request, 'place.html')

@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Clinton County | {% block title %}{% endblock %}
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Hamad Hamdi">
+          
+    {% load django_bootstrap5 %}
+    {% load static %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="icon" href="{% static 'img/cc_icon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/site.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl-carousel.min.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Petit+Formal+Script&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/regular.css' %}" rel="stylesheet" type="text/css">
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.usefathom.com/script.js" data-site="NTXFHVPF" defer></script>
+  </head>
+<body>
+  <div class="fluid-container mtot-main-container">
+    <div class="top-sticky">
+      <header id="siteHeader" class="">
+        <nav>
+          <div class="visitmt-nav">
+            <div class="mobile-header">
+              <button class="no-style hamburger">
+                <i class="hamburger-image fa-solid fa-bars"></i>
+                <i class="close-image fa-solid fa-xmark"></i>
+              </button>
+              <div class="logo-mobile" role="banner">
+                <a class="logo-text menu-item-text" href="/">CLINTON</a>
+              </div>
+              <div class="header-search">
+                <form role="search" action="/search" class="vmt-gtm-search-bar-form-submission" method="get">
+                  <input disabled type="search" name="query" autocomplete="off" size="6" aria-label="Search" placeholder="Type a keyword to start">
+                  <div class="search-suggestions-wrapper">
+                    <div class="suggest-results" data-url="#"></div>
+                    <script>
+                      $(".suggest-results button").click(function() {
+                        var suggestedQuery = this.innerText;
+                        var form = $(this).closest("form");
+                        form.find("input[type=search]").val(suggestedQuery);
+                        form.submit();
+                      });
+                    </script>
+                  </div>
+                </form>
+                <button class="search-button">search</button>
+              </div>
+            </div>
+            <div class="logo-desktop menu-item lvl1 highlighted" role="banner">
+              <a class="logo-text menu-item-text lvl1" href="/">CLINTON</a>
+            </div>
+            <ul class="menu lvl1">
+              <li class="menu-item lvl1">
+                <button class="menu-item-text lvl1"  >
+                  <span class="first-word lvl1">THINGS</span>
+                  <span class="non-first-words lvl1">TO DO</span>
+                  <svg fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M128,188a11.96187,11.96187,0,0,1-8.48535-3.51465l-80-80a12.0001,12.0001,0,0,1,16.9707-16.9707L128,159.0293l71.51465-71.51465a12.0001,12.0001,0,0,1,16.9707,16.9707l-80,80A11.96187,11.96187,0,0,1,128,188Z"/>
+                  </svg>
+                </button>
+                <ul class="menu lvl2">
+                  <li class="menu-item lvl2 icon-menu has-edit-button">
+                    <span class="menu-item-text lvl2"  >
+                      <span class="first-word lvl2">Experiences</span>
+                      <span class="non-first-words lvl2"></span>
+                    </span>
+                    <ul class="menu lvl3 icon-menu">
+                      <li class="menu-item lvl3 icon-menu">
+                        <a class="menu-item-text lvl3 fs-4" href="{% url 'coming_soon' %}" target="_self">
+                          <i class="fa-solid fa-person-hiking fs-2"></i>
+                          <span class="first-word lvl3">Outdoor</span>
+                          <span class="non-first-words lvl3">and Adventure</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 icon-menu">
+                        <a class="menu-item-text lvl3 fs-4" href="{% url 'coming_soon' %}" target="_self">
+		                      <i class="fa-solid fa-person-swimming fs-2"></i>
+                          <span class="first-word lvl3">Water</span>
+                          <span class="non-first-words lvl3">Recreation</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 icon-menu">
+                        <a class="menu-item-text lvl3 fs-4" href="{% url 'coming_soon' %}" target="_self">
+                          <i class="fa-solid fa-people-roof fs-2"></i>
+                          <span class="first-word lvl3">Family</span>
+                          <span class="non-first-words lvl3">Fun</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 icon-menu">
+                        <a class="menu-item-text lvl3 fs-4" href="{% url 'coming_soon' %}" target="_self">
+                          <i class="fa-solid fa-landmark fs-2"></i>
+                          <span class="first-word lvl3">History</span>
+                          <span class="non-first-words lvl3"></span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 icon-menu">
+                        <a class="menu-item-text lvl3 fs-4" href="{% url 'coming_soon' %}" target="_self">
+                          <i class="fa-solid fa-bag-shopping fs-2"></i>
+                          <span class="first-word lvl3">SHOPPING</span>
+                          <span class="non-first-words lvl3">AND LEISURE</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 icon-menu">
+                        <a class="menu-item-text lvl3 fs-4" href="{% url 'coming_soon' %}" target="_self">
+                          <i class="fa-solid fa-utensils fs-2"></i>
+                          <span class="first-word lvl3">FOOD</span>
+                          <span class="non-first-words lvl3">AND DRINK</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 icon-menu">
+                        <a class="menu-item-text lvl3 fs-4" href="{% url 'coming_soon' %}" target="_self">
+                          <i class="fa-solid fa-palette fs-2"></i>
+                          <span class="first-word lvl3">Arts</span>
+                          <span class="non-first-words lvl3">& Culture</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 icon-menu">
+                        <a class="menu-item-text lvl3 fs-4" href="{% url 'coming_soon' %}" target="_self">
+                          <i class="fa-solid fa-calendar-days fs-2"></i>
+                          <span class="first-word lvl3">Events</span>
+                          <span class="non-first-words lvl3"></span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item lvl2  has-edit-button">
+                    <span class="menu-item-text lvl2"  >
+                      <span class="first-word lvl2">Contact</span>
+                      <span class="non-first-words lvl2">us</span>
+                    </span>
+                    <ul class="menu lvl3 ">
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Email</span>
+                          <span class="non-first-words lvl3">Us</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_blank">
+                          <span class="first-word lvl3">CALL</span>
+                          <span class="non-first-words lvl3">1 (555) 555-5555</span>
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="menu-close">
+                      <svg class="exit-icon" viewBox="0 0 20 20" preserveAspectRatio="xMaxYMid slice">
+                        <line x1="0" y1="0" x2="20" y2="20" style="stroke:currentColor;stroke-width:2"></line>
+                        <line x1="20" y1="0" x2="0" y2="20" style="stroke:currentColor;stroke-width:2"></line>
+                      </svg>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item lvl1">
+                <button class="menu-item-text lvl1"  >
+                  <span class="first-word lvl1">PLACES</span>
+                  <span class="non-first-words lvl1">TO GO</span>
+                  <!-- this icon is licensed under the MIT license (https://opensource.org/license/mit) -->
+                   <svg class="visitmt-caret" fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M128,188a11.96187,11.96187,0,0,1-8.48535-3.51465l-80-80a12.0001,12.0001,0,0,1,16.9707-16.9707L128,159.0293l71.51465-71.51465a12.0001,12.0001,0,0,1,16.9707,16.9707l-80,80A11.96187,11.96187,0,0,1,128,188Z"/>
+                  </svg>
+                </button>
+                <ul class="menu lvl2">
+                  <li class="menu-item lvl2  has-edit-button">
+                    <a class="menu-item-text lvl2" href="{% url 'coming_soon' %}" target="_self">
+                      <span class="first-word lvl2">Outdoors</span>
+                      <span class="non-first-words lvl2"></span>
+                    </a>
+                    <ul class="menu lvl3 ">
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'place' %}" target="_self">
+                          <span class="first-word lvl3">Wallace</span>
+                          <span class="non-first-words lvl3">State Park</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Smithville</span>
+                          <span class="non-first-words lvl3">Lake</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">McGee</span>
+                          <span class="non-first-words lvl3">Family Conservation Area</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Trice-Dedman</span>
+                          <span class="non-first-words lvl3">Memorial Woods</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Honker</span>
+                          <span class="non-first-words lvl3">Cove Waterfowl Refuge</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Hartell</span>
+                          <span class="non-first-words lvl3">Conservation area</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Murals</span>
+                          <span class="non-first-words lvl3"></span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item lvl2  has-edit-button">
+                    <span class="menu-item-text lvl2"  >
+                      <span class="first-word lvl2">Indoors</span>
+                      <span class="non-first-words lvl2"></span>
+                    </span>
+                    <ul class="menu lvl3 ">
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Deer</span>
+                          <span class="non-first-words lvl3">Creek Cabin</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Riley-Carmack</span>
+                          <span class="non-first-words lvl3">House Museum</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_blank">
+                          <span class="first-word lvl3">Cameron</span>
+                          <span class="non-first-words lvl3">Historical Society and Depot Museum</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_blank">
+                          <span class="first-word lvl3">Abbey</span>
+                          <span class="non-first-words lvl3"></span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Shatto</span>
+                          <span class="non-first-words lvl3">Milk Company</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item lvl2  has-edit-button open-content">
+                    <span class="menu-item-text lvl2"  >
+                      <span class="first-word lvl2">Locations</span>
+                      <span class="non-first-words lvl2"></span>
+                    </span>
+                    <ul class="menu lvl3 ">
+                      <li class="menu-item lvl3 ">
+                        <iframe 
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d196745.1374973667!2d-94.56888712031676!3d39.601466132576405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0348fe15fb78b%3A0x1b4b47c082116152!2sClinton%20County%2C%20MO%2C%20USA!5e0!3m2!1sen!2sly!4v1723278781598!5m2!1sen!2sly" 
+                          width="600" 
+                          height="450" 
+                          style="border:0;" 
+                          allowfullscreen="" 
+                          loading="lazy" 
+                          referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                      </li>
+                    </ul>
+                    <button class="btn btn-primary main-menu-modal-open-button" type="button">VIEW</button>
+                    <div class="main-menu-open-content-container">
+                      <button class="main-menu-modal-close-button" title="Close">
+                        <svg class="exit-icon" viewBox="0 0 20 20" preserveAspectRatio="xMaxYMid slice">
+                          <line x1="0" y1="0" x2="20" y2="20" style="stroke:currentColor;stroke-width:2"></line>
+                          <line x1="20" y1="0" x2="0" y2="20" style="stroke:currentColor;stroke-width:2"></line>
+                        </svg>
+                      </button>
+                    </div>
+                  </li>
+                  <li class="menu-item lvl2  has-edit-button">
+                    <span class="menu-item-text lvl2"  >
+                      <span class="first-word lvl2">Contact</span>
+                      <span class="non-first-words lvl2">us</span>
+                    </span>
+                    <ul class="menu lvl3 ">
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Email</span>
+                          <span class="non-first-words lvl3">Us</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_blank">
+                          <span class="first-word lvl3">CALL</span>
+                          <span class="non-first-words lvl3">1 (555) 555-5555</span>
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="menu-close">
+                      <svg class="exit-icon" viewBox="0 0 20 20" preserveAspectRatio="xMaxYMid slice">
+                        <line x1="0" y1="0" x2="20" y2="20" style="stroke:currentColor;stroke-width:2"></line>
+                        <line x1="20" y1="0" x2="0" y2="20" style="stroke:currentColor;stroke-width:2"></line>
+                      </svg>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item lvl1">
+                <button class="menu-item-text lvl1"  >
+                  <span class="first-word lvl1">WHERE</span>
+                  <span class="non-first-words lvl1">TO STAY</span>
+                  <!-- this icon is licensed under the MIT license (https://opensource.org/license/mit) -->
+                   <svg class="visitmt-caret" fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M128,188a11.96187,11.96187,0,0,1-8.48535-3.51465l-80-80a12.0001,12.0001,0,0,1,16.9707-16.9707L128,159.0293l71.51465-71.51465a12.0001,12.0001,0,0,1,16.9707,16.9707l-80,80A11.96187,11.96187,0,0,1,128,188Z"/>
+                  </svg>
+                </button>
+                <ul class="menu lvl2">
+                  <li class="menu-item lvl2  has-edit-button">
+                    <span class="menu-item-text lvl2"  >
+                      <span class="first-word lvl2">Lodging</span>
+                      <span class="non-first-words lvl2"></span>
+                    </span>
+                    <ul class="menu lvl3 ">
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Hotels</span>
+                          <span class="non-first-words lvl3">& Motels</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Bed</span>
+                          <span class="non-first-words lvl3">& Breakfast</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Cabins</span>
+                          <span class="non-first-words lvl3"></span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Campgrounds</span>
+                          <span class="non-first-words lvl3"></span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Condos</span>
+                          <span class="non-first-words lvl3"></span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Hostels</span>
+                          <span class="non-first-words lvl3"></span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item lvl2  has-edit-button">
+                    <span class="menu-item-text lvl2"  >
+                      <span class="first-word lvl2">_</span>
+                      <span class="non-first-words lvl2"></span>
+                    </span>
+                    <ul class="menu lvl3 ">
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Place</span>
+                          <span class="non-first-words lvl3">One</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Another</span>
+                          <span class="non-first-words lvl3">Place</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">More</span>
+                          <span class="non-first-words lvl3">Places</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Resorts</span>
+                          <span class="non-first-words lvl3"></span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Vacation</span>
+                          <span class="non-first-words lvl3">Homes</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item lvl2  has-edit-button open-content">
+                    <span class="menu-item-text lvl2"  >
+                      <span class="first-word lvl2">Booking</span>
+                      <span class="non-first-words lvl2"></span>
+                    </span>
+                    <a href="#">ENTER BOOKING LINK</a>
+                  </li>
+                  <li class="menu-item lvl2  has-edit-button">
+                    <span class="menu-item-text lvl2"  >
+                      <span class="first-word lvl2">Contact</span>
+                      <span class="non-first-words lvl2">Us</span>
+                    </span>
+                    <ul class="menu lvl3 ">
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Email</span>
+                          <span class="non-first-words lvl3">Us</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_blank">
+                          <span class="first-word lvl3">CALL</span>
+                          <span class="non-first-words lvl3">1 (555) 555-5555</span>
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="menu-close">
+                      <svg class="exit-icon" viewBox="0 0 20 20" preserveAspectRatio="xMaxYMid slice">
+                        <line x1="0" y1="0" x2="20" y2="20" style="stroke:currentColor;stroke-width:2"></line>
+                        <line x1="20" y1="0" x2="0" y2="20" style="stroke:currentColor;stroke-width:2"></line>
+                      </svg>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item lvl1">
+                <button class="menu-item-text lvl1"  >
+                  <span class="first-word lvl1">EVENTS</span>
+                  <span class="non-first-words lvl1">TO ENJOY</span>
+                  <!-- this icon is licensed under the MIT license (https://opensource.org/license/mit) -->
+                  <svg class="visitmt-caret" fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M128,188a11.96187,11.96187,0,0,1-8.48535-3.51465l-80-80a12.0001,12.0001,0,0,1,16.9707-16.9707L128,159.0293l71.51465-71.51465a12.0001,12.0001,0,0,1,16.9707,16.9707l-80,80A11.96187,11.96187,0,0,1,128,188Z"/>
+                  </svg>
+                </button>
+                <ul class="menu lvl2">
+                  <li class="menu-item lvl2  has-edit-button">
+                    <span class="menu-item-text lvl2"  >
+                      <span class="first-word lvl2">EVENTS</span>
+                      <span class="non-first-words lvl2"></span>
+                    </span>
+                    <ul class="menu lvl3 ">
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">ALL</span>
+                          <span class="non-first-words lvl3">EVENTS</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_blank">
+                          <span class="first-word lvl3">SPRING</span>
+                          <span class="non-first-words lvl3">EVENTS</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_blank">
+                          <span class="first-word lvl3">SUMMER</span>
+                          <span class="non-first-words lvl3">EVENTS</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_blank">
+                          <span class="first-word lvl3">FALL</span>
+                          <span class="non-first-words lvl3">EVENTS</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_blank">
+                          <span class="first-word lvl3">WINTER</span>
+                          <span class="non-first-words lvl3">EVENTS</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item lvl2  has-edit-button">
+                    <span class="menu-item-text lvl2"  >
+                      <span class="first-word lvl2">MORE</span>
+                      <span class="non-first-words lvl2"></span>
+                    </span>
+                    <ul class="menu lvl3 ">
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">MORE</span>
+                          <span class="non-first-words lvl3">COUNTY EVENTS</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_blank">
+                          <span class="first-word lvl3">Some</span>
+                          <span class="non-first-words lvl3">Event</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_blank">
+                          <span class="first-word lvl3">Another</span>
+                          <span class="non-first-words lvl3">Event</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item lvl2  has-edit-button open-content">
+                    <span class="menu-item-text lvl2"  >
+                      <span class="first-word lvl2">CALENDAR</span>
+                      <span class="non-first-words lvl2"></span>
+                    </span>
+                    <ul class="menu lvl3 ">
+                      <li class="menu-item lvl3 ">
+                        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FTirane&bgcolor=%23ffffff&src=OGVhNWFkMjlkYmFiZGU1NDgwYjA5ZTllNGE3ZmY2Mjk5NWZkZTE3NmIyNTAyOTcwNWYxNzU5ZjhiNmNmNWZhZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%237CB342&color=%230B8043" style="border:solid 1px #777" width="600" height="400"></iframe>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item lvl2  has-edit-button">
+                    <span class="menu-item-text lvl2"  >
+                      <span class="first-word lvl2">CONTACT</span>
+                      <span class="non-first-words lvl2">US</span>
+                    </span>
+                    <ul class="menu lvl3 ">
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_blank">
+                          <span class="first-word lvl3">EMAIL</span>
+                          <span class="non-first-words lvl3">US</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_blank">
+                          <span class="first-word lvl3">Call</span>
+                          <span class="non-first-words lvl3">1 (555) 555-5555</span>
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="menu-close">
+                      <svg class="exit-icon" viewBox="0 0 20 20" preserveAspectRatio="xMaxYMid slice">
+                        <line x1="0" y1="0" x2="20" y2="20" style="stroke:currentColor;stroke-width:2"></line>
+                        <line x1="20" y1="0" x2="0" y2="20" style="stroke:currentColor;stroke-width:2"></line>
+                      </svg>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item lvl1">
+                <button class="menu-item-text lvl1"  >
+                  <span class="first-word lvl1">PLAN</span>
+                  <span class="non-first-words lvl1">YOUR TRIP</span>
+                  <!-- this icon is licensed under the MIT license (https://opensource.org/license/mit) -->
+                  <svg class="visitmt-caret" fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M128,188a11.96187,11.96187,0,0,1-8.48535-3.51465l-80-80a12.0001,12.0001,0,0,1,16.9707-16.9707L128,159.0293l71.51465-71.51465a12.0001,12.0001,0,0,1,16.9707,16.9707l-80,80A11.96187,11.96187,0,0,1,128,188Z"/>
+                  </svg>
+                </button>
+                <ul class="menu lvl2">
+                  <li class="menu-item lvl2  has-edit-button">
+                    <span class="menu-item-text lvl2"  >
+                      <span class="first-word lvl2">PLANNING</span>
+                      <span class="non-first-words lvl2"></span>
+                    </span>
+                    <ul class="menu lvl3 ">
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">TRIP</span>
+                          <span class="non-first-words lvl3">IDEAS</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Start</span>
+                          <span class="non-first-words lvl3">Planning</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Getting</span>
+                          <span class="non-first-words lvl3">to Clinton County</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Getting</span>
+                          <span class="non-first-words lvl3">Around</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Travel</span>
+                          <span class="non-first-words lvl3">Alerts</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Leave</span>
+                          <span class="non-first-words lvl3">No Trace</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_blank">
+                          <span class="first-word lvl3">VISITOR</span>
+                          <span class="non-first-words lvl3">INFORMATION CENTERS</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_blank">
+                          <span class="first-word lvl3">CHAMBERS</span>
+                          <span class="non-first-words lvl3">OF COMMERCE</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_blank">
+                          <span class="first-word lvl3">Conference</span>
+                          <span class="non-first-words lvl3">Centers</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item lvl2  has-edit-button open-content">
+                    <span class="menu-item-text lvl2"  >
+                      <span class="first-word lvl2">SECTION PLACEHOLDER</span>
+                      <span class="non-first-words lvl2"></span>
+                    </span>
+                    <button class="btn btn-primary main-menu-modal-open-button" type="button">VIEW</button>
+                    <div class="main-menu-open-content-container">
+                      <button class="main-menu-modal-close-button" title="Close">
+                        <svg class="exit-icon" viewBox="0 0 20 20" preserveAspectRatio="xMaxYMid slice">
+                          <line x1="0" y1="0" x2="20" y2="20" style="stroke:currentColor;stroke-width:2"></line>
+                          <line x1="20" y1="0" x2="0" y2="20" style="stroke:currentColor;stroke-width:2"></line>
+                        </svg>
+                      </button>
+                    </div>
+                  </li>
+                  <li class="menu-item lvl2  has-edit-button">
+                    <span class="menu-item-text lvl2"  >
+                      <span class="first-word lvl2">Contact</span>
+                      <span class="non-first-words lvl2">Us</span>
+                    </span>
+                    <ul class="menu lvl3 ">
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_self">
+                          <span class="first-word lvl3">Email</span>
+                          <span class="non-first-words lvl3">Us</span>
+                        </a>
+                      </li>
+                      <li class="menu-item lvl3 ">
+                        <a class="menu-item-text lvl3" href="{% url 'coming_soon' %}" target="_blank">
+                          <span class="first-word lvl3">Call</span>
+                          <span class="non-first-words lvl3">1 (555) 555-5555</span>
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="menu-close">
+                      <svg class="exit-icon" viewBox="0 0 20 20" preserveAspectRatio="xMaxYMid slice">
+                        <line x1="0" y1="0" x2="20" y2="20" style="stroke:currentColor;stroke-width:2"></line>
+                        <line x1="20" y1="0" x2="0" y2="20" style="stroke:currentColor;stroke-width:2"></line>
+                      </svg>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <div class="header-right-desktop">
+              <div class="header-search">
+                <form role="search" action="/search" class="vmt-gtm-search-bar-form-submission" method="get">
+                  <input disabled type="search" name="query" autocomplete="off" size="5" aria-label="Search" placeholder="Type a keyword to start">
+                  <div class="search-suggestions-wrapper"></div>
+                </form>
+                <div class="search-button-wrapper">
+                  <button class="search-button">search</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <div class="plan-your-trip">
+        <div class="plan-your-trip-background-image-container">
+          <picture>
+            <source media="(max-width: 767px)" srcset="{% static 'img/topo.png' %}" />
+            <source media="(min-width: 768px)" srcset="{% static 'img/topo.png' %}" />
+            <img class="plan-your-trip-background-image" src="{% static 'img/topo.png' %}" alt='' />
+          </picture>
+        </div>
+        <div class="plan-your-trip-text">
+          <a class="plan-your-trip-text-header" href="{% url 'coming_soon' %}">
+            Plan Your Trip
+          </a>
+          <a class="plan-your-trip-text-link left" href="{% url 'coming_soon' %}">
+            <svg height="12" class="arrow" viewBox="-400 0 500 100" preserveAspectRatio="xMaxYMid slice">
+              <rect x="-400" y="45" width="490" height="10" style="fill:currentColor" />
+              <polygon points="100,50 22,0 22,15 80,50 22,85 22,100" style="fill:currentColor" />
+            </svg>
+            <div class="text">
+              <span class="first-word">Where</span>
+              <span class="non-first-words">to Stay</span>
+            </div>
+          </a>
+          <a class="plan-your-trip-text-link right" href="{% url 'coming_soon' %}">
+            <div class="text">
+              <span class="first-word">Getting</span>
+              <span class="non-first-words">to Clinton</span>
+            </div>
+            <svg height="12" class="arrow" viewBox="-400 0 500 100" preserveAspectRatio="xMaxYMid slice">
+              <rect x="-400" y="45" width="490" height="10" style="fill:currentColor" />
+              <polygon points="100,50 22,0 22,15 80,50 22,85 22,100" style="fill:currentColor" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include 'partials/footer.html' %}
+<!--fluid-container-->
+
+
+<!-- custom js -->
+ <script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}" id="owl-carousel-api" title="No content"></script> 
+ <script type="text/javascript" src="{% static 'js/main.js' %}" id="main-js" title="No content"></script>
+ <script type="text/javascript" src="{% static 'js/application.min.js' %}" id="visitmt-js"></script>
+</body>
+</html>

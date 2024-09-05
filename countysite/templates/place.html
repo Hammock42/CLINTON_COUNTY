@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Place Temp Page{% endblock %}
+
+{% block content %}
+<div id="main-content" class="xpage-container">
+    <section class="hero mb-4">
+        <img src="{% static 'img/wallace_lake_1_1.jpg' %}" class="img-fluid d-block d-md-none" alt="...">
+        <img src="{% static 'img/wallace_lake_1_2.jpg' %}" class="img-fluid d-none d-md-block d-lg-none" alt="...">
+        <img src="{% static 'img/wallace_lake_1_3.jpg' %}" class="img-fluid d-none d-lg-block d-xl-none" alt="...">
+        <img src="{% static 'img/wallace_lake_1_4.jpg' %}" class="img-fluid d-none d-xl-block" alt="...">
+        <div class="z-3 position-absolute text-light text-center">
+            <p class="amaranth-regular fs-2 lh-1">Wallace State Park</p>
+            <p style="font-size: 0.8rem;">Hillsides of Seclusion &lpar; optional or can reword &rpar;</p>
+          </div>
+    </section>
+    <div class="container my-4 py-4">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/wsp_drive.jpg' %}" alt="" class="img-fluid rounded">
+            </div>
+            <div class="col-12 col-md-6 py-4">
+                <p>
+                    A short drive off of Interstate 35 south of Cameron is Clinton County&apos;s best kept serenity secret.
+                    Wallace State Park is 574 acres of family-oriented campgrounds, fishing spots, birding opportunities
+                    and hiking trails.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/wsp_camp.jpg' %}" alt="" class="img-fluid rounded">
+            </div>
+            <div class="d-none d-md-block col-md-6 py-4 order-first">
+                <p>
+                    Drive-in campsites include both basic, electric special-use types with modern restrooms and shorts
+                    nearby. Walk-in campsites are available for those seeking more seclusion. Playground equipment is
+                    available for the youngsters and the young at heart. If you have only a few hours for outdoor time to
+                    spend, shaded picnic shelters are spread throughout the park, and six-acre Lake Allaman and two
+                    old farm ponds invite you to drop a line.
+                </p>
+            </div>
+            <div class="d-block d-md-none col-12 py-4">
+                <p>
+                    Drive-in campsites include both basic, electric special-use types with modern restrooms and shorts
+                    nearby. Walk-in campsites are available for those seeking more seclusion. Playground equipment is
+                    available for the youngsters and the young at heart. If you have only a few hours for outdoor time to
+                    spend, shaded picnic shelters are spread throughout the park, and six-acre Lake Allaman and two
+                    old farm ponds invite you to drop a line.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/wsp_birders.jpg' %}" alt="" class="img-fluid rounded">
+            </div>
+            <div class="col-12 col-md-6 py-4">
+                <p>
+                    Birders will enjoy the change to see 171 identified species observed in the park from red-tailed
+                    hawks and wild turkeys to pileated woodpeckers and scarlet tanagers.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/wsp_hike.jpg' %}" alt="" class="img-fluid rounded">
+            </div>
+            <div class="d-none d-md-block col-md-6 py-4 order-first">
+                <p>
+                    For hikers, Wallace State Park offers four scenic trails ranging from about half a mile to more than
+                    three miles. Each has its own character and charms and each has benches along the way to rest
+                    and enjoy the woodland and stream views. The trail names tell you what to expect: Old Quarry, Deer
+                    Run, Rocky Ford and Skunk Hollow.
+                </p>
+            </div>
+            <div class="d-block d-md-none col-12 py-4">
+                <p>
+                    For hikers, Wallace State Park offers four scenic trails ranging from about half a mile to more than
+                    three miles. Each has its own character and charms and each has benches along the way to rest
+                    and enjoy the woodland and stream views. The trail names tell you what to expect: Old Quarry, Deer
+                    Run, Rocky Ford and Skunk Hollow.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/wsp_reservation.jpg' %}" alt="" class="img-fluid rounded">
+            </div>
+            <div class="col-12 col-md-6 py-4">
+                <span>
+                    <b>For information:</b>
+                    <a href="https://mostateparks.com/park/wallace-state-park" target="_blank">https://mostateparks.com/park/wallace-state-park</a>
+                </span>
+                <p>
+                    To make a reservation or view campsites details, photos and availability, go to the reservation
+                    website by clicking the &quot;Make a Reservation&quot; link below and start planning your trip today.
+                    Reservations may also be made by calling toll free 877-ICampMO &lpar;877-422-6766&rpar;. Printable
+                    campground maps are available for your reference by clicking on the &quot;Map&quot; links.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
