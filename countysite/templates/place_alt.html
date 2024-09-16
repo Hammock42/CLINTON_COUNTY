@@ -1,0 +1,156 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Place Temp Page{% endblock %}
+
+{% block content %}
+<div id="carouselExampleCaptions" class="carousel slide" style="max-height: 100vh;">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'img/wallace_lake_1.jpg' %}" class="d-block w-100" alt="...">
+        
+        <div class="carousel-caption d-none d-md-flex align-items-center h-100">
+            <div class="col bg-secondary bg-opacity-50 rounded p-1">
+                <p class="fs-3 fw-bold">Wallace State Park</p>
+                <p class="fs-6">
+                    A short drive off of Interstate 35 south of Cameron is Clinton County&apos;s best kept serenity secret.
+                    Wallace State Park is 574 acres of family-oriented campgrounds, fishing spots, birding opportunities
+                    and hiking trails.
+                </p>
+            </div>
+        </div>
+        <div class="carousel-caption d-flex d-md-none align-items-center h-100">
+            <div class="col bg-secondary bg-opacity-50 rounded p-1">
+                <p class="fs-3 fw-bold">Wallace State Park</p>
+                <p>
+                    A short drive off of Interstate 35 south of Cameron is Clinton County&apos;s best kept serenity secret.
+                    Wallace State Park is 574 acres of family-oriented campgrounds, fishing spots, birding opportunities
+                    and hiking trails.
+                </p>
+            </div>
+        </div>
+        
+      </div>
+      <div class="carousel-item h-100">
+        <img src="{% static 'img/wsp_camp.jpg' %}" class="d-block w-100" alt="...">
+
+        <div class="carousel-caption d-none d-md-flex align-items-center h-100">
+            <div class="col bg-secondary bg-opacity-50 rounded p-1">
+                <p class="fs-3 fw-bold">Wallace State Park</p>
+                <p class="fs-6">
+                    Drive-in campsites include both basic, electric special-use types with modern restrooms and shorts
+                    nearby. Walk-in campsites are available for those seeking more seclusion. Playground equipment is
+                    available for the youngsters and the young at heart. If you have only a few hours for outdoor time to
+                    spend, shaded picnic shelters are spread throughout the park, and six-acre Lake Allaman and two
+                    old farm ponds invite you to drop a line.
+                </p>
+            </div>
+        </div>
+        <div class="carousel-caption d-flex d-md-none align-items-center h-100">
+            <div class="col bg-secondary bg-opacity-50 rounded p-1">
+                <p class="fs-3 fw-bold">Wallace State Park</p>
+                <p>
+                    Drive-in campsites include both basic, electric special-use types with modern restrooms and shorts
+                    nearby. Walk-in campsites are available for those seeking more seclusion. Playground equipment is
+                    available for the youngsters and the young at heart. If you have only a few hours for outdoor time to
+                    spend, shaded picnic shelters are spread throughout the park, and six-acre Lake Allaman and two
+                    old farm ponds invite you to drop a line.
+                </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="{% static 'img/wsp_birders.jpg' %}" class="d-block w-100" alt="...">
+
+        <div class="carousel-caption d-none d-md-flex align-items-center h-100">
+            <div class="col bg-secondary bg-opacity-50 rounded p-1">
+                <p class="fs-3 fw-bold">Wallace State Park</p>
+                <p class="fs-6">
+                    Birders will enjoy the change to see 171 identified species observed in the park from red-tailed
+                    hawks and wild turkeys to pileated woodpeckers and scarlet tanagers.
+                </p>
+            </div>
+        </div>
+        <div class="carousel-caption d-flex d-md-none align-items-center h-100">
+            <div class="col bg-secondary bg-opacity-50 rounded p-1">
+                <p class="fs-3 fw-bold">Wallace State Park</p>
+                <p>
+                    Birders will enjoy the change to see 171 identified species observed in the park from red-tailed
+                    hawks and wild turkeys to pileated woodpeckers and scarlet tanagers.
+                </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="{% static 'img/wsp_hike.jpg' %}" class="d-block w-100" alt="...">
+
+        <div class="carousel-caption d-none d-md-flex align-items-center h-100">
+            <div class="col bg-secondary bg-opacity-50 rounded p-1">
+                <p class="fs-3 fw-bold">Wallace State Park</p>
+                <p class="fs-6">
+                    For hikers, Wallace State Park offers four scenic trails ranging from about half a mile to more than
+                    three miles. Each has its own character and charms and each has benches along the way to rest
+                    and enjoy the woodland and stream views. The trail names tell you what to expect: Old Quarry, Deer
+                    Run, Rocky Ford and Skunk Hollow.
+                </p>
+            </div>
+        </div>
+        <div class="carousel-caption d-flex d-md-none align-items-center h-100">
+            <div class="col bg-secondary bg-opacity-50 rounded p-1">
+                <p class="fs-3 fw-bold">Wallace State Park</p>
+                <p>
+                    For hikers, Wallace State Park offers four scenic trails ranging from about half a mile to more than
+                    three miles. Each has its own character and charms and each has benches along the way to rest
+                    and enjoy the woodland and stream views. The trail names tell you what to expect: Old Quarry, Deer
+                    Run, Rocky Ford and Skunk Hollow.
+                </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="{% static 'img/wsp_reservation.jpg' %}" class="d-block w-100" alt="...">
+
+        <div class="carousel-caption d-none d-md-flex align-items-center h-100">
+            <div class="col bg-secondary bg-opacity-50 rounded p-1">
+                <p class="fs-3 fw-bold">Wallace State Park</p>
+                <p class="fs-6">
+                    To make a reservation or view campsites details, photos and availability, go to the reservation
+                    website by clicking the &quot;Make a Reservation&quot; link below and start planning your trip today.
+                    Reservations may also be made by calling toll free 877-ICampMO &lpar;877-422-6766&rpar;. Printable
+                    campground maps are available for your reference by clicking on the &quot;Map&quot; links.
+                </p>
+            </div>
+        </div>
+        <div class="carousel-caption d-flex d-md-none align-items-center h-100">
+            <div class="col bg-secondary bg-opacity-50 rounded p-1">
+                <p class="fs-3 fw-bold">Wallace State Park</p>
+                <p>
+                    To make a reservation or view campsites details, photos and availability, go to the reservation
+                    website by clicking the &quot;Make a Reservation&quot; link below and start planning your trip today.
+                    Reservations may also be made by calling toll free 877-ICampMO &lpar;877-422-6766&rpar;. Printable
+                    campground maps are available for your reference by clicking on the &quot;Map&quot; links.
+                </p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+{% endblock %}

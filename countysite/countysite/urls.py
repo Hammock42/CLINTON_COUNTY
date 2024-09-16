@@ -27,4 +27,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('coming_soon/', views.coming_soon, name='coming_soon'),
     path('place/', views.place, name='place'),
+    path('place_alt/', views.place_alt, name='place_alt'),
 ]

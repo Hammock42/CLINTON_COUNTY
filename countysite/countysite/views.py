@@ -8,3 +8,6 @@ def coming_soon(request):
 
 def place(request):
     return render(request, 'place.html')
+
+def place_alt(request):
+    return render(request, 'place_alt.html')
