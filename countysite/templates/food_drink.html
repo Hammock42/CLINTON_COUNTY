@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Food and Drink{% endblock %}
+
+{% block content %}
+<div id="main-content" class="xpage-container">
+    <section class="hero mb-4">
+        <img src="{% static 'img/cc_sign_bg_lg.avif' %}" class="img-fluid d-none d-xl-block" alt="...">
+    </section>
+    <div class="row px-5">
+        <div class="col-7 mx-auto">
+            <div class="fs-2 text-center">
+                Food &amp; Drink in Clinton County, Missouri
+            </div>
+            <div class="fs-6 text-center">
+                Clinton County offers countless outdoor opportunities for nature lovers and adventure 
+                seekers. Whether you're hiking through lush forests, fishing in serene lakes, or 
+                enjoying a peaceful day of birdwatching, Clinton County has something for everyone. 
+                Explore these beautiful natural spots and find your next adventure!
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="fs-3 text-center mb-4">
+                Local Eateries
+            </div>
+            <ul>
+                <li>Temp Diner 1</li>
+                <li>Temp Diner 2</li>
+                <li>Temp Diner 3</li>
+                <li>Temp Diner 4</li>
+                <li>Temp Diner 5</li>
+                <li>Temp Diner 6</li>
+                <li>Temp Diner 7</li>
+                <li>Temp Diner 8</li>
+                <li>Temp Diner 9</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

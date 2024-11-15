@@ -9,22 +9,22 @@
         <div id="carouselExampleSlidesOnly" class="carousel carousel-fade" data-bs-interval="7000" data-bs-ride="carousel" data-bs-pause="false" style="tr">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="{% static 'img/scroll_1_1.jpg' %}" class="img-fluid d-block d-md-none" alt="...">
-              <img src="{% static 'img/scroll_1_2.jpg' %}" class="img-fluid d-none d-md-block d-lg-none" alt="...">
-              <img src="{% static 'img/scroll_1_3.jpg' %}" class="img-fluid d-none d-lg-block d-xl-none" alt="...">
-              <img src="{% static 'img/scroll_1_4.jpg' %}" class="img-fluid d-none d-xl-block" alt="...">
+              <img src="{% static 'img/abbey_sq.avif' %}" class="img-fluid d-block d-md-none" alt="...">
+              <img src="{% static 'img/abbey_4_3.avif' %}" class="img-fluid d-none d-md-block d-lg-none" alt="...">
+              <img src="{% static 'img/abbey_16_9.avif' %}" class="img-fluid d-none d-lg-block d-xl-none" alt="...">
+              <img src="{% static 'img/abbey_2_1.avif' %}" class="img-fluid d-none d-xl-block" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="{% static 'img/scroll_2_1.jpg' %}" class="img-fluid d-block d-md-none" alt="...">
-              <img src="{% static 'img/scroll_2_2.jpg' %}" class="img-fluid d-none d-md-block d-lg-none" alt="...">
-              <img src="{% static 'img/scroll_2_3.jpg' %}" class="img-fluid d-none d-lg-block d-xl-none" alt="...">
-              <img src="{% static 'img/scroll_2_4.jpg' %}" class="img-fluid d-none d-xl-block" alt="...">
+              <img src="{% static 'img/lathrop_antique_show_sq.avif' %}" class="img-fluid d-block d-md-none" alt="...">
+              <img src="{% static 'img/lathrop_antique_show_4_3.avif' %}" class="img-fluid d-none d-md-block d-lg-none" alt="...">
+              <img src="{% static 'img/lathrop_antique_show_16_9.avif' %}" class="img-fluid d-none d-lg-block d-xl-none" alt="...">
+              <img src="{% static 'img/lathrop_antique_show_2_1.avif' %}" class="img-fluid d-none d-xl-block" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="{% static 'img/scroll_3_1.jpg' %}" class="img-fluid d-block d-md-none" alt="...">
-              <img src="{% static 'img/scroll_3_2.jpg' %}" class="img-fluid d-none d-md-block d-lg-none" alt="...">
-              <img src="{% static 'img/scroll_3_3.jpg' %}" class="img-fluid d-none d-lg-block d-xl-none" alt="...">
-              <img src="{% static 'img/scroll_3_4.jpg' %}" class="img-fluid d-none d-xl-block" alt="...">
+              <img src="{% static 'img/lathrop_tractor_sq.avif' %}" class="img-fluid d-block d-md-none" alt="...">
+              <img src="{% static 'img/lathrop_tractor_4_3.avif' %}" class="img-fluid d-none d-md-block d-lg-none" alt="...">
+              <img src="{% static 'img/lathrop_tractor_16_9.avif' %}" class="img-fluid d-none d-lg-block d-xl-none" alt="...">
+              <img src="{% static 'img/lathrop_tractor_2_1.avif' %}" class="img-fluid d-none d-xl-block" alt="...">
             </div>
           </div>
         </div>
@@ -39,34 +39,93 @@
         </div>
       </section>
       <div class="rich-text-section has-edit-button">
-        <h2 class="rich-text-title">Ready to discover what Clinton County has to offer?</h2>
+        <h2 class="rich-text-title">PLACEHOLDER TEXT</h2>
         <div class="rich-text-container">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
       </div>
-      <div class="container">
-        <div class="row m-3 p-3">
-          <div class="col-md-4">
-            <img class="rounded medium-img" src="{% static 'img/rich_history.jpg'%}" alt="...">
-            <h3>Rich History:</h3>
-            <p>Explore hostoric landmarks and museums in charming Plattsburg.</p>
-            <button>Learn More</button>
-          </div>
-          <div class="col-md-4">
-            <img class="rounded medium-img" src="{% static 'img/scenic_outdoors.jpg'%}" alt="...">
-            <h3>Scenic Outdoors:</h3>
-            <p>Enjoy hiking, fishing, and picknicking at Wallace State Park and Smithville Lake.</p>
-            <button>Learn More</button>
-          </div>
-          <div class="col-md-4">
-            <img class="rounded medium-img" src="{% static 'img/unique_attractions.jpg'%}" alt="...">
-            <h3>Unique Attractions:</h3>
-            <p>Experience the vibrant Plattsburg Fall Festival and quirky landmarks like the World's Largest Golf Tee.</p>
-            <button>Learn More</button>
-          </div>
+      <div class="row m-1">
+        <div class="col col-3 rounded">
+          <img src="{% static 'img/Hartell_4_3.avif'%}" onclick="openModal();currentSlide(1)" class="hover-shadow img-fluid rounded" alt="Kayaking">
+        </div>
+        <div class="col col-3 rounded">
+          <img src="{% static 'img/wallace_hiking_4_3.avif'%}" onclick="openModal();currentSlide(2)" class="hover-shadow img-fluid rounded">
+        </div>
+        <div class="col col-3 rounded">
+          <img src="{% static 'img/hunting_4_3.avif'%}" onclick="openModal();currentSlide(3)" class="hover-shadow img-fluid rounded">
+        </div>
+        <div class="col col-3 rounded">
+          <img src="{% static 'img/fishing_4_3.avif'%}" onclick="openModal();currentSlide(4)" class="hover-shadow img-fluid rounded">
         </div>
       </div>
-      <div class="container">
+      
+      <!-- The Modal/Lightbox -->
+      <div id="myModal" class="modal">
+        <span class="close cursor text-light fs-1" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+      
+          <div class="mySlides bg-secondary">
+            <div class="numbertext">1 / 4</div>
+            <img src="{% static 'img/Hartell_16_9.avif'%}" style="width:100%" alt="Kayaking">
+            <p class="fs-3 text-light text-center">
+              Kayaking
+            </p>
+          </div>
+      
+          <div class="mySlides bg-secondary">
+            <div class="numbertext">2 / 4</div>
+            <img src="{% static 'img/wallace_hiking_16_9.avif'%}" style="width:100%">
+            <p class="fs-3 text-light text-center">
+              Hiking
+            </p>
+          </div>
+      
+          <div class="mySlides bg-secondary">
+            <div class="numbertext">3 / 4</div>
+            <img src="{% static 'img/hunting_16_9.avif'%}" style="width:100%">
+            <p class="fs-3 text-light text-center">
+              Hunting
+            </p>
+          </div>
+      
+          <div class="mySlides bg-secondary">
+            <div class="numbertext">4 / 4</div>
+            <img src="{% static 'img/fishing_16_9.avif'%}" style="width:100%">
+            <p class="fs-3 text-light text-center">
+              Fishing
+            </p>
+          </div>
+      
+          <!-- Next/previous controls -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      
+          <!-- Caption text -->
+          {% comment %} <div class="caption-container">
+            <p id="caption"></p>
+          </div> {% endcomment %}
+      
+          <!-- Thumbnail image controls -->
+          {% comment %}  <div class="d-flex flex-row">
+            <div class="column">
+              <img class="demo img-fluid" src="{% static 'img/Hartell_4_3.avif'%}" onclick="currentSlide(1)" alt="Kayaking">
+            </div>
+        
+            <div class="column">
+              <img class="demo img-fluid" src="{% static 'img/wallace_hiking_4_3.avif'%}" onclick="currentSlide(2)" alt="Hiking">
+            </div>
+        
+            <div class="column">
+              <img class="demo img-fluid" src="{% static 'img/hunting_4_3.avif'%}" onclick="currentSlide(3)" alt="Hunting">
+            </div>
+        
+            <div class="column">
+              <img class="demo img-fluid" src="{% static 'img/fishing_4_3.avif'%}" onclick="currentSlide(4)" alt="Fishing">
+            </div>
+           </div> {% endcomment %}
+        </div>
+      </div>
+      {% comment %} <div class="container">
         <div class="row m-3 p-3">
           <h1>Explore amazing places</h1>
           <p>
@@ -244,7 +303,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> {% endcomment %}
       <section class="social-media-component has-edit-button m-5 p-5">
         <div class="social-media-component-header">
           <span class="social-media-component-title fs-1">Social</span>
@@ -263,13 +322,13 @@
           <div class="row">
             <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
               <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                src="{% static 'img/1950s_party.avif'%}"
                 class="w-100 shadow-1-strong rounded mb-4"
                 alt="Boat on Calm Water"
               />
 
               <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
+                src="{% static 'img/car_show.avif'%}"
                 class="w-100 shadow-1-strong rounded mb-4"
                 alt="Wintry Mountain Landscape"
               />
@@ -277,13 +336,13 @@
 
             <div class="col-lg-4 mb-4 mb-lg-0">
               <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
+                src="{% static 'img/cc_historical_society.avif'%}"
                 class="w-100 shadow-1-strong rounded mb-4"
                 alt="Mountains in the Clouds"
               />
 
               <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                src="{% static 'img/Shatto0089.avif'%}"
                 class="w-100 shadow-1-strong rounded mb-4"
                 alt="Boat on Calm Water"
               />
@@ -291,13 +350,13 @@
 
             <div class="col-lg-4 mb-4 mb-lg-0">
               <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+                src="{% static 'img/Juneteenth0098.avif'%}"
                 class="w-100 shadow-1-strong rounded mb-4"
                 alt="Waves at Sea"
               />
 
               <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
+                src="{% static 'img/IMGP9013.avif'%}"
                 class="w-100 shadow-1-strong rounded mb-4"
                 alt="Yosemite National Park"
               />
@@ -353,6 +412,48 @@
         </div>
       </section>
     </div>
+    <script>
+      // Open the Modal
+      function openModal() {
+        document.getElementById("myModal").style.display = "block";
+      }
+      
+      // Close the Modal
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+      }
+      
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      // Next/previous controls
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      // Thumbnail image controls
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+      }
+      </script>
 {% endblock %}
   
 <!--fluid-container-->
