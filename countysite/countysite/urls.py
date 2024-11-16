@@ -38,4 +38,11 @@ urlpatterns = [
     path('place_alt/', views.place_alt, name='place_alt'),
     path('shopping_leisure/', views.shopping_leisure, name='shopping_leisure'),
     path('tours/', views.tours, name='tours'),
+    path('bigfoote_outfitters/', views.bigfoote_outfitters, name='bigfoote_outfitters'),
+    path('hartell_conservation_area/', views.hartell_conservation_area, name='hartell_conservation_area'),
+    path('honker_cove_waterfowl_refuge/', views.honker_cove_waterfowl_refuge, name='honker_cove_waterfowl_refuge'),
+    path('mcgee_family_conservation/', views.mcgee_family_conservation, name='mcgee_family_conservation'),
+    path('smithville_lake/', views.smithville_lake, name='smithville_lake'),
+    path('trice_dedman/', views.trice_dedman, name='trice_dedman'),
+    path('wallace_state_park/', views.wallace_state_park, name='wallace_state_park'),
 ]

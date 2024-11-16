@@ -4,118 +4,120 @@
 {% block title %}Food and Drink{% endblock %}
 
 {% block content %}
-<div id="main-content" class="xpage-container">
+<div id="main-content" class="xpage-container py-4" style="background-color: #DAB28F;">
     <section class="hero mb-4">
         <img src="{% static 'img/cc_sign_bg_lg.avif' %}" class="img-fluid d-none d-xl-block" alt="...">
     </section>
-    <div class="row px-5">
-        <div class="col-7 mx-auto">
-            <div class="fs-2 text-center">
-                Food &amp; Drink in Clinton County, Missouri
-            </div>
-            <div class="fs-6 text-center">
-                Welcome to Clinton County, where culinary delights await you at every corner! 
-                Whether you're in the mood for a quick snack or a leisurely dining experience, our 
-                diverse range of eateries promises to satisfy your cravings. From cozy cafes to elegant 
-                restaurants, you'll find the perfect spot to enjoy a delicious meal and create 
-                unforgettable memories. Come and explore the vibrant food scene in Clinton County, Missouri!
+    <div class="container rounded-3 py-4 border border-dark" style="background-color: #f3e7dc;">
+        <div class="row px-5">
+            <div class="col-10 mx-auto">
+                <div class="fs-2 text-center">
+                    Food &amp; Drink in Clinton County, Missouri
+                </div>
+                <div class="fs-6 text-center">
+                    Welcome to Clinton County, where culinary delights await you at every corner! 
+                    Whether you're in the mood for a quick snack or a leisurely dining experience, our 
+                    diverse range of eateries promises to satisfy your cravings. From cozy cafes to elegant 
+                    restaurants, you'll find the perfect spot to enjoy a delicious meal and create 
+                    unforgettable memories. Come and explore the vibrant food scene in Clinton County, Missouri!
+                </div>
             </div>
         </div>
+        <section class="g-2 mx-auto py-3" style="background-color: #f3e7dc;">
+            <div class="filter-group mb-4">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="familyFriendlyFilter" class="form-label">Family Friendly</label>
+                        <select id="familyFriendlyFilter" class="form-select" onchange="filterBusinesses()">
+                            <option value="">All</option>
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="cityFilter" class="form-label">City</label>
+                        <select id="cityFilter" class="form-select" onchange="filterBusinesses()">
+                            <option value="">All</option>
+                            <option value="city 1">City 1</option>
+                            <option value="city 2">City 2</option>
+                            <option value="city 3">City 3</option>
+                            <option value="city 4">City 4</option>
+                            <option value="city 5">City 5</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="typeFilter" class="form-label">Type</label>
+                        <select id="typeFilter" class="form-select" onchange="filterBusinesses()">
+                            <option value="">All</option>
+                            <option value="italian">Italian</option>
+                            <option value="greek">Greek</option>
+                            <option value="bbq">BBQ</option>
+                            <option value="mexican">Mexican</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Dietary Restrictions</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="vegetarian" id="vegetarianFilter" onchange="filterBusinesses()">
+                            <label class="form-check-label" for="vegetarianFilter">
+                                Vegetarian
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="vegan" id="veganFilter" onchange="filterBusinesses()">
+                            <label class="form-check-label" for="veganFilter">
+                                Vegan
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="gluten-free" id="glutenFreeFilter" onchange="filterBusinesses()">
+                            <label class="form-check-label" for="glutenFreeFilter">
+                                Gluten Free
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="dairy-free" id="dairyFreeFilter" onchange="filterBusinesses()">
+                            <label class="form-check-label" for="dairyFreeFilter">
+                                Dairy Free
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="vegan" id="kosherFilter" onchange="filterBusinesses()">
+                            <label class="form-check-label" for="kosherFilter">
+                                Kosher
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive mt-4 p4 wrapper rounded-3">
+                <table class="table table-scrollable">
+                    <thead class="bg-light text-center">
+                        <tr class="align-middle">
+                            <th scope="col">Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Website</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-hover text-center" id="businessDetails">
+                        {% for business in businesses %}
+                        <tr data-family-friendly="{{ business.family_friendly|yesno:'true,false' }}"
+                            data-city="{{ business.city }}" 
+                            data-description="{{ business.description }}"
+                            data-type="{{ business.type }}"
+                            data-dietary-restrictions="{{ business.dietary_restrictions }}">
+                            <td>{{ business.name }}</td>
+                            <td>{{ business.address }}</td>
+                            <td>{{ business.phone }}</td>
+                            <td><a href="{{ business.website }}" target="_blank">{{ business.website }}</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </div>
-    <section class="container g-2 py-5">
-        <div class="filter-group mb-4">
-            <div class="row">
-                <div class="col-md-3">
-                    <label for="familyFriendlyFilter" class="form-label">Family Friendly</label>
-                    <select id="familyFriendlyFilter" class="form-select" onchange="filterBusinesses()">
-                        <option value="">All</option>
-                        <option value="true">True</option>
-                        <option value="false">False</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <label for="cityFilter" class="form-label">City</label>
-                    <select id="cityFilter" class="form-select" onchange="filterBusinesses()">
-                        <option value="">All</option>
-                        <option value="city 1">City 1</option>
-                        <option value="city 2">City 2</option>
-                        <option value="city 3">City 3</option>
-                        <option value="city 4">City 4</option>
-                        <option value="city 5">City 5</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <label for="typeFilter" class="form-label">Type</label>
-                    <select id="typeFilter" class="form-select" onchange="filterBusinesses()">
-                        <option value="">All</option>
-                        <option value="italian">Italian</option>
-                        <option value="greek">Greek</option>
-                        <option value="bbq">BBQ</option>
-                        <option value="mexican">Mexican</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <label class="form-label">Dietary Restrictions</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="vegetarian" id="vegetarianFilter" onchange="filterBusinesses()">
-                        <label class="form-check-label" for="vegetarianFilter">
-                            Vegetarian
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="vegan" id="veganFilter" onchange="filterBusinesses()">
-                        <label class="form-check-label" for="veganFilter">
-                            Vegan
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="gluten-free" id="glutenFreeFilter" onchange="filterBusinesses()">
-                        <label class="form-check-label" for="glutenFreeFilter">
-                            Gluten Free
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="dairy-free" id="dairyFreeFilter" onchange="filterBusinesses()">
-                        <label class="form-check-label" for="dairyFreeFilter">
-                            Dairy Free
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="vegan" id="kosherFilter" onchange="filterBusinesses()">
-                        <label class="form-check-label" for="kosherFilter">
-                            Kosher
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="table-responsive mt-4 p4 wrapper rounded-3">
-            <table class="table table-scrollable">
-                <thead class="bg-light text-center">
-                    <tr class="align-middle">
-                        <th scope="col">Name</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Phone</th>
-                        <th scope="col">Website</th>
-                    </tr>
-                </thead>
-                <tbody class="table-hover text-center" id="businessDetails">
-                    {% for business in businesses %}
-                    <tr data-family-friendly="{{ business.family_friendly|yesno:'true,false' }}"
-                        data-city="{{ business.city }}" 
-                        data-description="{{ business.description }}"
-                        data-type="{{ business.type }}"
-                        data-dietary-restrictions="{{ business.dietary_restrictions }}">
-                        <td>{{ business.name }}</td>
-                        <td>{{ business.address }}</td>
-                        <td>{{ business.phone }}</td>
-                        <td><a href="{{ business.website }}" target="_blank">{{ business.website }}</a></td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </section>
 </div>
 
 <script>

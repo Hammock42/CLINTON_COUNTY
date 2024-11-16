@@ -45,6 +45,27 @@ def shopping_leisure(request):
 def tours(request):
     return render(request, 'tours.html')
 
+def bigfoote_outfitters(request):
+    return render(request, 'bigfoote_outfitters.html')
+
+def hartell_conservation_area(request):
+    return render(request, 'hartell_conservation_area.html')
+
+def honker_cove_waterfowl_refuge(request):
+    return render(request, 'honker_cove_waterfowl_refuge.html')
+
+def mcgee_family_conservation(request):
+    return render(request, 'mcgee_family_conservation.html')
+
+def smithville_lake(request):
+    return render(request, 'smithville_lake.html')
+
+def trice_dedman(request):
+    return render(request, 'trice_dedman.html')
+
+def wallace_state_park(request):
+    return render(request, 'wallace_state_park.html')
+
 
 temp_businesses = [
     {
