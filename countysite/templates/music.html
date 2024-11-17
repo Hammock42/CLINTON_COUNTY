@@ -4,7 +4,85 @@
 {% block title %}Music{% endblock %}
 
 {% block content %}
-<div class="m-5 p-5">
-    Music Page
+<div id="main-content" class="xpage-container">
+    <section class="hero mb-4">
+        <img src="{% static 'img/cc_sign_bg_lg.avif' %}" class="img-fluid" alt="...">
+    </section>
+    <div class="row px-5">
+        <div class="col-7 mx-auto">
+            <div class="fs-2 text-center">
+                PLACEHODER TITLE FOR MUSIC PAGE
+            </div>
+            <div class="fs-6 text-center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ut sunt autem accusamus explicabo velit porro quae voluptas exercitationem ipsa reiciendis, dolor architecto sit cumque doloribus odio cupiditate, fuga soluta.
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 p-5">
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'img/default_img.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="fs-5 card-title fw-bold">Placeholder Title</p>
+              <p class="card-text">ENTER BRIEF DESCRIPTION DETAILS HERE...</p>
+              <span>
+                <p class="fw-bold">Address: </p>
+                <p class="card-text">ENTER ADDRESS HERE...</p>
+              </span>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'coming_soon' %}" class="btn btn-primary stretched-link">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'img/default_img.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="fs-5 card-title fw-bold">Placeholder Title</p>
+              <p class="card-text">ENTER BRIEF DESCRIPTION DETAILS HERE...</p>
+              <span>
+                <p class="fw-bold">Address: </p>
+                <p class="card-text">ENTER ADDRESS HERE...</p>
+              </span>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'coming_soon' %}" class="btn btn-primary stretched-link">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'img/default_img.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="fs-5 card-title fw-bold">Placeholder Title</p>
+              <p class="card-text">ENTER BRIEF DESCRIPTION DETAILS HERE...</p>
+              <span>
+                <p class="fw-bold">Address: </p>
+                <p class="card-text">ENTER ADDRESS HERE...</p>
+              </span>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'coming_soon' %}" class="btn btn-primary stretched-link">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+              <img src="{% static 'img/default_img.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="fs-5 card-title fw-bold">Placeholder Title</p>
+                <p class="card-text">ENTER BRIEF DESCRIPTION DETAILS HERE...</p>
+                <span>
+                  <p class="fw-bold">Address: </p>
+                  <p class="card-text">ENTER ADDRESS HERE...</p>
+                </span>
+              </div>
+              <div class="card-footer">
+                  <a href="{% url 'coming_soon' %}" class="btn btn-primary stretched-link">Learn More</a>
+              </div>
+            </div>
+          </div>
+      </div>
 </div>
 {% endblock %}

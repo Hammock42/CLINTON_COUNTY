@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Resources{% endblock %}
+
+{% block content %}
+<div id="main-content" class="xpage-container py-4" style="background-color: #DAB28F;">
+    <section class="hero mb-4">
+        <img src="{% static 'img/cc_sign_bg_lg.avif' %}" class="img-fluid d-none d-xl-block" alt="...">
+    </section>
+    <div class="container rounded-3 py-4 border border-dark" style="background-color: #f3e7dc;">
+        <div class="row px-5">
+            <div class="col-10 mx-auto">
+                <div class="fs-2 text-center">
+                    Clinton County Resources
+                </div>
+                <div class="fs-6 text-center">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias rerum delectus repellendus asperiores quia, veniam a vero, voluptas perferendis illo voluptatum autem consequatur! Aperiam ab amet dolor voluptatibus perspiciatis natus?
+                </div>
+            </div>
+        </div>
+        <section class="mt-4 p-3 rounded-3">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="filter-type" class="form-label">Filter by Type</label>
+                    <select id="filter-type" class="form-select" onchange="filterResources()">
+                        <option value="">All Types</option>
+                        <option value="type_1">Type 1</option>
+                        <option value="type_2">Type 2</option>
+                        <!-- Add more types as needed -->
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="filter-city" class="form-label">Filter by City</label>
+                    <select id="filter-city" class="form-select" onchange="filterResources()">
+                        <option value="">All Cities</option>
+                            <option value="cameron">Cameron</option>
+                            <option value="gower">Gower</option>
+                            <option value="holt">Holt</option>
+                            <option value="lathrop">Lathrop</option>
+                            <option value="lawson">Lawson</option>
+                            <option value="osborn">Osborn</option>
+                            <option value="plattsburg">Plattsburg</option>
+                            <option value="trimble">Trimble</option>
+                            <option value="turney">Turney</option>
+                        <!-- Add more cities as needed -->
+                    </select>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>City</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resources-table-body">
+                        {% for resource in resources %}
+                        <tr>
+                            <td>{{ resource.name }}</td>
+                            <td>{{ resource.type }}</td>
+                            <td>{{ resource.city }}</td>
+                            <td>{{ resource.description }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script>
+
+    function filterResources() {
+        var typeFilter = document.getElementById('filter-type').value;
+        var cityFilter = document.getElementById('filter-city').value;
+        var tableBody = document.getElementById('resources-table-body');
+        var rows = tableBody.getElementsByTagName('tr');
+
+        for (var i = 0; i < rows.length; i++) {
+            var type = rows[i].getElementsByTagName('td')[1].innerText;
+            var city = rows[i].getElementsByTagName('td')[2].innerText;
+
+            if ((typeFilter === "" || type === typeFilter) && (cityFilter === "" || city === cityFilter)) {
+                rows[i].style.display = "";
+            } else {
+                rows[i].style.display = "none";
+            }
+        }
+    }
+
+    function log(data) {
+        console.log(data);
+    }
+
+</script>
+{% endblock %}

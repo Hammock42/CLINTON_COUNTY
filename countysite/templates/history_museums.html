@@ -4,7 +4,89 @@
 {% block title %}History and Museums{% endblock %}
 
 {% block content %}
-<div class="m-5 p-5">
-    History and Museums Page
+<div id="main-content" class="xpage-container">
+    <section class="hero mb-4">
+        <img src="{% static 'img/cc_sign_bg_lg.avif' %}" class="img-fluid" alt="...">
+    </section>
+    <div class="row px-5">
+        <div class="col-7 mx-auto">
+            <div class="fs-2 text-center">
+                Explore the Rich History of Clinton County
+            </div>
+            <div class="fs-6 text-center">
+                Step back in time and immerse yourself in the fascinating history of Clinton County. From the architectural beauty 
+                of the Riley-Carmack House Museum to the historic charm of the Cameron Depot Museum, each site offers a unique 
+                glimpse into the past. Discover the stories of early settlers, the railroad&apos;s impact on local development, and 
+                the cultural heritage that shaped this vibrant community. Whether you&apos;re a history enthusiast or simply curious 
+                about the past, our museums provide an enriching experience for visitors of all ages.
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 p-5">
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'img/default_img.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="fs-5 card-title fw-bold">Cameron Historical Society and Depot Museum</p>
+              <p class="card-text">ENTER BRIEF DESCRIPTION DETAILS HERE...</p>
+              <span>
+                <p class="fw-bold">Address: </p>
+                <p class="card-text">202 S Walnut St, Cameron, MO</p>
+              </span>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'cameron_depot_museum' %}" class="btn btn-primary stretched-link">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'img/default_img.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="fs-5 card-title fw-bold">Clinton County Historical Society Museum</p>
+              <p class="card-text">ENTER BRIEF DESCRIPTION DETAILS HERE...</p>
+              <span>
+                <p class="fw-bold">Address: </p>
+                <p class="card-text">308 S Birch Ave, Plattsburg, MO</p>
+              </span>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'riley_carmack_museum' %}" class="btn btn-primary stretched-link">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'img/default_img.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="fs-5 card-title fw-bold">Placeholder Title</p>
+              <p class="card-text">ENTER BRIEF DESCRIPTION DETAILS HERE...</p>
+              <span>
+                <p class="fw-bold">Address: </p>
+                <p class="card-text">ENTER ADDRESS HERE...</p>
+              </span>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'coming_soon' %}" class="btn btn-primary stretched-link">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+              <img src="{% static 'img/default_img.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="fs-5 card-title fw-bold">Placeholder Title</p>
+                <p class="card-text">ENTER BRIEF DESCRIPTION DETAILS HERE...</p>
+                <span>
+                  <p class="fw-bold">Address: </p>
+                  <p class="card-text">ENTER ADDRESS HERE...</p>
+                </span>
+              </div>
+              <div class="card-footer">
+                  <a href="{% url 'coming_soon' %}" class="btn btn-primary stretched-link">Learn More</a>
+              </div>
+            </div>
+          </div>
+      </div>
 </div>
 {% endblock %}

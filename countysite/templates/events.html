@@ -1,10 +1,62 @@
 {% extends "layout.html" %}
 {% load static %}
 
-{% block title %}Events{% endblock %}
+{% block title %}Family Fun{% endblock %}
 
 {% block content %}
-<div class="m-5 p-5">
-    Events Page
+<div id="main-content" class="xpage-container py-4" style="background-color: #DAB28F;">
+    <section class="hero mb-4">
+        <img src="{% static 'img/cc_sign_bg_lg.avif' %}" class="img-fluid" alt="...">
+    </section>
+    <div class="container rounded-3 py-4 border border-dark" style="background-color: #f3e7dc;">
+        <div class="row px-5">
+            <div class="col-7 mx-auto">
+                <div class="fs-2 text-center">
+                    PLACEHODER TITLE FOR EVENTS PAGE
+                </div>
+                <div class="fs-6 text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ut sunt autem accusamus explicabo velit porro quae voluptas exercitationem ipsa reiciendis, dolor architecto sit cumque doloribus odio cupiditate, fuga soluta.
+                </div>
+            </div>
+        </div>
+        <div class="container py-2">
+            <div class="row mt-5">
+                <div class="col-md-3">
+                    <h4>Filters</h4>
+                    <form>
+                        <div class="mb-3">
+                            <label for="eventType" class="form-label">Event Type</label>
+                            <select class="form-select" id="eventType">
+                                <option selected>Choose...</option>
+                                <option value="1">Concert</option>
+                                <option value="2">Festival</option>
+                                <option value="3">Workshop</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="eventDate" class="form-label">Date</label>
+                            <input type="date" class="form-control" id="eventDate">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Apply Filters</button>
+                    </form>
+                    <div class="py-3">
+                        <h4 class="mb-3">Upcoming Events</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">Event 1 - Date</li>
+                            <li class="list-group-item">Event 2 - Date</li>
+                            <li class="list-group-item">Event 3 - Date</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <h4 class="mb-3">Events Calendar</h4>
+                    <div id="calendar">
+                        <!-- Calendar will be implemented here -->
+                        <iframe class="rounded-3" src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FTirane&bgcolor=%23ffffff&src=OGVhNWFkMjlkYmFiZGU1NDgwYjA5ZTllNGE3ZmY2Mjk5NWZkZTE3NmIyNTAyOTcwNWYxNzU5ZjhiNmNmNWZhZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%237CB342&color=%230B8043" style="border:solid 1px #777" width="800" height="600"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
