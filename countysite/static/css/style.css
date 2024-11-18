@@ -45,11 +45,15 @@
 }
 
 .font-size-2 {
-  font-size: 2em;
+  font-size: 3em;
 }
 
 .font-size-3 {
-  font-size: 1.3em;
+  font-size: 2em;
+}
+
+.font-size-4 {
+  font-size: 1.5em;
 }
 
 .dropdown:hover > .dropdown-menu {
@@ -79,108 +83,26 @@
   transform: scale(1.1);
 }
 
-.featured-content-1x4-component {
-  padding: 94px 30px 54px;
-  overflow: hidden;
-}
-@media (max-width: 767px) {
-  .featured-content-1x4-component {
-    padding-right: 0;
-  }
-}
-.featured-content-1x4-component .featured-content-1x4-container {
-  width: 100%;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.featured-content-1x4-component .featured-content-1x4-title {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 2.5rem;
-  color: #000;
-}
-.featured-content-1x4-component .featured-content-1x4-group {
-  margin-top: 80px;
-}
-@media (max-width: 767px) {
-  .featured-content-1x4-component .featured-content-1x4-group {
-    margin-top: 0;
-  }
-}
-.featured-content-1x4-component .featured-content-1x4-image {
-  position: relative;
-  display: block;
-}
-.featured-content-1x4-component
-  .featured-content-1x4-image
-  img.fc-1x4-item-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.featured-content-1x4-component .img-title {
-  position: absolute;
-  color: #fff;
-}
-.featured-content-1x4-component .featured-content-1x4-image .img-title {
-  bottom: 60px;
-  left: 30px;
-  width: 163px;
-}
-@media (min-width: 768px) {
-  .featured-content-1x4-component
-    .featured-content-1x4-group-content.owl-carousel {
-    aspect-ratio: 1000/537.8;
-    display: grid;
-    grid-template-columns: 9fr 4fr 4fr;
-    grid-template-rows: 1fr 1fr;
-    row-gap: 11.2%;
-    column-gap: 8.33%;
-  }
-  .featured-content-1x4-component .featured-content-1x4-image .img-title {
-    font-size: 1.5rem;
-  }
-  .featured-content-1x4-component .featured-content-1x4-image:nth-child(1) {
-    grid-column-start: 1;
-    grid-row-start: 1;
-    grid-column-end: 2;
-    grid-row-end: 3;
-  }
-  .featured-content-1x4-component
-    .featured-content-1x4-image:nth-child(1)
-    .img-title {
-    bottom: 62px;
-    left: 34px;
-    width: 208px;
-    font-size: 2rem;
-  }
+
+.section-title {
+  font-size: 3em;
+  font-weight: 700;
+  font-family: "Amaranth", sans-serif;
+  text-align: center;
 }
 
-.rich-text-section {
-  position: relative;
-  padding: 30px;
-}
-.rich-text-section h2.rich-text-title {
-  max-width: 1000px;
-  margin: 0 auto;
-  font-size: 2.125rem;
-  text-transform: uppercase;
-  padding: 0 0 25px;
-  width: 100%;
-  color: #262726;
-  text-shadow: none;
-}
-.rich-text-section .rich-text-container {
-  max-width: 1000px;
-  margin: auto;
-  font-size: 1rem;
-}
-.rich-text-section h3 {
+.section-subtitle {
   font-size: 2em;
+  font-weight: 400;
+  font-family: "Amaranth", sans-serif;
+  text-align: center;
 }
-.rich-text-section img {
-  max-width: 100%;
+
+.section-text {
+  font-size: 1.5em;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  margin-top: 1em;
 }
 
 
@@ -198,130 +120,13 @@
 }
 
 
-.row > .column {
-  padding: 0 8px;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Create four equal columns that floats next to eachother */
-.column {
-  float: left;
-  width: 24%;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: black;
-}
-
-/* Modal Content */
-.modal-content {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  width: 90%;
-  max-width: 1200px;
-}
-
-/* The Close Button */
-.close {
-  color: white;
-  position: absolute;
-  top: 100px;
-  right: 25px;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #999;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Hide the slides by default */
-.mySlides {
-  display: none;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* Caption text */
-.caption-container {
-  text-align: center;
-  background-color: black;
-  padding: 2px 16px;
-  color: white;
-}
-
-img.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-
 img.hover-shadow {
   transition: 0.3s;
 }
 
 .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.5);
 }
 
 .card:hover {
