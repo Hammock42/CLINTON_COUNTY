@@ -4,24 +4,24 @@
 {% block title %}Resources{% endblock %}
 
 {% block content %}
-<div id="main-content" class="xpage-container py-4" style="background-color: #DAB28F;">
-    <section class="hero mb-4">
-        <img src="{% static 'img/cc_sign_bg_lg.avif' %}" class="img-fluid d-none d-xl-block" alt="...">
+<div class="xpage-container pb-5" style="background-color: #DAB28F;">
+    <section class="hero mb-5">
+        <img src="{% static 'img/cc_sign_bg_lg.avif' %}" class="img-fluid d-block" alt="...">
     </section>
-    <div class="container rounded-3 py-4 border border-dark" style="background-color: #f3e7dc;">
-        <div class="row px-5">
+    <div class="container rounded-3 py-4 border border-dark shadow-lg" style="background-color: #f3e7dc;">
+        <div class="row">
             <div class="col-10 mx-auto">
-                <div class="fs-2 text-center">
+                <div class="section-title">
                     Clinton County Resources
                 </div>
-                <div class="fs-6 text-center">
+                <div class="section-text">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias rerum delectus repellendus asperiores quia, veniam a vero, voluptas perferendis illo voluptatum autem consequatur! Aperiam ab amet dolor voluptatibus perspiciatis natus?
                 </div>
             </div>
         </div>
         <section class="mt-4 p-3 rounded-3">
-            <div class="row mb-3">
-                <div class="col-md-6">
+            <div class="row">
+                <div class="col col-md-6 py-1">
                     <label for="filter-type" class="form-label">Filter by Type</label>
                     <select id="filter-type" class="form-select" onchange="filterResources()">
                         <option value="">All Types</option>
@@ -30,7 +30,7 @@
                         <!-- Add more types as needed -->
                     </select>
                 </div>
-                <div class="col-md-6">
+                <div class="col col-md-6 py-1">
                     <label for="filter-city" class="form-label">Filter by City</label>
                     <select id="filter-city" class="form-select" onchange="filterResources()">
                         <option value="">All Cities</option>
@@ -47,17 +47,17 @@
                     </select>
                 </div>
             </div>
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>City</th>
-                            <th>Description</th>
+            <div class="table-responsive mt-4 wrapper rounded-3">
+                <table class="table table-scrollable table-hover table-bordered">
+                    <thead class="table-dark">
+                        <tr class="align-middle">
+                            <th scope="col">Name</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Description</th>
                         </tr>
                     </thead>
-                    <tbody id="resources-table-body">
+                    <tbody class="text-center" id="resources-table-body">
                         {% for resource in resources %}
                         <tr>
                             <td>{{ resource.name }}</td>

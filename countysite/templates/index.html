@@ -12,23 +12,23 @@
               <img src="{% static 'img/abbey_sq.avif' %}" class="img-fluid d-block d-md-none" alt="...">
               <img src="{% static 'img/abbey_4_3.avif' %}" class="img-fluid d-none d-md-block d-lg-none" alt="...">
               <img src="{% static 'img/abbey_16_9.avif' %}" class="img-fluid d-none d-lg-block d-xl-none" alt="...">
-              <img src="{% static 'img/abbey_2_1.avif' %}" class="img-fluid d-none d-xl-block" alt="...">
+              <img src="{% static 'img/abbey_16_9.avif' %}" class="img-fluid d-none d-xl-block" alt="...">
             </div>
             <div class="carousel-item">
               <img src="{% static 'img/lathrop_antique_show_sq.avif' %}" class="img-fluid d-block d-md-none" alt="...">
               <img src="{% static 'img/lathrop_antique_show_4_3.avif' %}" class="img-fluid d-none d-md-block d-lg-none" alt="...">
               <img src="{% static 'img/lathrop_antique_show_16_9.avif' %}" class="img-fluid d-none d-lg-block d-xl-none" alt="...">
-              <img src="{% static 'img/lathrop_antique_show_2_1.avif' %}" class="img-fluid d-none d-xl-block" alt="...">
+              <img src="{% static 'img/abbey_2_1.avif' %}" class="img-fluid d-none d-xl-block" alt="...">
             </div>
             <div class="carousel-item">
               <img src="{% static 'img/lathrop_tractor_sq.avif' %}" class="img-fluid d-block d-md-none" alt="...">
               <img src="{% static 'img/lathrop_tractor_4_3.avif' %}" class="img-fluid d-none d-md-block d-lg-none" alt="...">
               <img src="{% static 'img/lathrop_tractor_16_9.avif' %}" class="img-fluid d-none d-lg-block d-xl-none" alt="...">
-              <img src="{% static 'img/lathrop_tractor_2_1.avif' %}" class="img-fluid d-none d-xl-block" alt="...">
+              <img src="{% static 'img/abbey_test_2.avif' %}" class="img-fluid d-none d-xl-block" alt="...">
             </div>
           </div>
         </div>
-        <div class="z-3 position-absolute text-light">
+        {% comment %} <div class="z-3 position-absolute text-light">
           <p class="amaranth-regular fs-2 ps-2 lh-1">Discover</p>
           <p class="amaranth-regular fs-1 lh-1 fw-bold">Rural America</p>
           <a id="hero_link" href="{% url 'coming_soon' %}" target="_self" class="link-light link-underline link-underline-opacity-0 link-underline-opacity-75-hover" aria-label="" style="min-width: 300px;">
@@ -36,275 +36,94 @@
                 at your doorstep  &nbsp;<i class="fa-solid fa-arrow-right-long fa-beat"></i>
             </p>
           </a>
-        </div>
+        </div> {% endcomment %}
       </section>
-      <div class="rich-text-section has-edit-button">
-        <h2 class="rich-text-title">PLACEHOLDER TEXT</h2>
-        <div class="rich-text-container">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="container p-3">
+        <div class="section-title">
+          Discover Clinton County, Missouri
+        </div>
+        <div class="section-subtitle">
+          &mdash; Your Perfect Rural Getaway!
+        </div>
+        <div class="section-text">
+          Welcome to Clinton County, Missouri, where small-town charm meets endless adventure! Nestled in the heart of rural America, 
+          just up the road from Kansas City, we invite you to step into a world where history, nature, and community come together to 
+          create unforgettable family experiences.
         </div>
       </div>
-      <div class="row m-1">
-        <div class="col col-3 rounded">
-          <img src="{% static 'img/Hartell_4_3.avif'%}" onclick="openModal();currentSlide(1)" class="hover-shadow img-fluid rounded" alt="Kayaking">
+      <div class="container p-3">
+        <div class="section-title">
+          Feel the Pulse of the Heartland
         </div>
-        <div class="col col-3 rounded">
-          <img src="{% static 'img/wallace_hiking_4_3.avif'%}" onclick="openModal();currentSlide(2)" class="hover-shadow img-fluid rounded">
-        </div>
-        <div class="col col-3 rounded">
-          <img src="{% static 'img/hunting_4_3.avif'%}" onclick="openModal();currentSlide(3)" class="hover-shadow img-fluid rounded">
-        </div>
-        <div class="col col-3 rounded">
-          <img src="{% static 'img/fishing_4_3.avif'%}" onclick="openModal();currentSlide(4)" class="hover-shadow img-fluid rounded">
+        <div class="section-text">
+          Stroll through our lively main streets, where festivals fill the air with music, laughter, and community spirit. Enjoy the 
+          charm of our famous wine walks, lighted Christmas parades and frog-jumping contests. For a one-of-a-kind experience, head 
+          to Shatto Milk Company, where you can see firsthand how farm-to-table works in Missouri. Enjoy fresh dairy products straight 
+          from the source, meet the cows, and experience a day on the farm—a perfect family adventure.<br>
+          In Clinton County, tradition isn't just celebrated—it&apos;s a way of life.
         </div>
       </div>
-      
-      <!-- The Modal/Lightbox -->
-      <div id="myModal" class="modal">
-        <span class="close cursor text-light fs-1" onclick="closeModal()">&times;</span>
-        <div class="modal-content">
-      
-          <div class="mySlides bg-secondary">
-            <div class="numbertext">1 / 4</div>
-            <img src="{% static 'img/Hartell_16_9.avif'%}" style="width:100%" alt="Kayaking">
-            <p class="fs-3 text-light text-center">
-              Kayaking
-            </p>
-          </div>
-      
-          <div class="mySlides bg-secondary">
-            <div class="numbertext">2 / 4</div>
-            <img src="{% static 'img/wallace_hiking_16_9.avif'%}" style="width:100%">
-            <p class="fs-3 text-light text-center">
-              Hiking
-            </p>
-          </div>
-      
-          <div class="mySlides bg-secondary">
-            <div class="numbertext">3 / 4</div>
-            <img src="{% static 'img/hunting_16_9.avif'%}" style="width:100%">
-            <p class="fs-3 text-light text-center">
-              Hunting
-            </p>
-          </div>
-      
-          <div class="mySlides bg-secondary">
-            <div class="numbertext">4 / 4</div>
-            <img src="{% static 'img/fishing_16_9.avif'%}" style="width:100%">
-            <p class="fs-3 text-light text-center">
-              Fishing
-            </p>
-          </div>
-      
-          <!-- Next/previous controls -->
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      
-          <!-- Caption text -->
-          {% comment %} <div class="caption-container">
-            <p id="caption"></p>
-          </div> {% endcomment %}
-      
-          <!-- Thumbnail image controls -->
-          {% comment %}  <div class="d-flex flex-row">
-            <div class="column">
-              <img class="demo img-fluid" src="{% static 'img/Hartell_4_3.avif'%}" onclick="currentSlide(1)" alt="Kayaking">
-            </div>
-        
-            <div class="column">
-              <img class="demo img-fluid" src="{% static 'img/wallace_hiking_4_3.avif'%}" onclick="currentSlide(2)" alt="Hiking">
-            </div>
-        
-            <div class="column">
-              <img class="demo img-fluid" src="{% static 'img/hunting_4_3.avif'%}" onclick="currentSlide(3)" alt="Hunting">
-            </div>
-        
-            <div class="column">
-              <img class="demo img-fluid" src="{% static 'img/fishing_4_3.avif'%}" onclick="currentSlide(4)" alt="Fishing">
-            </div>
-           </div> {% endcomment %}
+      <div class="container p-3">
+        <div class="section-title">
+          Step into History
+        </div>
+        <div class="section-text">
+          Explore our delightful Victorian-era homes and historic buildings that enrich Clinton County&apos;s towns. Take a walking 
+          tour of historic homes in Plattsburg and visit our museums where we celebrate northwest Missouri&apos;s rich rural past. 
+          Wander Lathrop&apos;s unique fairgrounds, home to interactive displays that tell the story of our 19th-century farming 
+          heritage. Relive the good old days at classic car shows that pay tribute to the glory of American automobiles, surrounded 
+          by folks who share your passion for vintage wheels and open roads.
         </div>
       </div>
-      {% comment %} <div class="container">
-        <div class="row m-3 p-3">
-          <h1>Explore amazing places</h1>
-          <p>
-            Spend half a day exploring Cashew Ridge Park by foot. This trek is an excellent choice if you don&apos;t have time for a full-day 
-            or overnight trip. The early morning tour starts early enough to enjoy the sounds of the forest waking up. The afternoon tour finishes 
-            at dusk, so you can enjoy the quiet calm of the nighttime forest. Bring your own food and water. As your tour guide, I&apos;ll help you 
-            disconnect from your everyday world, so you can immerse yourself in nature and reconnect with yourself.
-          </p>
-          <button>Book your spot!</button>
+      <div class="container p-3">
+        <div class="section-title">
+          Scenic Wonders &amp; Outdoor Fun
+        </div>
+        <div class="section-text">
+          Clinton County&apos;s serene landscapes make it a haven for nature lovers. Kayak the clear waters of Smithville Lake, where 
+          miles of shoreline offer perfect spots for picnicking, fishing and hiking. Stride the walking trails at Wallace State Park 
+          and the Nature Conservancy&apos;s Trice-Dedman Woods. Enjoy our peaceful countryside, where rolling hills and vibrant sunsets 
+          create a stunning backdrop for a relaxing day in Nature.
         </div>
       </div>
       <div class="container">
-        <div class="row m-3 p-3">
-          <h1>Discovering the Delights of Clinton County, Missouri</h1>
-          <p>
-            Nestled in the heart of the Midwest, Clinton County, Missouri, is a hidden gem that offers a charming blend of small-town warmth, 
-            natural beauty, and a touch of quirky fun. Whether you're a history buff, nature enthusiast, or just looking for a weekend getaway, 
-            Clinton County has something for everyone. Let's embark on a delightful journey through this picturesque region and uncover why it's 
-            worth a visit.
-          </p>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row m-3 p-3">
-          <h1>A Stroll Through History</h1>
-          <p>
-            Start your adventure in Plattsburg, the county seat, where history whispers through the streets. This quaint town is a treasure trove 
-            of historical landmarks and stories waiting to be discovered. The Clinton County Historical Society Museum is a must-visit, offering 
-            fascinating exhibits that take you back in time. From Civil War artifacts to antique farming equipment, it's a history buff's paradise. 
-            While you're in Plattsburg, don't miss the opportunity to explore the beautifully preserved historic homes. The Honey Dew Mansion, an 
-            architectural marvel, will transport you to a bygone era with its elegant design and timeless charm. Imagine sipping lemonade on the 
-            porch, basking in the serene ambiance of a simpler time.
-          </p>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row m-3 p-3">
-          <h1>Nature's Playground</h1>
-          <p>
-            For those who prefer the great outdoors, Clinton County does not disappoint. The county is home to several parks and lakes that promise 
-            endless hours of fun and relaxation. Wallace State Park is a favorite among locals and visitors alike. With its lush greenery, tranquil 
-            lake, and scenic hiking trails, it's the perfect spot for a family picnic or a leisurely hike. Fishing enthusiasts will find their haven
-          </p>
-          <h3>Small-Town Festivities</h3>
-          <p>
-            One of the true joys of visiting Clinton County is experiencing its lively community spirit. The county hosts a variety of festivals and 
-            events throughout the year, each with its unique flavor and charm. The Plattsburg Fall Festival, held every September, is a vibrant 
-            celebration featuring local crafts, delicious food, and live entertainment. The parade is a highlight, with colorful floats and cheerful 
-            participants spreading joy through the streets. If you're visiting in the summer, the Clinton County Fair is a must-attend event. From 
-            thrilling carnival rides to agricultural exhibits, there's something for everyone. Don't forget to indulge in some classic fair food &mdash; 
-            cotton candy, funnel cakes, and corn dogs galore!
-          </p>
-          <h3>Quirky Finds and Hidden Treasures</h3>
-          <p>
-            No visit to Clinton County would be complete without a bit of quirky exploration. Take a leisurely drive through the countryside, and 
-            you'll stumble upon charming antique shops and roadside stands. The Clinton County Barn Quilt Trail is a delightful surprise, featuring 
-            beautifully painted quilt patterns adorning barns across the county. It's like a scavenger hunt, but with art! For a truly unique 
-            experience, stop by the World's Largest Golf Tee in Putt Park, Plattsburg. Standing at an impressive 30 feet tall, this whimsical 
-            landmark is a perfect photo op and a testament to the county's playful spirit.
-          </p>
-          <h3>A Warm Welcome Awaits</h3>
-          <p>
-            What truly sets Clinton County apart is its people. The residents are known for their hospitality and friendliness, making every visitor
-            feel like a part of the community. Whether you're chatting with a shop owner in Lathrop or enjoying a meal at a local diner in Gower,
-            you'll be met with genuine smiles and warm conversations. So, pack your bags, hit the road, and discover the wonders of Clinton County,
-            Missouri. With its rich history, natural beauty, and charming small-town vibe, it's a destination that promises unforgettable memories
-            and a whole lot of fun. Come for the sights, stay for the smiles &mdash; Clinton County is ready to welcome you with open arms.
-          </p>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row m-3 p-3">
-          <h1>Unique Shopping Experiences</h1>
-          <p>
-            Shopping in Clinton County offers a delightful mix of quaint boutiques, charming antique shops, and local markets. In towns like 
-            Plattsburg and Lathrop, you&apos;ll find unique stores featuring handmade crafts, vintage treasures, and one-of-a-kind finds. The county 
-            also boasts seasonal farmers&apos; markets, where you can purchase fresh produce, homemade goods, and artisanal products straight from local 
-            farmers and artisans.
-          </p>
-        </div>
-      </div>
-      <section class="featured-content-1x4-component has-edit-button">
-        <div class="featured-content-1x4-container">
-          <h1 class="featured-content-1x4-title">Section Placeholder</h1>
-          <div class="featured-content-1x4-group">
-            <div class="visitmt-featured-content-carousel owl-carousel featured-content-1x4-group-content">
-              <a href="{% url 'coming_soon' %}" target="_self" class="featured-content-1x4-image shadowed" aria-label="">
-                <img src="{% static 'img/default_img.jpg' %}" alt="">
-                <h2 class="img-title">Trip Ideas</h2>
-              </a>
-              <a href="{% url 'coming_soon' %}" target="_self" class="featured-content-1x4-image shadowed" aria-label="">
-                <img src="{% static 'img/default_img.jpg' %}" alt="">
-                <h2 class="img-title">EVENTS</h2>
-              </a>
-              <a href="{% url 'coming_soon' %}" target="_self" class="featured-content-1x4-image shadowed" aria-label="">
-                <img src="{% static 'img/default_img.jpg' %}" alt="">
-                <h2 class="img-title">Outdoor Adventure</h2>
-              </a>
-              <a href="{% url 'coming_soon' %}" target="_self" class="featured-content-1x4-image shadowed" aria-label="">
-                <img src="{% static 'img/default_img.jpg' %}" alt="">
-                <h2 class="img-title">BRING THE FAM</h2>
-              </a>
-              <a href="{% url 'coming_soon' %}" target="_self" class="featured-content-1x4-image shadowed" aria-label="">
-                <img src="{% static 'img/default_img.jpg' %}" alt="">
-                <h2 class="img-title">RV and Camping</h2>
-              </a>
-            </div>
+        <div class="row m-1">
+          <div class="col col-3 rounded">
+            <img src="{% static 'img/Hartell_4_3.avif'%}" onclick="openModal();currentSlide(1)" class="hover-shadow img-fluid rounded" alt="Kayaking" title="Kayaking">
+          </div>
+          <div class="col col-3 rounded">
+            <img src="{% static 'img/wallace_hiking_4_3.avif'%}" onclick="openModal();currentSlide(2)" class="hover-shadow img-fluid rounded" alt="Hiking" title="Hiking">
+          </div>
+          <div class="col col-3 rounded">
+            <img src="{% static 'img/hunting_4_3.avif'%}" onclick="openModal();currentSlide(3)" class="hover-shadow img-fluid rounded" alt="Hunting" title="Hunting">
+          </div>
+          <div class="col col-3 rounded">
+            <img src="{% static 'img/fishing_4_3.avif'%}" onclick="openModal();currentSlide(4)" class="hover-shadow img-fluid rounded" alt="Fishing" title="Fishing">
           </div>
         </div>
-      </section>
-      <section class="feature-content-2x3-section has-edit-button">
-        <div class="featured-content-2x3-container">
-          <h1 class="featured-content-2x3-title">Section Placeholder</h1>
-          <div class="featured-content-2x3-wrapper owl-carousel visitmt-featured-content-carousel">
-            <div class="fc-2x3-item square">
-              <img src="{% static 'img/default_img.jpg' %}" alt="">
-              <h2 class="item-title">Start Planning</h2>
-              <a href="{% url 'coming_soon' %}" target="_self" class="page-title-link shadowed" aria-label="Start Planning">
-                <svg class="arrow" viewBox="0 0 50 20">
-                  <rect x="0" y="9.2" width="50" height="1.5" style="fill:currentColor"></rect>
-                  <polygon points="50,10 42,2 42,4 48,10 42,16 42,18" style="fill:currentColor"></polygon>
-                </svg>
-              </a>
-            </div>
-            <div class="fc-2x3-item square">
-              <img src="{% static 'img/default_img.jpg' %}" alt="">
-              <h2 class="item-title">Getting to Clinton</h2>
-              <a href="{% url 'coming_soon' %}" target="_self" class="page-title-link shadowed" aria-label="Getting to Clinton">
-                <svg class="arrow" viewBox="0 0 50 20">
-                  <rect x="0" y="9.2" width="50" height="1.5" style="fill:currentColor"></rect>
-                  <polygon points="50,10 42,2 42,4 48,10 42,16 42,18" style="fill:currentColor"></polygon>
-                </svg>
-              </a>
-            </div>
-            <div class="fc-2x3-item square">
-              <img src="{% static 'img/default_img.jpg' %}" alt="">
-              <h2 class="item-title">All Regions</h2>
-              <a href="{% url 'coming_soon' %}" target="_self" class="page-title-link shadowed" aria-label="All Regions">
-                <svg class="arrow" viewBox="0 0 50 20">
-                  <rect x="0" y="9.2" width="50" height="1.5" style="fill:currentColor"></rect>
-                  <polygon points="50,10 42,2 42,4 48,10 42,16 42,18" style="fill:currentColor">
-                  </polygon>
-                </svg>
-              </a>
-            </div>
-            <div class="fc-2x3-item square">
-              <img src="{% static 'img/default_img.jpg' %}" alt="">
-              <h2 class="item-title">Leave No Trace</h2>
-              <a href="{% url 'coming_soon' %}" target="_self" class="page-title-link shadowed" aria-label="Leave No Trace">
-                <svg class="arrow" viewBox="0 0 50 20">
-                  <rect x="0" y="9.2" width="50" height="1.5" style="fill:currentColor"></rect>
-                  <polygon points="50,10 42,2 42,4 48,10 42,16 42,18" style="fill:currentColor"></polygon>
-                </svg>
-              </a>
-            </div>
-            <div class="fc-2x3-item square">
-              <img src="{% static 'img/default_img.jpg' %}" alt="">
-              <h2 class="item-title">Travel Alerts</h2>
-              <a href="{% url 'coming_soon' %}" target="_self" class="page-title-link shadowed" aria-label="Travel Alerts">
-                <svg class="arrow" viewBox="0 0 50 20">
-                  <rect x="0" y="9.2" width="50" height="1.5" style="fill:currentColor"></rect>
-                  <polygon points="50,10 42,2 42,4 48,10 42,16 42,18" style="fill:currentColor"></polygon>
-                </svg>
-              </a>
-            </div>
-            <div class="fc-2x3-item square">
-              <img src="{% static 'img/default_img.jpg' %}" alt="">
-              <h2 class="item-title">Guidebooks</h2>
-              <a href="{% url 'coming_soon' %}" target="_self" class="page-title-link shadowed" aria-label="Guidebooks">
-                <svg class="arrow" viewBox="0 0 50 20">
-                  <rect x="0" y="9.2" width="50" height="1.5" style="fill:currentColor"></rect>
-                  <polygon points="50,10 42,2 42,4 48,10 42,16 42,18" style="fill:currentColor"></polygon>
-                </svg>
-              </a>
-            </div>
-          </div>
+      </div>
+      <div class="container p-3">
+        <div class="section-title">
+          A Place of Peace
         </div>
-      </section> {% endcomment %}
-      <section class="social-media-component has-edit-button m-5 p-5">
+        <div class="section-text">
+          Make a pilgrimage to the serene Abbey of Benedictines of Mary, Queen of Apostles in Gower, which has become a tranquil 
+          spiritual destination, renowned for its beautiful Gregorian music and miraculous story. It&apos;s an unforgettable place, 
+          perfect for reflection and retreat.
+        </div>
+      </div>
+      <div class="container p-3">
+        <div class="section-title">
+          A Community that Welcomes You with Open Arms
+        </div>
+        <div class="section-text">
+          Clinton County isn&apos;t just a place&mdash;it&apos;s a feeling. We invite you to experience the warmth of our small-town hospitality 
+          and our spiritual connections that are rooted in kindness, respect, and shared values. Here, visitors quickly become friends, and 
+          friends become family. We can&apos;t wait to welcome you!
+        </div>
+      </div>
+
+      {% comment %} <section class="social-media-component has-edit-button m-5 p-5">
         <div class="social-media-component-header">
           <span class="social-media-component-title fs-1">Social</span>
           <div class="social-media-component-icons fs-3">
@@ -364,8 +183,8 @@
           </div>
           <!-- Gallery -->
         </div>
-      </section>
-      <section class="four-tile-nav-section has-edit-button">
+      </section> {% endcomment %}
+      {% comment %} <section class="four-tile-nav-section has-edit-button">
         <div class="four-tile-nav-tile-container">
           <div class="four-tile-nav-tile">
             <a href="{% url 'coming_soon' %}" target="_self" class="four-tile-nav-tile-title" aria-label="Where To Stay">
@@ -410,50 +229,8 @@
             </a>
           </div>
         </div>
-      </section>
+      </section> {% endcomment %}
     </div>
-    <script>
-      // Open the Modal
-      function openModal() {
-        document.getElementById("myModal").style.display = "block";
-      }
-      
-      // Close the Modal
-      function closeModal() {
-        document.getElementById("myModal").style.display = "none";
-      }
-      
-      var slideIndex = 1;
-      showSlides(slideIndex);
-      
-      // Next/previous controls
-      function plusSlides(n) {
-        showSlides(slideIndex += n);
-      }
-      
-      // Thumbnail image controls
-      function currentSlide(n) {
-        showSlides(slideIndex = n);
-      }
-      
-      function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("demo");
-        var captionText = document.getElementById("caption");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-        captionText.innerHTML = dots[slideIndex-1].alt;
-      }
-      </script>
 {% endblock %}
   
 <!--fluid-container-->

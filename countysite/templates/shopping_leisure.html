@@ -4,17 +4,17 @@
 {% block title %}Shopping &amp; Leisure{% endblock %}
 
 {% block content %}
-<div id="main-content" class="xpage-container py-4" style="background-color: #DAB28F;">
-    <section class="hero mb-4">
-        <img src="{% static 'img/cc_sign_bg_lg.avif' %}" class="img-fluid d-none d-xl-block" alt="...">
+<div class="xpage-container pb-4" style="background-color: #DAB28F;">
+    <section class="hero mb-5">
+        <img src="{% static 'img/cc_sign_bg_lg.avif' %}" class="img-fluid d-block" alt="...">
     </section>
-    <div class="container rounded-3 py-4 border border-dark" style="background-color: #f3e7dc;">
-        <div class="row px-5">
+    <div class="container rounded-3 py-4 border border-dark shadow-lg" style="background-color: #f3e7dc;">
+        <div class="row">
             <div class="col-10 mx-auto">
-                <div class="fs-2 text-center">
+                <div class="section-title">
                     Local Shopping &amp; Leisure
                 </div>
-                <div class="fs-6 text-center">
+                <div class="section-text">
                     Welcome to Clinton County! Discover a variety of shopping and leisure experiences that 
                     cater to all tastes and preferences. Enjoy the charm and hospitality of our local 
                     businesses and make unforgettable memories.
@@ -22,9 +22,9 @@
             </div>
         </div>
         <section class="g-2 mx-auto py-3" style="background-color: #f3e7dc;">
-            <div class="filter-group mb-4">
+            <div class="filter-group">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col col-md-3 py-1">
                         <label for="familyFriendlyFilter" class="form-label">Family Friendly</label>
                         <select id="familyFriendlyFilter" class="form-select" onchange="filterBusinesses()">
                             <option value="">All</option>
@@ -32,7 +32,7 @@
                             <option value="false">False</option>
                         </select>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col col-md-3 py-1">
                         <label for="cityFilter" class="form-label">City</label>
                         <select id="cityFilter" class="form-select" onchange="filterBusinesses()">
                             <option value="">All</option>
@@ -47,7 +47,7 @@
                             <option value="turney">Turney</option>
                         </select>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col col-md-4 py-1">
                         <label for="typeFilter" class="form-label">Type</label>
                         <select id="typeFilter" class="form-select" onchange="filterBusinesses()">
                             <option value="">All</option>
@@ -99,16 +99,15 @@
                 </div>
             </div>
             <div class="table-responsive mt-4 p4 wrapper rounded-3">
-                <table class="table table-scrollable">
-                    <thead class="bg-light text-center">
+                <table class="table table-scrollable table-hover table-bordered">
+                    <thead class="table-dark">
                         <tr class="align-middle">
                             <th scope="col">Name</th>
                             <th scope="col">Address</th>
-                            <th scope="col">City</th>
                             <th scope="col">Website</th>
                         </tr>
                     </thead>
-                    <tbody class="table-hover text-center" id="businessDetails">
+                    <tbody class="text-center" id="shopBusinessDetails">
                         {% for business in businesses %}
                         <tr data-family-friendly="{{ business.family_friendly|yesno:'true,false' }}"
                             data-city="{{ business.city }}" 
@@ -116,7 +115,6 @@
                             data-type="{{ business.type }}">
                             <td>{{ business.name }}</td>
                             <td>{{ business.address }}</td>
-                            <td>{{ business.city }}</td>
                             <td><a href="{{ business.website }}" target="_blank">{{ business.website }}</a></td>
                         </tr>
                         {% endfor %}
@@ -133,7 +131,7 @@
         const familyFriendlyFilter = document.getElementById('familyFriendlyFilter').value;
         const cityFilter = document.getElementById('cityFilter').value;
         const typeFilter = document.getElementById('typeFilter').value;
-        const businessDetails = document.getElementById('businessDetails').children;
+        const businessDetails = document.getElementById('shopBusinessDetails').children;
 
         for (let i = 0; i < businessDetails.length; i++) {
             const business = businessDetails[i];
