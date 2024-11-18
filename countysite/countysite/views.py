@@ -3,6 +3,9 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'index.html')
 
+def abbey(request):
+    return render(request, 'abbey.html')
+
 def arts(request):
     return render(request, 'arts.html')
 
@@ -56,6 +59,9 @@ def resources(request):
         'resources': temp_resources
     }
     return render(request, 'resources.html', context)
+
+def shatto_milk(request):
+    return render(request, 'shatto_milk.html')
 
 def shopping_leisure(request):
     context = {
