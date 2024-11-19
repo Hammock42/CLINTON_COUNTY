@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-g2to+5el36c@2moctlxk*j#&ng$6*$xmld3(i(8t!vzph2tv-*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['hammock42.pythonanywhere.com', '.vercel.app', 'localhost']
+ALLOWED_HOSTS = ['www.visitclintoncomo.com', 'hammock42.pythonanywhere.com', '.vercel.app', 'localhost']
 
 
 # Application definition
