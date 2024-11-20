@@ -6,7 +6,7 @@
 {% block content %}
 <div id="main-content" class="xpage-container">
     <section class="hero">
-        <div id="carouselExampleSlidesOnly" class="carousel carousel-fade" data-bs-interval="7000" data-bs-ride="carousel" data-bs-pause="false" style="tr">
+        <div id="homeCarousel" class="carousel carousel-fade" data-bs-interval="7000" data-bs-ride="carousel" data-bs-pause="false" style="tr">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="{% static 'img/abbey_sq.avif' %}" class="img-fluid d-block d-md-none" alt="...">
@@ -87,17 +87,17 @@
         </div>
     </div>
     <div class="container">
-        <div class="row m-1">
-            <div class="col col-3 rounded">
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-3 rounded p-2">
                 <img src="{% static 'img/Hartell_4_3.avif'%}" onclick="openModal();currentSlide(1)" class="hover-shadow img-fluid rounded" alt="Kayaking" title="Kayaking">
             </div>
-            <div class="col col-3 rounded">
+            <div class="col-10 col-md-3 rounded p-2">
                 <img src="{% static 'img/wallace_hiking_4_3.avif'%}" onclick="openModal();currentSlide(2)" class="hover-shadow img-fluid rounded" alt="Hiking" title="Hiking">
             </div>
-            <div class="col col-3 rounded">
+            <div class="col-10 col-md-3 rounded p-2">
                 <img src="{% static 'img/hunting_4_3.avif'%}" onclick="openModal();currentSlide(3)" class="hover-shadow img-fluid rounded" alt="Hunting" title="Hunting">
             </div>
-            <div class="col col-3 rounded">
+            <div class="col-10 col-md-3 rounded p-2">
                 <img src="{% static 'img/fishing_4_3.avif'%}" onclick="openModal();currentSlide(4)" class="hover-shadow img-fluid rounded" alt="Fishing" title="Fishing">
             </div>
         </div>
