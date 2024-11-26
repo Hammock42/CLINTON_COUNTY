@@ -8,145 +8,117 @@
     <section class="hero mb-5">
         <img src="{% static 'img/cc_sign_bg_lg.avif' %}" class="img-fluid" alt="...">
     </section>
-    <div class="row mb-3">
-        <div class="col-10 col-md-8 mx-auto">
-            <div class="section-title">
-                Outdoor &amp; Adventure in Clinton County, Missouri
-            </div>
-            <div class="section-text">
-                Clinton County offers countless outdoor opportunities for nature lovers and adventure 
-                seekers. Whether you're hiking through lush forests, fishing in serene lakes, or 
-                enjoying a peaceful day of birdwatching, Clinton County has something for everyone. 
-                Explore these beautiful natural spots and find your next adventure!
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col mx-auto">
+                <div class="section-title">
+                    Outdoor &amp; Adventure in Clinton County, Missouri
+                </div>
+                <div class="section-text">
+                    Clinton County offers countless outdoor opportunities for nature lovers and adventure 
+                    seekers. Whether you're hiking through lush forests, fishing in serene lakes, or 
+                    enjoying a peaceful day of birdwatching, Clinton County has something for everyone. 
+                    Explore these beautiful natural spots and find your next adventure!
+                </div>
             </div>
         </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 p-5">
-        <div class="col">
-            <div class="card h-100">
-                <img src="{% static 'img/bigfoote_kayak.avif' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="fs-5 card-title fw-bold">BigFoote Outfitters</p>
-                    <p class="card-text">Gear up for your next outdoor adventure!</p>
-                    <span>
-                        <p class="fw-bold">Address: </p>
-                        <p class="card-text">104 S Main St, Plattsburg, MO 64477</p>
-                    </span>
-                </div>
-                <div class="card-footer">
-                    <a href="{% url 'bigfoote_outfitters' %}" class="btn btn-primary stretched-link">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="{% static 'img/Hartell_4_3.avif' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="fs-5 card-title fw-bold">Hartell Conservation Area</p>
-                    <p class="card-text">Enjoy wildlife observation and nature hikes in this serene conservation area.</p>
-                    <span>
-                        <p class="fw-bold">Address: </p>
-                        <p class="card-text">East of Plattsburg, MO</p>
-                    </span>
-                </div>
-                <div class="card-footer">
-                    <a href="{% url 'hartell_conservation_area' %}" class="btn btn-primary stretched-link">Learn More</a>
+    <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 p-5">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'img/Hartell_4_3.avif' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="fs-5 card-title fw-bold">Ronald &amp; Maude Hartell Conservation Area</p>
+                        <p class="card-text">Enjoy wildlife observation and nature hikes in this serene conservation area.</p>
+                        <span>
+                            <p class="fw-bold">Address: </p>
+                            <p class="card-text">Five miles northeast of Plattsburg, on 280 Street just off Highway 33.</p>
+                        </span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'hartell_conservation_area' %}" class="btn btn-primary stretched-link">Learn More</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="{% static 'img/default_img.jpg' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="fs-5 card-title fw-bold">Honker Cove Waterfowl Refuge</p>
-                    <p class="card-text">Perfect for birdwatching and wildlife photography</p>
-                    <span>
-                        <p class="fw-bold">Address: </p>
-                        <p class="card-text">Near Smithville Lake, Smithville, MO</p>
-                    </span>
-                </div>
-                <div class="card-footer">
-                    <a href="{% url 'honker_cove_waterfowl_refuge' %}" class="btn btn-primary stretched-link">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="{% static 'img/mcgee_family_conservation/Bobolink_male.avif' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="fs-5 card-title fw-bold">McGee Family Conservation Area</p>
-                    <p class="card-text">Discover wildlife and peaceful walking trails</p>
-                    <span>
-                        <p class="fw-bold">Address: </p>
-                        <p class="card-text">S of 116 Hwy, NW of Plattsburg, MO</p>
-                    </span>
-                </div>
-                <div class="card-footer">
-                    <a href="{% url 'mcgee_family_conservation' %}" class="btn btn-primary stretched-link">Learn More</a>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'img/mcgee_family_conservation/Bobolink_male.avif' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="fs-5 card-title fw-bold">McGee Family Conservation Area</p>
+                        <p class="card-text">Discover wildlife and peaceful walking trails</p>
+                        <span>
+                            <p class="fw-bold">Address: </p>
+                            <p class="card-text">S of 116 Hwy, NW of Plattsburg, MO</p>
+                        </span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'mcgee_family_conservation' %}" class="btn btn-primary stretched-link">Learn More</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="{% static 'img/default_img.jpg' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="fs-5 card-title fw-bold">Smithville Lake Recreation Areas</p>
-                    <p class="card-text">Water activities, hiking, and scenic views at Smithville Lake</p>
-                    <span>
-                        <p class="fw-bold">Address: </p>
-                        <p class="card-text">Smithville Lake, Kansas City, MO 64152</p>
-                    </span>
-                </div>
-                <div class="card-footer">
-                    <a href="{% url 'smithville_lake' %}" class="btn btn-primary stretched-link">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="{% static 'img/Trice_Dedman/Trice_Dedman_3.avif' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="fs-5 card-title fw-bold">Trice-Dedman Memorial Woods</p>
-                    <p class="card-text">Explore pristine woodlands and enjoy scenic walking trails</p>
-                    <span>
-                        <p class="fw-bold">Address: </p>
-                        <p class="card-text">North of Plattsburg, MO, off Hwy 169</p>
-                    </span>
-                </div>
-                <div class="card-footer">
-                    <a href="{% url 'trice_dedman' %}" class="btn btn-primary stretched-link">Learn More</a>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'img/smithville_lake/kayaking.avif' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="fs-5 card-title fw-bold">Smithville Lake Recreation Areas</p>
+                        <p class="card-text">Water activities, hiking, and scenic views at Smithville Lake</p>
+                        <span>
+                            <p class="fw-bold">Address: </p>
+                            <p class="card-text">Smithville Lake, Kansas City, MO 64152</p>
+                        </span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'smithville_lake' %}" class="btn btn-primary stretched-link">Learn More</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="{% static 'img/wallace_state_park/wallace_5.avif' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="fs-5 card-title fw-bold">Wallace State Park</p>
-                    <p class="card-text">Hiking, picnicking, and more in a peaceful setting</p>
-                    <span>
-                        <p class="fw-bold">Address: </p>
-                        <p class="card-text">2200 S. 32 Hwy, Cameron, MO 64429</p>
-                    </span>
-                </div>
-                <div class="card-footer">
-                    <a href="{% url 'wallace_state_park' %}" class="btn btn-primary stretched-link">Learn More</a>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'img/Trice_Dedman/Trice_Dedman_3.avif' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="fs-5 card-title fw-bold">Trice-Dedman Memorial Woods</p>
+                        <p class="card-text">Explore pristine woodlands and enjoy scenic walking trails</p>
+                        <span>
+                            <p class="fw-bold">Address: </p>
+                            <p class="card-text">North of Plattsburg, MO, off Hwy 169</p>
+                        </span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'trice_dedman' %}" class="btn btn-primary stretched-link">Learn More</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="{% static 'img/default_img.jpg' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="fs-5 card-title fw-bold">Location Title</p>
-                    <p class="card-text">Temp Description</p>
-                    <span>
-                        <p class="fw-bold">Address: </p>
-                        <p class="card-text">123 Main</p>
-                    </span>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'img/wallace_state_park/wallace_5.avif' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="fs-5 card-title fw-bold">Wallace State Park</p>
+                        <p class="card-text">Hiking, picnicking, and more in a peaceful setting</p>
+                        <span>
+                            <p class="fw-bold">Address: </p>
+                            <p class="card-text">2200 S. 32 Hwy, Cameron, MO 64429</p>
+                        </span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'wallace_state_park' %}" class="btn btn-primary stretched-link">Learn More</a>
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary stretched-link">Learn More</a>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'img/default_img.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="fs-5 card-title fw-bold">Location Title</p>
+                        <p class="card-text">Temp Description</p>
+                        <span>
+                            <p class="fw-bold">Address: </p>
+                            <p class="card-text">123 Main</p>
+                        </span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary stretched-link">Learn More</a>
+                    </div>
                 </div>
             </div>
         </div>

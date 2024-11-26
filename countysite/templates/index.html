@@ -6,7 +6,7 @@
 {% block content %}
 <div id="main-content" class="xpage-container">
     <section class="hero">
-        <div id="homeCarousel" class="carousel carousel-fade" data-bs-interval="7000" data-bs-ride="carousel" data-bs-pause="false" style="tr">
+        <div id="homeCarousel" class="carousel carousel-fade" data-bs-interval="3500" data-bs-ride="carousel" data-bs-pause="false" style="tr">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="{% static 'img/abbey_sq.avif' %}" class="img-fluid d-block d-md-none" alt="...">
@@ -37,6 +37,12 @@
                     <img src="{% static 'img/lathrop_tractor_4_3.avif' %}" class="img-fluid d-none d-md-block d-lg-none" alt="...">
                     <img src="{% static 'img/lathrop_tractor_2_1.avif' %}" class="img-fluid d-none d-lg-block d-xl-none" alt="...">
                     <img src="{% static 'img/home_page/tractors_3_1.avif' %}" class="img-fluid d-none d-xl-block" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'img/lathrop_tractor_sq.avif' %}" class="img-fluid d-block d-md-none" alt="...">
+                    <img src="{% static 'img/lathrop_tractor_4_3.avif' %}" class="img-fluid d-none d-md-block d-lg-none" alt="...">
+                    <img src="{% static 'img/lathrop_tractor_2_1.avif' %}" class="img-fluid d-none d-lg-block d-xl-none" alt="...">
+                    <img src="{% static 'img/home_page/abbey_3_1_2.avif' %}" class="img-fluid d-none d-xl-block" alt="...">
                 </div>
             </div>
         </div>
@@ -75,6 +81,23 @@
             In Clinton County, tradition isn't just celebrated—it&apos;s a way of life.
         </div>
     </div>
+    <div class="container">
+        <div>4 image placeholder</div>
+        <div class="row justify-content-center">
+            <a href="{% url 'coming_soon' %}" class="col-10 col-md-3 rounded p-2">
+                <img src="{% static 'img/default_img.jpg'%}" class="hover-shadow img-fluid rounded" alt="Temp Image 1" title="Temp Image 1">
+            </a>
+            <a href="{% url 'coming_soon' %}"  class="col-10 col-md-3 rounded p-2">
+                <img src="{% static 'img/default_img.jpg'%}" class="hover-shadow img-fluid rounded" alt="Temp Image 2" title="Temp Image 2">
+            </a>
+            <a href="{% url 'coming_soon' %}"  class="col-10 col-md-3 rounded p-2">
+                <img src="{% static 'img/default_img.jpg'%}" class="hover-shadow img-fluid rounded" alt="Temp Image 3" title="Temp Image 3">
+            </a>
+            <a href="{% url 'coming_soon' %}"  class="col-10 col-md-3 rounded p-2">
+                <img src="{% static 'img/default_img.jpg'%}" class="hover-shadow img-fluid rounded" alt="Temp Image 4" title="Temp Image 4">
+            </a>
+        </div>
+    </div>
     <div class="container p-3">
         <div class="section-title">
             Step into History
@@ -85,6 +108,20 @@
             Wander Lathrop&apos;s unique fairgrounds, home to interactive displays that tell the story of our 19th-century farming 
             heritage. Relive the good old days at classic car shows that pay tribute to the glory of American automobiles, surrounded 
             by folks who share your passion for vintage wheels and open roads.
+        </div>
+    </div>
+    <div class="container">
+      <div>3 image placeholder</div>
+      <div class="row justify-content-center">
+            <a href="{% url 'coming_soon' %}" class="col-10 col-md-4 rounded p-2">
+                <img src="{% static 'img/default_img.jpg'%}" class="hover-shadow img-fluid rounded" alt="Temp Image 1" title="Temp Image 1">
+            </a>
+            <a href="{% url 'coming_soon' %}"  class="col-10 col-md-4 rounded p-2">
+                <img src="{% static 'img/default_img.jpg'%}" class="hover-shadow img-fluid rounded" alt="Temp Image 2" title="Temp Image 2">
+            </a>
+            <a href="{% url 'coming_soon' %}"  class="col-10 col-md-4 rounded p-2">
+                <img src="{% static 'img/default_img.jpg'%}" class="hover-shadow img-fluid rounded" alt="Temp Image 3" title="Temp Image 3">
+            </a>
         </div>
     </div>
     <div class="container p-3">

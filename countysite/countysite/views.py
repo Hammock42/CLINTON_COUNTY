@@ -48,12 +48,6 @@ def music(request):
 def outdoor_adventure(request):
     return render(request, 'outdoor_adventure.html')
 
-def place(request):
-    return render(request, 'place.html')
-
-def place_alt(request):
-    return render(request, 'place_alt.html')
-
 def resources(request):
     context = {
         'resources': temp_resources
@@ -72,14 +66,11 @@ def shopping_leisure(request):
 def tours(request):
     return render(request, 'tours.html')
 
-def bigfoote_outfitters(request):
-    return render(request, 'bigfoote_outfitters.html')
+def golf(request):
+    return render(request, 'golf.html')
 
 def hartell_conservation_area(request):
     return render(request, 'hartell_conservation_area.html')
-
-def honker_cove_waterfowl_refuge(request):
-    return render(request, 'honker_cove_waterfowl_refuge.html')
 
 def mcgee_family_conservation(request):
     return render(request, 'mcgee_family_conservation.html')
