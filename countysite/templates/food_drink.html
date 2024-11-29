@@ -27,14 +27,6 @@
             <div class="filter-group">
                 <div class="row">
                     <div class="col col-md-3 py-1">
-                        <label for="familyFriendlyFilter" class="form-label">Family Friendly</label>
-                        <select id="familyFriendlyFilter" class="form-select" onchange="filterBusinesses()">
-                            <option value="">All</option>
-                            <option value="true">True</option>
-                            <option value="false">False</option>
-                        </select>
-                    </div>
-                    <div class="col col-md-3 py-1">
                         <label for="cityFilter" class="form-label">City</label>
                         <select id="cityFilter" class="form-select" onchange="filterBusinesses()">
                             <option value="">All</option>
@@ -53,70 +45,39 @@
                         <label for="typeFilter" class="form-label">Type</label>
                         <select id="typeFilter" class="form-select" onchange="filterBusinesses()">
                             <option value="">All</option>
-                            <option value="bakery">Bakery</option>
+                            <option value="bakeries">Bakery</option>
+                            <option value="bar">Bar</option>
+                            <option value="butcher shop">Butcher Shop</option>
                             <option value="catering">Catering</option>
-                            <option value="coffee_shop">Coffee Shop</option>
-                            <option value="grocery_store">Grocery Store</option>
-                            <option value="liquor_store">Liquor Store</option>
-                            <option value="dine_in_restaurant">Dine In Restaurant</option>
-                            <option value="over_counter_restaurant">Over Counter Restaurant</option>
-                            <option value="pub">Pub</option>
+                            <option value="coffee shop">Coffee Shop</option>
+                            <option value="convenience store">Convenience Store</option>
+                            <option value="food truck">Food Truck</option>
+                            <option value="grocery/variety stores">Grocery Store</option>
+                            <option value="honey farm">Honey Farm</option>
+                            <option value="liquor">Liquor Store</option>
+                            <option value="nutritional drink">Nutritional Drink</option>
+                            <option value="restaurant">Restaurant</option>
                         </select>
                     </div>
-                    {% comment %} <div class="col-md-3">
-                        <label class="form-label">Dietary Restrictions</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="vegetarian" id="vegetarianFilter" onchange="filterBusinesses()">
-                            <label class="form-check-label" for="vegetarianFilter">
-                                Vegetarian
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="vegan" id="veganFilter" onchange="filterBusinesses()">
-                            <label class="form-check-label" for="veganFilter">
-                                Vegan
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="gluten-free" id="glutenFreeFilter" onchange="filterBusinesses()">
-                            <label class="form-check-label" for="glutenFreeFilter">
-                                Gluten Free
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="dairy-free" id="dairyFreeFilter" onchange="filterBusinesses()">
-                            <label class="form-check-label" for="dairyFreeFilter">
-                                Dairy Free
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="vegan" id="kosherFilter" onchange="filterBusinesses()">
-                            <label class="form-check-label" for="kosherFilter">
-                                Kosher
-                            </label>
-                        </div>
-                    </div> {% endcomment %}
                 </div>
             </div>
             <div class="table-responsive mt-4 wrapper rounded-3">
                 <table class="table table-scrollable table-hover table-bordered">
                     <thead class="table-dark">
                         <tr class="align-middle">
-                            <th scope="col">Name</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Website</th>
+                            <th scope="col ps-3">Name</th>
+                            <th scope="col ps-3">Address</th>
+                            <th scope="col ps-3">City</th>
                         </tr>
                     </thead>
-                    <tbody class="text-center" id="foodBusinessDetails">
+                    <tbody id="foodBusinessDetails">
                         {% for business in businesses %}
-                        <tr data-family-friendly="{{ business.family_friendly|yesno:'true,false' }}"
-                            data-city="{{ business.city }}" 
+                        <tr data-city="{{ business.city }}" 
                             data-description="{{ business.description }}"
-                            data-type="{{ business.type }}"
-                            {% comment %} data-dietary-restrictions="{{ business.dietary_restrictions }}" {% endcomment %}>
-                            <td>{{ business.name }}</td>
-                            <td>{{ business.address }}</td>
-                            <td><a href="{{ business.website }}" target="_blank">{{ business.website }}</a></td>
+                            data-type="{{ business.get_place_types }}">
+                            <td class="ps-3">{{ business.name }}</td>
+                            <td class="ps-3">{{ business.address }}</td>
+                            <td class="ps-3">{{ business.city }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -129,24 +90,17 @@
 <script>
 
     function filterBusinesses() {
-        const familyFriendlyFilter = document.getElementById('familyFriendlyFilter').value;
         const cityFilter = document.getElementById('cityFilter').value;
         const typeFilter = document.getElementById('typeFilter').value;
-        //const dietaryFilters = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
         const businessDetails = document.getElementById('foodBusinessDetails').children;
 
         for (let i = 0; i < businessDetails.length; i++) {
             const business = businessDetails[i];
-            const familyFriendly = business.getAttribute('data-family-friendly');
             const city = business.getAttribute('data-city');
             const type = business.getAttribute('data-type');
-            //const dietaryRestrictions = business.getAttribute('data-dietary-restrictions')
-            //const dietaryMatch = dietaryFilters.every(filter => dietaryRestrictions.includes(filter));
 
-            if ((familyFriendlyFilter === '' || familyFriendlyFilter === familyFriendly) &&
-                (cityFilter === '' || cityFilter === city) &&
-                (typeFilter === '' || typeFilter === type)) {//&&
-                //dietaryMatch) {
+            if ((cityFilter === '' || cityFilter === city) &&
+                (typeFilter === '' || type.includes(typeFilter))) {
                 business.style.display = 'table-row';
             } else {
                 business.style.display = 'none';

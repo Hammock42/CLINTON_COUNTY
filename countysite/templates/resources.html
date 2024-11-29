@@ -19,21 +19,113 @@
                 </div>
             </div>
         </div>
-        <section class="mt-4 p-3 rounded-3">
-            <div class="row">
-                <div class="col col-md-6 py-1">
-                    <label for="filter-type" class="form-label">Filter by Type</label>
-                    <select id="filter-type" class="form-select" onchange="filterResources()">
-                        <option value="">All Types</option>
-                        <option value="type_1">Type 1</option>
-                        <option value="type_2">Type 2</option>
-                        <!-- Add more types as needed -->
-                    </select>
-                </div>
-                <div class="col col-md-6 py-1">
-                    <label for="filter-city" class="form-label">Filter by City</label>
-                    <select id="filter-city" class="form-select" onchange="filterResources()">
-                        <option value="">All Cities</option>
+        <section class="g-2 mx-auto py-3" style="background-color: #f3e7dc;">
+            <div class="filter-group">
+                <div class="row">
+                    <div class="col col-md-6 py-1">
+                        <label for="resource-type-filter" class="form-label">Filter by Type</label>
+                        <select id="resource-type-filter" class="form-select" onchange="filterResources()">
+                            <option value="">All Types</option>
+                            <option value="agriculture">Agriculture</option>
+                            <option value="antiques">Antiques</option>
+                            <option value="appliance repair">Appliance Repair</option>
+                            <option value="art school">Art School</option>
+                            <option value="auto/vehicle">Auto/Vehicle</option>
+                            <option value="bakeries">Bakeries</option>
+                            <option value="banks">Banks</option>
+                            <option value="bar">Bar</option>
+                            <option value="barber shop">Barber Shop</option>
+                            <option value="beauty salon">Beauty Salon</option>
+                            <option value="behavioral health">Behavioral Health</option>
+                            <option value="books">Books</option>
+                            <option value="boutiques">Boutiques</option>
+                            <option value="bowling">Bowling</option>
+                            <option value="building/remodeling">Building/Remodeling</option>
+                            <option value="business park">Business Park</option>
+                            <option value="butcher shop">Butcher Shop</option>
+                            <option value="car wash">Car Wash</option>
+                            <option value="catering">Catering</option>
+                            <option value="church">Church</option>
+                            <option value="coffee shop">Coffee Shop</option>
+                            <option value="computer service">Computer Service</option>
+                            <option value="conference/meeting rooms">Conference/Meeting Rooms</option>
+                            <option value="consultant">Consultant</option>
+                            <option value="convenience store">Convenience Store</option>
+                            <option value="crane service">Crane Service</option>
+                            <option value="day care">Day Care</option>
+                            <option value="dental">Dental</option>
+                            <option value="electrician">Electrician</option>
+                            <option value="electronic repair">Electronic Repair</option>
+                            <option value="embroidery shop">Embroidery Shop</option>
+                            <option value="emergency services">Emergency Services</option>
+                            <option value="exercise/fitness">Exercise/Fitness</option>
+                            <option value="fertilizer supplier">Fertilizer Supplier</option>
+                            <option value="financial services">Financial Services</option>
+                            <option value="fire">Fire</option>
+                            <option value="firearms sales">Firearms Sales</option>
+                            <option value="firewood/tree services">Firewood/Tree Services</option>
+                            <option value="fireworks">Fireworks</option>
+                            <option value="florist">Florist</option>
+                            <option value="food truck">Food Truck</option>
+                            <option value="funeral services">Funeral Services</option>
+                            <option value="gas station">Gas Station</option>
+                            <option value="golf">Golf</option>
+                            <option value="government">Government</option>
+                            <option value="grain processing">Grain Processing</option>
+                            <option value="grocery/variety stores">Grocery/Variety Stores</option>
+                            <option value="health">Health</option>
+                            <option value="herb shop">Herb Shop</option>
+                            <option value="home inspectors">Home Inspectors</option>
+                            <option value="honey farm">Honey Farm</option>
+                            <option value="hospice care">Hospice Care</option>
+                            <option value="insurance">Insurance</option>
+                            <option value="laundry">Laundry</option>
+                            <option value="lawn services">Lawn Services</option>
+                            <option value="legal services">Legal Services</option>
+                            <option value="license office">License Office</option>
+                            <option value="liquor">Liquor</option>
+                            <option value="lodging">Lodging</option>
+                            <option value="massage">Massage</option>
+                            <option value="media communications">Media Communications</option>
+                            <option value="nail salon">Nail Salon</option>
+                            <option value="nutritional drink">Nutritional Drink</option>
+                            <option value="pest control">Pest Control</option>
+                            <option value="pet groomer">Pet Groomer</option>
+                            <option value="petroleum sales">Petroleum Sales</option>
+                            <option value="pharmacy">Pharmacy</option>
+                            <option value="photo booth">Photo Booth</option>
+                            <option value="photography">Photography</option>
+                            <option value="plumbing">Plumbing</option>
+                            <option value="plumbing/hvac">Plumbing/HVAC</option>
+                            <option value="police">Police</option>
+                            <option value="preschool">Preschool</option>
+                            <option value="real estate">Real Estate</option>
+                            <option value="restaurant">Restaurant</option>
+                            <option value="school">School</option>
+                            <option value="screen printing">Screen Printing</option>
+                            <option value="senior services">Senior Services</option>
+                            <option value="solar energy">Solar Energy</option>
+                            <option value="specialty shop">Specialty Shop</option>
+                            <option value="storage">Storage</option>
+                            <option value="tattoo shop">Tattoo Shop</option>
+                            <option value="telecommunications">Telecommunications</option>
+                            <option value="title company">Title Company</option>
+                            <option value="travel agency">Travel Agency</option>
+                            <option value="tree/asphalt services">Tree/Asphalt Services</option>
+                            <option value="trucking">Trucking</option>
+                            <option value="unknown">Unknown</option>
+                            <option value="utility">Utility</option>
+                            <option value="venue">Venue</option>
+                            <option value="veterinary">Veterinary</option>
+                            <option value="warehouse">Warehouse</option>
+                            <option value="waste management">Waste Management</option>
+                            <!-- Add more types as needed -->
+                        </select>
+                    </div>
+                    <div class="col col-md-6 py-1">
+                        <label for="resource-city-filter" class="form-label">Filter by City</label>
+                        <select id="resource-city-filter" class="form-select" onchange="filterResources()">
+                            <option value="">All Cities</option>
                             <option value="cameron">Cameron</option>
                             <option value="gower">Gower</option>
                             <option value="holt">Holt</option>
@@ -43,27 +135,28 @@
                             <option value="plattsburg">Plattsburg</option>
                             <option value="trimble">Trimble</option>
                             <option value="turney">Turney</option>
-                        <!-- Add more cities as needed -->
-                    </select>
+                            <!-- Add more cities as needed -->
+                        </select>
+                    </div>
                 </div>
             </div>
             <div class="table-responsive mt-4 wrapper rounded-3">
                 <table class="table table-scrollable table-hover table-bordered">
                     <thead class="table-dark">
                         <tr class="align-middle">
-                            <th scope="col">Name</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">City</th>
-                            <th scope="col">Description</th>
+                            <th scope="col ps-3">Name</th>
+                            <th scope="col ps-3">Address</th>
+                            <th scope="col ps-3">City</th>
                         </tr>
                     </thead>
-                    <tbody class="text-center" id="resources-table-body">
+                    <tbody id="resourceDetails">
                         {% for resource in resources %}
-                        <tr>
-                            <td>{{ resource.name }}</td>
-                            <td>{{ resource.type }}</td>
-                            <td>{{ resource.city }}</td>
-                            <td>{{ resource.description }}</td>
+                        <tr data-city="{{ resource.city }}" 
+                            data-description="{{ resource.description }}"
+                            data-type="{{ resource.get_place_types }}">
+                            <td class="ps-3">{{ resource.name }}</td>
+                            <td class="ps-3">{{ resource.address }}</td>
+                            <td class="ps-3">{{ resource.city }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -74,21 +167,21 @@
 </div>
 
 <script>
-
     function filterResources() {
-        var typeFilter = document.getElementById('filter-type').value;
-        var cityFilter = document.getElementById('filter-city').value;
-        var tableBody = document.getElementById('resources-table-body');
-        var rows = tableBody.getElementsByTagName('tr');
+        const cityFilter = document.getElementById('resource-city-filter').value;
+        const typeFilter = document.getElementById('resource-type-filter').value;
+        const businessDetails = document.getElementById('resourceDetails').children;
 
-        for (var i = 0; i < rows.length; i++) {
-            var type = rows[i].getElementsByTagName('td')[1].innerText;
-            var city = rows[i].getElementsByTagName('td')[2].innerText;
+        for (let i = 0; i < businessDetails.length; i++) {
+            const business = businessDetails[i];
+            const city = business.getAttribute('data-city');
+            const type = business.getAttribute('data-type');
 
-            if ((typeFilter === "" || type === typeFilter) && (cityFilter === "" || city === cityFilter)) {
-                rows[i].style.display = "";
+            if ((cityFilter === '' || cityFilter === city) &&
+                (typeFilter === '' || type.includes(typeFilter))) {
+                business.style.display = 'table-row';
             } else {
-                rows[i].style.display = "none";
+                business.style.display = 'none';
             }
         }
     }

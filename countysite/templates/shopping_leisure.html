@@ -25,14 +25,6 @@
             <div class="filter-group">
                 <div class="row">
                     <div class="col col-md-3 py-1">
-                        <label for="familyFriendlyFilter" class="form-label">Family Friendly</label>
-                        <select id="familyFriendlyFilter" class="form-select" onchange="filterBusinesses()">
-                            <option value="">All</option>
-                            <option value="true">True</option>
-                            <option value="false">False</option>
-                        </select>
-                    </div>
-                    <div class="col col-md-3 py-1">
                         <label for="cityFilter" class="form-label">City</label>
                         <select id="cityFilter" class="form-select" onchange="filterBusinesses()">
                             <option value="">All</option>
@@ -51,49 +43,31 @@
                         <label for="typeFilter" class="form-label">Type</label>
                         <select id="typeFilter" class="form-select" onchange="filterBusinesses()">
                             <option value="">All</option>
-                            <option value="agriculture">Agriculture</option>
                             <option value="antiques">Antiques</option>
-                            <option value="appliance_repair">Appliance Repair</option>
-                            <option value="auto">Auto/Vehicle</option>
-                            <option value="banks">Banks</option>
+                            <option value="barber shop">Barber Shop</option>
+                            <option value="beauty salon">Beauty Salon</option>
+                            <option value="books">Books</option>
                             <option value="boutiques">Boutiques</option>
                             <option value="bowling">Bowling</option>
-                            <option value="building_remodeling">Building/Remodeling</option>
-                            <option value="business_park">Business Park</option>
-                            <option value="child_care">Child/Day Care</option>
-                            <option value="computers">Computers</option>
-                            <option value="conference_meeting_rooms">Conference/Meeting Rooms</option>
-                            <option value="dentist">Dentist</option>
-                            <option value="electronic_repair">Electronic Repair</option>
-                            <option value="feed_farm_supplies">Feed &amp; Farm Supplies</option>
+                            <option value="car wash">Car Wash</option>
+                            <option value="computer service">Computer Service</option>
+                            <option value="electronic repair">Electronic Repair</option>
+                            <option value="embroidery shop">Embroidery Shop</option>
+                            <option value="exercise/fitness">Exercise/Fitness</option>
+                            <option value="firearms sales">Firearms Sales</option>
+                            <option value="fireworks">Fireworks</option>
                             <option value="florist">Florist</option>
-                            <option value="funeral_homes">Funeral Homes</option>
-                            <option value="gas_stations">Gas Stations</option>
-                            <option value="golf">Golf</option>
-                            <option value="groceries_stores">Groceries/Variety Stores</option>
-                            <option value="hair_salon_barber_shop">Hair Salon/Barber Shop</option>
-                            <option value="home_inspectors">Home Inspectors</option>
-                            <option value="insurance">Insurance</option>
-                            <option value="lawn_exterior">Lawn &amp; Exterior</option>
-                            <option value="legal">Legal Assistance</option>
-                            <option value="library">Library</option>
-                            <option value="licence_office">License Office</option>
-                            <option value="liquor">Liquor</option>
-                            <option value="media_communications">Media Communications</option>
+                            <option value="grocery/variety stores">Variety Stores</option>
+                            <option value="health">Health</option>
+                            <option value="herb shop">Herb Shop</option>
+                            <option value="massage">Massage</option>
+                            <option value="nail salon">Nail Salon</option>
+                            <option value="pet groomer">Pet Groomer</option>
                             <option value="pharmacy">Pharmacy</option>
-                            <option value="photo_booth">Photo Booth</option>
-                            <option value="photography">Photography</option>
-                            <option value="plumbing">Plumbing</option>
-                            <option value="preschools">Preschools</option>
-                            <option value="real_estate">Real Estate</option>
-                            <option value="senior_services">Senior Services</option>
-                            <option value="specialty_shops">Specialty Shops</option>
-                            <option value="storage">Storage</option>
-                            <option value="title_companies">Title Companies</option>
-                            <option value="utilities">Utilities</option>
-                            <option value="venues">Venues</option>
-                            <option value="veterinary">Veterinary</option>
-                            <option value="warehouse">Warehouse</option>
+                            <option value="screen printing">Screen Printing</option>
+                            <option value="specialty shop">Specialty Shop</option>
+                            <option value="tattoo shop">Tattoo Shop</option>
+                            <option value="travel agency">Travel Agency</option>
                         </select>
                     </div>
                 </div>
@@ -102,20 +76,19 @@
                 <table class="table table-scrollable table-hover table-bordered">
                     <thead class="table-dark">
                         <tr class="align-middle">
-                            <th scope="col">Name</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Website</th>
+                            <th scope="col ps-3">Name</th>
+                            <th scope="col ps-3">Address</th>
+                            <th scope="col ps-3">City</th>
                         </tr>
                     </thead>
-                    <tbody class="text-center" id="shopBusinessDetails">
+                    <tbody id="shopBusinessDetails">
                         {% for business in businesses %}
-                        <tr data-family-friendly="{{ business.family_friendly|yesno:'true,false' }}"
-                            data-city="{{ business.city }}" 
+                        <tr data-city="{{ business.city }}" 
                             data-description="{{ business.description }}"
-                            data-type="{{ business.type }}">
-                            <td>{{ business.name }}</td>
-                            <td>{{ business.address }}</td>
-                            <td><a href="{{ business.website }}" target="_blank">{{ business.website }}</a></td>
+                            data-type="{{ business.get_place_types }}">
+                            <td class="ps-3">{{ business.name }}</td>
+                            <td class="ps-3">{{ business.address }}</td>
+                            <td class="ps-3">{{ business.city }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -128,20 +101,17 @@
 <script>
 
     function filterBusinesses() {
-        const familyFriendlyFilter = document.getElementById('familyFriendlyFilter').value;
         const cityFilter = document.getElementById('cityFilter').value;
         const typeFilter = document.getElementById('typeFilter').value;
         const businessDetails = document.getElementById('shopBusinessDetails').children;
 
         for (let i = 0; i < businessDetails.length; i++) {
             const business = businessDetails[i];
-            const familyFriendly = business.getAttribute('data-family-friendly');
             const city = business.getAttribute('data-city');
             const type = business.getAttribute('data-type');
 
-            if ((familyFriendlyFilter === '' || familyFriendlyFilter === familyFriendly) &&
-                (cityFilter === '' || cityFilter === city) &&
-                (typeFilter === '' || typeFilter === type)) {
+            if ((cityFilter === '' || cityFilter === city) &&
+                (typeFilter === '' || type.includes(typeFilter))) {
                 business.style.display = 'table-row';
             } else {
                 business.style.display = 'none';

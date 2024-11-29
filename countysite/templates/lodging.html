@@ -25,14 +25,6 @@
             <div class="filter-group mb-4">
                 <div class="row">
                     <div class="col-md-3">
-                        <label for="familyFriendlyFilter" class="form-label">Family Friendly</label>
-                        <select id="familyFriendlyFilter" class="form-select" onchange="filterBusinesses()">
-                            <option value="">All</option>
-                            <option value="true">True</option>
-                            <option value="false">False</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
                         <label for="cityFilter" class="form-label">City</label>
                         <select id="cityFilter" class="form-select" onchange="filterBusinesses()">
                             <option value="">All</option>
@@ -59,25 +51,22 @@
                 </div>
             </div>
             <div class="table-responsive mt-4 p4 wrapper rounded-3">
-                <table class="table table-scrollable">
-                    <thead class="bg-light text-center">
+                <table class="table table-scrollable table-hover table-bordered">
+                    <thead class="table-dark">
                         <tr class="align-middle">
-                            <th scope="col">Name</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">City</th>
-                            <th scope="col">Website</th>
+                            <th scope="col ps-3">Name</th>
+                            <th scope="col ps-3">Address</th>
+                            <th scope="col ps-3">City</th>
                         </tr>
                     </thead>
-                    <tbody class="table-hover text-center" id="businessDetails">
+                    <tbody id="businessDetails">
                         {% for business in businesses %}
-                        <tr data-family-friendly="{{ business.family_friendly|yesno:'true,false' }}"
-                            data-city="{{ business.city }}" 
+                        <tr data-city="{{ business.city }}" 
                             data-description="{{ business.description }}"
                             data-type="{{ business.type }}">
-                            <td>{{ business.name }}</td>
-                            <td>{{ business.address }}</td>
-                            <td>{{ business.city }}</td>
-                            <td><a href="{{ business.website }}" target="_blank">{{ business.website }}</a></td>
+                            <td class="ps-3">{{ business.name }}</td>
+                            <td class="ps-3">{{ business.address }}</td>
+                            <td class="ps-3">{{ business.city }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -90,19 +79,16 @@
 <script>
 
     function filterBusinesses() {
-        const familyFriendlyFilter = document.getElementById('familyFriendlyFilter').value;
         const cityFilter = document.getElementById('cityFilter').value;
         const typeFilter = document.getElementById('typeFilter').value;
         const businessDetails = document.getElementById('businessDetails').children;
 
         for (let i = 0; i < businessDetails.length; i++) {
             const business = businessDetails[i];
-            const familyFriendly = business.getAttribute('data-family-friendly');
             const city = business.getAttribute('data-city');
             const type = business.getAttribute('data-type');
 
-            if ((familyFriendlyFilter === '' || familyFriendlyFilter === familyFriendly) &&
-                (cityFilter === '' || cityFilter === city) &&
+            if ((cityFilter === '' || cityFilter === city) &&
                 (typeFilter === '' || typeFilter === type)) {
                 business.style.display = 'table-row';
             } else {

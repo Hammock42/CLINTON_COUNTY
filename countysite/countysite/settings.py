@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'fontawesomefree',
     # Project apps
+    'places.apps.PlacesConfig',
 
 ]
 
