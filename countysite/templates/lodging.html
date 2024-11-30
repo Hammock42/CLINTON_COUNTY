@@ -25,8 +25,8 @@
             <div class="filter-group mb-4">
                 <div class="row">
                     <div class="col-md-3">
-                        <label for="cityFilter" class="form-label">City</label>
-                        <select id="cityFilter" class="form-select" onchange="filterBusinesses()">
+                        <label for="lodgingCityFilter" class="form-label">City</label>
+                        <select id="lodgingCityFilter" class="form-select" onchange="filterBusinesses()">
                             <option value="">All</option>
                             <option value="cameron">Cameron</option>
                             <option value="gower">Gower</option>
@@ -40,12 +40,12 @@
                         </select>
                     </div>
                     <div class="col-md-3">
-                        <label for="typeFilter" class="form-label">Type</label>
-                        <select id="typeFilter" class="form-select" onchange="filterBusinesses()">
+                        <label for="lodgingTypeFilter" class="form-label">Type</label>
+                        <select id="lodgingTypeFilter" class="form-select" onchange="filterBusinesses()">
                             <option value="">All</option>
-                            <option value="airbnb_bnb">AirBnB &amp; Bed and Breakfast</option>
+                            <option value="bnb">AirBnB &amp; Bed and Breakfast</option>
                             <option value="campground">Campground</option>
-                            <option value="hotel_motel">Hotels / Motels</option>   
+                            <option value="hotels & motels">Hotels / Motels</option>   
                         </select>
                     </div>
                 </div>
@@ -55,18 +55,22 @@
                     <thead class="table-dark">
                         <tr class="align-middle">
                             <th scope="col ps-3">Name</th>
-                            <th scope="col ps-3">Address</th>
                             <th scope="col ps-3">City</th>
+                            <th scope="col ps-3">Website</th>
                         </tr>
                     </thead>
                     <tbody id="businessDetails">
                         {% for business in businesses %}
                         <tr data-city="{{ business.city }}" 
                             data-description="{{ business.description }}"
-                            data-type="{{ business.type }}">
+                            data-type="{{ business.get_place_types }}">
                             <td class="ps-3">{{ business.name }}</td>
-                            <td class="ps-3">{{ business.address }}</td>
                             <td class="ps-3">{{ business.city }}</td>
+                            <td class="ps-3">
+                                {% if business.website %}
+                                    <a href="{{ business.website }}" target="_blank">Book Now</a>
+                                {% endif %}
+                            </td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -79,8 +83,8 @@
 <script>
 
     function filterBusinesses() {
-        const cityFilter = document.getElementById('cityFilter').value;
-        const typeFilter = document.getElementById('typeFilter').value;
+        const cityFilter = document.getElementById('lodgingCityFilter').value;
+        const typeFilter = document.getElementById('lodgingTypeFilter').value;
         const businessDetails = document.getElementById('businessDetails').children;
 
         for (let i = 0; i < businessDetails.length; i++) {
@@ -89,7 +93,7 @@
             const type = business.getAttribute('data-type');
 
             if ((cityFilter === '' || cityFilter === city) &&
-                (typeFilter === '' || typeFilter === type)) {
+                (typeFilter === '' || type.includes(typeFilter))) {
                 business.style.display = 'table-row';
             } else {
                 business.style.display = 'none';
