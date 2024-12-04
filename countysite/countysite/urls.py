@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('abbey/', views.abbey, name='abbey'),
+    path('about/', views.about, name='about'),
     path('arts/', views.arts, name='arts'),
     path('cameron_depot_museum/', views.cameron_depot_museum, name='cameron_depot_museum'),
     path('coming_soon/', views.coming_soon, name='coming_soon'),

@@ -7,6 +7,9 @@ def index(request):
 def abbey(request):
     return render(request, 'abbey.html')
 
+def about(request):
+    return render(request, 'about.html')
+
 def arts(request):
     return render(request, 'arts.html')
 
