@@ -10,11 +10,20 @@ def abbey(request):
 def about(request):
     return render(request, 'about.html')
 
+def antique_show(request):
+    return render(request, 'antique_show.html')
+
 def arts(request):
     return render(request, 'arts.html')
 
 def cameron_depot_museum(request):
     return render(request, 'cameron_depot.html')
+
+def car_show(request):
+    return render(request, 'car_show.html')
+
+def christmas(request):
+    return render(request, 'christmas.html')
 
 def riley_carmack_museum(request):
     return render(request, 'riley_carmack.html')
@@ -28,8 +37,14 @@ def culture(request):
 def events(request):
     return render(request, 'events.html')
 
+def fair(request):
+    return render(request, 'fair.html')
+
 def family_fun(request):
     return render(request, 'family_fun.html')
+
+def festivals(request):
+    return render(request, 'county_festivals.html')
 
 def food_drink(request):
     businesses = Place.objects.filter(place_page_filter='food')
@@ -41,6 +56,12 @@ def food_drink(request):
 def history_museums(request):
     return render(request, 'history_museums.html')
 
+def juneteenth(request):
+    return render(request, 'juneteenth.html')
+
+def lathrop_festival(request):
+    return render(request, 'lathrop_living_history.html')
+
 def lodging(request):
     lodging_places = Place.objects.filter(place_page_filter='lodging')
     context = {
@@ -48,8 +69,14 @@ def lodging(request):
     }
     return render(request, 'lodging.html', context)
 
+def main_st(request):
+    return render(request, 'main_st_stroll.html')
+
 def music(request):
     return render(request, 'music.html')
+
+def oak_st(request):
+    return render(request, 'oak_st_market.html')
 
 def outdoor_adventure(request):
     return render(request, 'outdoor_adventure.html')

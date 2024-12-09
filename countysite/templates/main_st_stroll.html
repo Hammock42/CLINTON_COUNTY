@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Main Street Stroll{% endblock %}
+
+{% block content %}
+<div class="xpage-container pb-5" style="background-color: #DAB28F;">
+    <section class="hero mb-5">
+        <img src="{% static 'img/cc_sign_bg_lg.avif' %}" class="img-fluid" alt="...">
+    </section>
+    <div class="container rounded-3 border border-dark shadow-lg p-3" style="background-color: #f3e7dc;">
+        <div class="m-3">
+            <div class="section-title my-3">
+                Main Street Stroll
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/default_img.jpg' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <p class="section-text">
+                    Imagine a sunny Saturday in May, strolling the cordoned off streets of a charming small town, a sample glass of wine 
+                    in one hand, a delectable from a food truck in the other. If that&apos;s your idea of a good time, come to Plattsburg 
+                    the third Saturday in May for the town&apos;s annual Main Street Stroll.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/default_img.jpg' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="d-none d-md-block col-md-6 order-first">
+                <p class="section-text">
+                    What started as a Wine Stroll has blossomed into a full celebration featuring local and regional wineries, craft 
+                    breweries, and distilleries. Whether you&apos;re a fan of wine, beer, or spirits, you&apos;ll find your favorite 
+                    sip along Main, Second, or Locust Street.
+                </p>
+            </div>
+            <div class="d-block d-md-none col-12">
+                <p class="section-text">
+                    What started as a Wine Stroll has blossomed into a full celebration featuring local and regional wineries, craft 
+                    breweries, and distilleries. Whether you&apos;re a fan of wine, beer, or spirits, you&apos;ll find your favorite 
+                    sip along Main, Second, or Locust Street.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/default_img.jpg' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <p class="section-text">
+                    If you prefer shopping to sipping, enjoy Vendors&apos; Row, where local artisans showcase handmade crafts, early 
+                    spring plants, and unique finds. A DJ keeps the energy lively, and dance lovers are invited to show off their 
+                    Two Step moves. With live music at venues like The Backyard and a tasty array of food truck options, there&apos;s 
+                    something for everyone.
+                </p>
+            </div>
+        </div>
+        <div class="section-subtitle">
+            Come stroll with us in Plattsburg and enjoy the best of small-town charm, great drinks, and good company!
+        </div>
+    </div>  
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Clinton County Fair{% endblock %}
+
+{% block content %}
+<div class="xpage-container pb-5" style="background-color: #DAB28F;">
+    <section class="hero mb-5">
+        <img src="{% static 'img/cc_sign_bg_lg.avif' %}" class="img-fluid" alt="...">
+    </section>
+    <div class="container rounded-3 border border-dark shadow-lg p-3" style="background-color: #f3e7dc;">
+        <div class="m-3">
+            <div class="section-title my-3">
+                Clinton County Fair
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/default_img.jpg' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <p class="section-text">
+                    Nothing captures the charm of rural America like the Clinton County Fair. It&apos;s an endearing blend of farm 
+                    families, farm animals, and fun as 4-H kids and their prized critters compete for blue ribbons and pride. For 
+                    spectators, the county fair is a unique chance to glimpse farm culture firsthand and to savor barbeque, shaved 
+                    ice and cold drinks served outdoors under sunny summer skies.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/default_img.jpg' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="d-none d-md-block col-md-6 order-first">
+                <p class="section-text">
+                    In Clinton County every June, the action takes place at the livestock pavilion just east of Plattsburg on Hwy. 
+                    116. Dozens of 4-H kids finally get to show animals they have spent months raising, training and grooming. The 
+                    kids parade their charges before keen eyed judges as parents and grandparents anxiously watch. Only the finest 
+                    of the lot come away with blue ribbons, and you can see pride glowing on the winning youngsters&apos; faces.
+                </p>
+            </div>
+            <div class="d-block d-md-none col-12">
+                <p class="section-text">
+                    In Clinton County every June, the action takes place at the livestock pavilion just east of Plattsburg on Hwy. 
+                    116. Dozens of 4-H kids finally get to show animals they have spent months raising, training and grooming. The 
+                    kids parade their charges before keen eyed judges as parents and grandparents anxiously watch. Only the finest 
+                    of the lot come away with blue ribbons, and you can see pride glowing on the winning youngsters&apos; faces.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/default_img.jpg' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <p class="section-text">
+                    Come enjoy the 2025 fair, which starts on June 22 with small animals&mdash;rabbits, poultry and dogs. On June 23, 
+                    sheep, goats and swine take center stage. The beef show caps off events the evening of June 24. Admission is free. 
+                </p>
+            </div>
+        </div>
+        <div class="section-subtitle">
+            Don&apos;t miss this slice of rural tradition! <a href="https://extension.missouri.edu/counties/clinton">Learn More!</a>
+        </div>
+    </div>  
+</div>
+{% endblock %}

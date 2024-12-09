@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Lathrop Antique Car, Tractor, &amp; Engine Show{% endblock %}
+
+{% block content %}
+<div class="xpage-container pb-5" style="background-color: #DAB28F;">
+    <section class="hero mb-5">
+        <img src="{% static 'img/cc_sign_bg_lg.avif' %}" class="img-fluid" alt="...">
+    </section>
+    <div class="container rounded-3 border border-dark shadow-lg p-3" style="background-color: #f3e7dc;">
+        <div class="m-3">
+            <div class="section-title my-3">
+                Lathrop Antique Car, Tractor, &amp; Engine Show 
+            </div>
+            <div class="section-text">
+                If you&apos;re a gearhead or just like the pop-pop-pop sound of old tractors, the Lathrop Antique Car, Tractor, 
+                &amp; Engine Show is the event for you.
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/default_img.jpg' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <p class="section-text">
+                    The annual event is held on Father&apos;s Day weekend &lpar;June 12-15, 2025&rpar;, at the Lathrop Antique 
+                    Show Grounds. Dozens of old time tractors are the stars of the show. Co-starring are antique and collectible 
+                    cars.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/default_img.jpg' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="d-none d-md-block col-md-6 order-first">
+                <p class="section-text">
+                    Enjoy classic events including a cross-country antique tractor cruise, a tractor pull on the fairgrounds, a 
+                    pony pull and a draft horse pulling contest. There will be 10 different types of demonstrations, including one 
+                    of the largest antique engines shows in the region, kid&apos;s pedal power tractor pull and live music.
+                </p>
+            </div>
+            <div class="d-block d-md-none col-12">
+                <p class="section-text">
+                    Enjoy classic events including a cross-country antique tractor cruise, a tractor pull on the fairgrounds, a 
+                    pony pull and a draft horse pulling contest. There will be 10 different types of demonstrations, including one 
+                    of the largest antique engines shows in the region, kid&apos;s pedal power tractor pull and live music.
+                </p>
+            </div>
+        </div>
+        <div class="section-subtitle">
+            Gear up for a weekend of vintage fun! For details, visit <a href="lathropantique.com.">Lathrop Antique</a>
+        </div>
+    </div>  
+</div>
+{% endblock %}
