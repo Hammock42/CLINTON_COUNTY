@@ -12028,7 +12028,7 @@ button.no-style {
 #feature-content-2x2-section .featured-content-2x2-container .featured-content-2x2-wrapper .featured-content-2x2-row .fc-2x2-item-map {
     width: 299px;
     height: 80px;
-    background: url(../img/location.png) no-repeat
+    background: url("../img/location.87d03afc4edb.png") no-repeat
 }
 
 #feature-content-2x2-section .featured-content-2x2-container #tripMap,
@@ -12210,7 +12210,7 @@ button.no-style {
 #feature-content-2x2-section .featured-content-2x2-container .featured-content-2x2-wrapper-mobile .fc-2x2-item-map-mobile {
     width: 299px;
     height: 80px;
-    background: url(../img/location.png) no-repeat
+    background: url("../img/location.87d03afc4edb.png") no-repeat
 }
 
 @media all and (max-width:991px) {
@@ -12492,7 +12492,7 @@ button.no-style {
 #feature-content-3x3-section .featured-content-3x3-container .featured-content-3x3-wrapper .featured-content-3x3-row .fc-3x3-item-map {
     width: 299px;
     height: 80px;
-    background: url(../img/location.png) no-repeat
+    background: url("../img/location.87d03afc4edb.png") no-repeat
 }
 
 #feature-content-3x3-section .featured-content-3x3-container .load-more-button-wrapper {
@@ -12637,7 +12637,7 @@ button.no-style {
 #feature-content-3x3-section .featured-content-3x3-container .featured-content-3x3-wrapper-mobile .fc-3x3-item-map-mobile {
     width: 299px;
     height: 80px;
-    background: url(../img/location.png) no-repeat
+    background: url("../img/location.87d03afc4edb.png") no-repeat
 }
 
 @media all and (max-width:991px) {

@@ -9380,18 +9380,7 @@ button.no-style {
         flex-grow: 1
     }
 
-    #siteHeader .lvl3.icon-menu.menu {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: space-between;
-        margin-top: 104px
-    }
-
-    #siteHeader .lvl3.icon-menu.menu-item {
-        display: flex;
-        align-items: center;
-        margin: 0 35px 68px
-    }
+    
 
     #siteHeader .lvl3.icon-menu .icon-menu-image {
         margin-right: 7px
