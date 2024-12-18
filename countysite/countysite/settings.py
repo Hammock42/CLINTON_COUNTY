@@ -29,10 +29,10 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     # Third party apps
     'django_bootstrap5',
-    #'cms',
-    #'menus',
-    #'treebeard',
-    #'django_check_seo',
+    'cms',
+    'menus',
+    'treebeard',
+    'django_check_seo',
     'fontawesomefree',
     # Project apps
     'places.apps.PlacesConfig',
