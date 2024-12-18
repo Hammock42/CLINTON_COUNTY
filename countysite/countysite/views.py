@@ -34,6 +34,9 @@ def coming_soon(request):
 def culture(request):
     return render(request, 'culture.html')
 
+def deer_creek(request):
+    return render(request, 'deer_creek.html')
+
 def events(request):
     return render(request, 'events.html')
 
@@ -100,6 +103,9 @@ def shopping_leisure(request):
 
 def tours(request):
     return render(request, 'tours.html')
+
+def walking_tour(request):
+    return render(request, 'walking_tour.html')
 
 def golf(request):
     return render(request, 'golf.html')

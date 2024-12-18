@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-g2to+5el36c@2moctlxk*j#&ng$6*$xmld3(i(8t!vzph2tv-*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.visitclintoncomo.com', 'hammock42.pythonanywhere.com', '.vercel.app', 'localhost']
+ALLOWED_HOSTS = ['www.visitclintoncomo.com', 'hammock42.pythonanywhere.com', '.vercel.app', 'localhost', 'testserver']
 
 
 # Application definition
@@ -26,13 +26,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     # Third party apps
     'django_bootstrap5',
+    'cms',
+    'menus',
+    'treebeard',
+    'django_check_seo',
     'fontawesomefree',
     # Project apps
     'places.apps.PlacesConfig',
 
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
