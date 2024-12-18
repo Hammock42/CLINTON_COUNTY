@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-g2to+5el36c@2moctlxk*j#&ng$6*$xmld3(i(8t!vzph2tv-*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['www.visitclintoncomo.com', 'hammock42.pythonanywhere.com', '.vercel.app', 'localhost', 'testserver']
 
@@ -29,10 +29,10 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     # Third party apps
     'django_bootstrap5',
-    'cms',
-    'menus',
-    'treebeard',
-    'django_check_seo',
+    #'cms',
+    #'menus',
+    #'treebeard',
+    #'django_check_seo',
     'fontawesomefree',
     # Project apps
     'places.apps.PlacesConfig',

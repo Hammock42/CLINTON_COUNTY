@@ -60,5 +60,5 @@ urlpatterns = [
     path('smithville_lake/', views.smithville_lake, name='smithville_lake'),
     path('trice_dedman/', views.trice_dedman, name='trice_dedman'),
     path('wallace_state_park/', views.wallace_state_park, name='wallace_state_park'),
-    path('django-check-seo/', include('django_check_seo.urls')),
+    #path('django-check-seo/', include('django_check_seo.urls')),
 ]
