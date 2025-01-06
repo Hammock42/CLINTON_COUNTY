@@ -14,10 +14,3 @@ def privacy_policy(request):
 
 def legal_statement(request):
     return render(request, 'legal_statement.html')
-
-""" def resources(request):
-    all_resources = Place.objects.all()
-    context = {
-        'resources': all_resources
-    }
-    return render(request, 'resources.html', context) """

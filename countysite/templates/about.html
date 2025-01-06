@@ -248,8 +248,8 @@
                     More History
                 </div>
                 <p class="section-text">
-                    To see more Clinton County History, visit the <a href="{% static 'things/clinton-county-historical-society-museum.html' %}">Clinton County Historical Society Museum</a> 
-                    in Plattsburg and the <a href="{% static 'things/cameron-historical-society-and-depot-museum.html' %}">Depot Museum</a> in Cameron.
+                    To see more Clinton County History, visit the <a href="{% url 'things:thing_detail' 'clinton-county-historical-society-museum' %}">Clinton County Historical Society Museum</a> 
+                    in Plattsburg and the <a href="{% url 'things:thing_detail' 'cameron-historical-society-and-depot-museum' %}">Depot Museum</a> in Cameron.
                 </p>
             </div>
         </div>
