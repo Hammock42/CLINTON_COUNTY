@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Shatto Milk Company{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-5" style="background-color: #DAB28F;">
+    <div class="container rounded-3 border border-dark shadow-lg p-3 mt-5" style="background-color: #f3e7dc;">
+        <div class="m-3">
+            <div class="section-title my-3">
+                Shatto Milk Company
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/shatto/shatto_1_4x3.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="section-subtitle">
+                    Experience Farm Fresh Fun
+                </div>
+                <p class="section-text">
+                    Wholesome Americana comes to life at the Shatto Milk Company in Osborn, Missouri. This family-run dairy 
+                    farm, cherished by locals and visitors alike, offers an authentic glimpse into farm life.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/shatto/shatto_2_4x3.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="d-none d-md-block col-md-6 order-first">
+                <div class="section-subtitle">
+                    Take the Tour
+                </div>
+                <p class="section-text">
+                    On a Shatto tour, you&apos;ll meet the cows, see milk bottling in action, and visit friendly farm animals 
+                    like calves, goats, rabbits, and Bailey, the lovable farm dog. Kids and adults alike enjoy sampling 
+                    Shatto&apos;s unique milk flavors, cheeses, and ice cream while hearing the story of a farm that&apos;s 
+                    been proudly family-owned for generations.
+                </p>
+                <a href="https://shattomilk.com/events-tours/" class="btn btn-primary">Schedule a Tour</a>
+            </div>
+            <div class="d-block d-md-none col-12">
+                <div class="section-subtitle">
+                    Take the Tour
+                </div>
+                <p class="section-text">
+                    On a Shatto tour, you&apos;ll meet the cows, see milk bottling in action, and visit friendly farm animals 
+                    like calves, goats, rabbits, and Bailey, the lovable farm dog. Kids and adults alike enjoy sampling 
+                    Shatto&apos;s unique milk flavors, cheeses, and ice cream while hearing the story of a farm that&apos;s 
+                    been proudly family-owned for generations.
+                </p> 
+            </div>
+        </div>
+        
+        <div class="section-subtitle">
+            For a taste of country charm and fresh dairy delights, book a tour at
+            <a href="https://shattomilk.com/">Shatto Milk</a>.
+        </div>
+    </div>  
+</div>
+{% endblock %}

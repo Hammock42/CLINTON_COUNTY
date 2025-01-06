@@ -1,0 +1,243 @@
+<nav id="main-navbar" class="navbar navbar-expand-lg fixed-top text-center m-0 p-0 bg-grad">
+    <div class="container-fluid m-0 p-0">
+        <a href="/" class="navbar-brand bg-light lvl0 lh-1 m-0 pt-3">
+            <span class="first-word lvl1">CLINTON</span><br>
+            <span class="non-first-words lvl1">COUNTY, MO</span>
+        </a>
+        <button class="col-3 navbar-toggler border border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerMenu" aria-controls="navbarTogglerMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="navbarTogglerMenu">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown lvl0 nav-item-no-scroll">
+                <a class="nav-link dropdown-toggle nav-link-no-scroll lh-1 pt-4 d-flex justify-content-center align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div>
+                        <span class="first-word lvl1">THINGS</span><br>
+                        <span class="non-first-words lvl1">TO DO</span>
+                    </div>
+                    <svg class="dropdown-caret ms-2" fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M128,188a11.96187,11.96187,0,0,1-8.48535-3.51465l-80-80a12.0001,12.0001,0,0,1,16.9707-16.9707L128,159.0293l71.51465-71.51465a12.0001,12.0001,0,0,1,16.9707,16.9707l-80,80A11.96187,11.96187,0,0,1,128,188Z"/>
+                    </svg>
+                </a>
+                <ul class="dropdown-menu p-4 bg-light">
+                    <div class="row">
+                        <div class="col-12 col-lg-5">
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list' %}" target="_self">ALL THINGS TO DO</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=art-culture&city=all&sort=recommended" target="_self">ART &amp; CULTURE</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=beauty-wellness&city=all&sort=recommended" target="_self">BEAUTY &amp; WELLNESS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=family-fun&city=all&sort=recommended" target="_self">FAMILY FUN</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=food-drink&city=all&sort=recommended" target="_self">FOOD &amp; DRINK</a></li>
+                        </div>
+                        <div class="col-12 col-lg-5">
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=history&city=all&sort=recommended" target="_self">HISTORY &amp; MUSEUMS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=outdoor-adventure&city=all&sort=recommended" target="_self">OUTDOOR ADVENTURE</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=recreation&city=all&sort=recommended" target="_self">RECREATION</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=shopping&city=all&sort=recommended" target="_self">SHOPPING</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=tours&city=all&sort=recommended" target="_self">TOURS</a></li>
+                        </div>
+                        <div class="col-12 col-lg-2 contact-border">
+                            <li><span>CONTACT US</span></li>
+                            <li><a href="#" class="dropdown-item">EMAIL</a></li>
+                            <li><a href="#" class="dropdown-item">PHONE</a></li>
+                        </div>
+                    </div>
+                </ul>
+              </li>
+              <li class="nav-item dropdown lvl0 nav-item-no-scroll">
+                <a class="nav-link dropdown-toggle lh-1 pt-4 nav-link-no-scroll d-flex justify-content-center align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div>
+                        <span class="first-word lvl1">WHERE</span><br>
+                        <span class="non-first-words lvl1">TO STAY</span>
+                    </div>
+                    <svg class="dropdown-caret ms-2" fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M128,188a11.96187,11.96187,0,0,1-8.48535-3.51465l-80-80a12.0001,12.0001,0,0,1,16.9707-16.9707L128,159.0293l71.51465-71.51465a12.0001,12.0001,0,0,1,16.9707,16.9707l-80,80A11.96187,11.96187,0,0,1,128,188Z"/>
+                    </svg>
+                </a>
+                <ul class="dropdown-menu p-4">
+                    <div class="row">
+                        <div class="col-12 col-lg-5">
+                            <li><a class="dropdown-item" href="{% url 'places:place_list' %}">ALL PLACES</a></li>
+                            <li><a class="dropdown-item" href="{% url 'places:filtered_place_list' %}?categories=airbnb&city=all&sort=recommended">AIRBNB</a></li>
+                            <li><a class="dropdown-item" href="{% url 'places:filtered_place_list' %}?categories=campground&city=all&sort=recommended">CAMPGROUNDS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'places:filtered_place_list' %}?categories=hotel/motel&city=all&sort=recommended">HOTEL</a></li>
+                        </div>
+                        <div class="col-12 col-lg-5">
+                            <li><a class="dropdown-item" href="#">TEMP FEATURE PLACE 1</a></li>
+                            <li><a class="dropdown-item" href="#">TEMP FEATURE PLACE 2</a></li>
+                            <li><a class="dropdown-item" href="#">TEMP FEATURE PLACE 3</a></li>
+                            <li><a class="dropdown-item" href="#">TEMP FEATURE PLACE 4</a></li>
+                        </div>
+                        <div class="col-12 col-lg-2 contact-border">
+                            <li><span>CONTACT US</span></li>
+                            <li><a href="#" class="dropdown-item">EMAIL</a></li>
+                            <li><a href="#" class="dropdown-item">PHONE</a></li>
+                        </div>
+                    </div>
+                </ul>
+              </li>
+              <li class="nav-item dropdown lvl0 nav-item-no-scroll">
+                <a class="nav-link dropdown-toggle nav-link-no-scroll lh-1 pt-4 d-flex justify-content-center align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div>
+                        <span class="first-word lvl1">EVENTS</span><br>
+                        <span class="non-first-words lvl1">TO ENJOY</span>
+                    </div>
+                    <svg class="dropdown-caret ms-2" fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M128,188a11.96187,11.96187,0,0,1-8.48535-3.51465l-80-80a12.0001,12.0001,0,0,1,16.9707-16.9707L128,159.0293l71.51465-71.51465a12.0001,12.0001,0,0,1,16.9707,16.9707l-80,80A11.96187,11.96187,0,0,1,128,188Z"/>
+                    </svg>
+                </a>
+                <ul class="dropdown-menu p-4">
+                    <div class="row">
+                        <div class="col-12 col-lg-5">
+                            <li><a class="dropdown-item" href="{% url 'events:event_list' %}">ALL EVENTS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=all&city=all&sort=recommended" target="_self">UPCOMING EVENTS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=art-culture&city=all&sort=recommended" target="_self">ART &amp; CULTURE</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=family-fun&city=all&sort=recommended" target="_self">FAMILY FUN</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=food-drink&city=all&sort=recommended" target="_self">FOOD &amp; DRINK</a></li>
+                        </div>
+                        <div class="col-12 col-lg-5">
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=lectures-workshops&city=all&sort=recommended" target="_self">LECTURES &amp; WORKSHOPS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=music-dance&city=all&sort=recommended" target="_self">MUSIC &amp; DANCE</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=seasonal-holiday&city=all&sort=recommended" target="_self">SEASONAL &amp; HOLIDAY</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=sports&city=all&sort=recommended" target="_self">SPORTS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=volunteer&city=all&sort=recommended" target="_self">VOLUNTEER</a></li>
+                        </div>
+                        <div class="col-12 col-lg-2 contact-border">
+                            <li><span>CONTACT US</span></li>
+                            <li><a href="#" class="dropdown-item">EMAIL</a></li>
+                            <li><a href="#" class="dropdown-item">PHONE</a></li>
+                        </div>
+                    </div>
+                </ul>
+              </li>
+              <li class="nav-item dropdown lvl0 nav-item-no-scroll">
+                <a class="nav-link dropdown-toggle nav-link-no-scroll lh-1 pt-4 d-flex justify-content-center align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div>
+                        <span class="first-word lvl1">RESOURCES</span><br>
+                        <span class="non-first-words lvl1">TO USE</span>
+                    </div>
+                    <svg class="dropdown-caret ms-2" fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M128,188a11.96187,11.96187,0,0,1-8.48535-3.51465l-80-80a12.0001,12.0001,0,0,1,16.9707-16.9707L128,159.0293l71.51465-71.51465a12.0001,12.0001,0,0,1,16.9707,16.9707l-80,80A11.96187,11.96187,0,0,1,128,188Z"/>
+                    </svg>
+                </a>
+                <ul class="dropdown-menu p-4">
+                    <div class="row">
+                        <div class="col-12 col-lg-10">
+                            <li><a class="dropdown-item" href="{% url 'resources:resource_list' %}">ALL RESOURCES</a></li>
+                            <li><a class="dropdown-item" href="{% url 'about' %}">WHO WE ARE</a></li>
+                            <li><a class="dropdown-item" href="{% url 'privacy_policy' %}">PRIVACY POLICY</a></li>
+                            <li><a class="dropdown-item" href="{% url 'legal_statement' %}">LEGAL STATEMENT</a></li>
+                        </div>
+                        <div class="col-12 col-lg-2 contact-border">
+                            <li><span>CONTACT US</span></li>
+                            <li><a href="#" class="dropdown-item">EMAIL</a></li>
+                            <li><a href="#" class="dropdown-item">PHONE</a></li>
+                        </div>
+                    </div>
+                </ul>
+              </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    var navLinks = document.querySelectorAll('.nav-link');
+    var navItems = document.querySelectorAll('.nav-item');
+    var navBrand = document.querySelector('.navbar-brand');
+    var navEl = document.getElementById('main-navbar');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navEl.classList.add('bg-light');
+            navEl.classList.remove('bg-grad');
+            navBrand.classList.add('text-light');
+            navBrand.classList.add('bg-dark');
+            navBrand.classList.remove('text-dark');
+            navBrand.classList.remove('bg-light');
+            navItems.forEach(function(item) {
+                item.classList.add('nav-item-scroll');
+                item.classList.remove('nav-item-no-scroll');
+            });
+            navLinks.forEach(function(link) {
+                link.classList.add('nav-link-scroll');
+                link.classList.remove('nav-link-no-scroll');
+            });
+        } else {
+            navEl.classList.add('bg-grad');
+            navEl.classList.remove('bg-light');
+            navBrand.classList.add('text-dark');
+            navBrand.classList.add('bg-light');
+            navBrand.classList.remove('text-light');
+            navBrand.classList.remove('bg-dark');
+            navItems.forEach(function(item) {
+                item.classList.add('nav-item-no-scroll');
+                item.classList.remove('nav-item-scroll');
+            });
+            navLinks.forEach(function(link) {
+                link.classList.add('nav-link-no-scroll');
+                link.classList.remove('nav-link-scroll');
+            });
+        }
+    });
+
+    var dropdowns = document.querySelectorAll('.dropdown');
+    const navElRect = navEl.getBoundingClientRect();
+
+    dropdowns.forEach(function(dropdown) {
+        dropdown.addEventListener('show.bs.dropdown', function() {
+            var link = dropdown.querySelector('.nav-link');
+            var svgCaret = dropdown.querySelector('.dropdown-caret');
+            var dropdownMenu = dropdown.querySelector('.dropdown-menu');
+            var rect = dropdown.getBoundingClientRect();
+            var offsetLeft = navElRect.left - rect.left;
+            var offsetTop = navElRect.bottom - rect.top - 10;
+            dropdownMenu.style.left = `${offsetLeft}px`;
+            dropdownMenu.style.top = `${offsetTop}px`; // Move the dropdown menu up
+            
+            if (window.scrollY > 100) {
+                dropdown.classList.add('nav-item-scroll-dropdown-open');
+                link.classList.add('nav-link-scroll-dropdown-open');
+                link.classList.remove('nav-link-scroll');
+                svgCaret.style.transform = 'rotate(180deg)';
+            } else {
+                dropdown.classList.add('nav-item-no-scroll-dropdown-open');
+                link.classList.add('nav-link-no-scroll-dropdown-open');
+                link.classList.remove('nav-link-no-scroll');
+                svgCaret.style.transform = 'rotate(180deg)';
+            }
+        });
+
+        dropdown.addEventListener('hide.bs.dropdown', function() {
+            var link = dropdown.querySelector('.nav-link');
+            var svgCaret = dropdown.querySelector('.dropdown-caret');
+            var dropdownMenu = dropdown.querySelector('.dropdown-menu');
+            dropdownMenu.style.left = ''; // Reset dropdown menu position
+            dropdown.classList.remove('nav-item-scroll-dropdown-open', 'nav-item-no-scroll-dropdown-open');
+            link.classList.remove('nav-link-scroll-dropdown-open', 'nav-link-no-scroll-dropdown-open');
+            if (window.scrollY > 100) {
+                link.classList.add('nav-link-scroll');
+                svgCaret.style.transform = 'rotate(0deg)';
+            } else {
+                link.classList.add('nav-link-no-scroll');
+                svgCaret.style.transform = 'rotate(0deg)';
+            }
+        });
+    });
+
+
+    // get all elements with contact-border class
+    var contactBorders = document.querySelectorAll('.contact-border');
+
+    // if screen width is less than 992px, remove border-start class and add border-top class
+    if (window.innerWidth < 992) {
+        contactBorders.forEach(function(element) {
+            element.classList.remove('border-start');
+            element.classList.add('border-top', 'pt-2');
+        });
+    } else {
+        contactBorders.forEach(function(element) {
+            element.classList.remove('border-top', 'pt-2');
+            element.classList.add('border-start');
+        });
+    }
+</script>

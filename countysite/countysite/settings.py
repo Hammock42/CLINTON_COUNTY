@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django.contrib.sitemaps',
     # Third party apps
     'django_bootstrap5',
     'cms',
@@ -34,8 +35,12 @@ INSTALLED_APPS = [
     'treebeard',
     'django_check_seo',
     'fontawesomefree',
+    'pillow_avif',
     # Project apps
+    'events.apps.EventsConfig',
     'places.apps.PlacesConfig',
+    'things.apps.ThingsConfig',
+    'resources.apps.ResourcesConfig',
 
 ]
 
@@ -134,6 +139,9 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },

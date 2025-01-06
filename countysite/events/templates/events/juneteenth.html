@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}JuneTeenth{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-5" style="background-color: #DAB28F;">
+    <div class="container rounded-3 border border-dark shadow-lg p-3 mt-5" style="background-color: #f3e7dc;">
+        <div class="m-3">
+            <div class="section-title my-3">
+                Temp Title
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/default_img.jpg' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="section-subtitle">
+                    section title
+                </div>
+                <p class="section-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ea quaerat hic animi, dolores quis facilis totam, labore voluptatum commodi numquam ipsum incidunt! Fugit incidunt unde facere. Harum, qui rerum?
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/default_img.jpg' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="d-none d-md-block col-md-6 order-first">
+                <div class="section-subtitle">
+                    section title
+                </div>
+                <p class="section-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ea quaerat hic animi, dolores quis facilis totam, labore voluptatum commodi numquam ipsum incidunt! Fugit incidunt unde facere. Harum, qui rerum?
+                </p>
+            </div>
+            <div class="d-block d-md-none col-12">
+                <div class="section-subtitle">
+                    section title
+                </div>
+                <p class="section-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ea quaerat hic animi, dolores quis facilis totam, labore voluptatum commodi numquam ipsum incidunt! Fugit incidunt unde facere. Harum, qui rerum?
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/default_img.jpg' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="section-subtitle">
+                    section title
+                </div>
+                <p class="section-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ea quaerat hic animi, dolores quis facilis totam, labore voluptatum commodi numquam ipsum incidunt! Fugit incidunt unde facere. Harum, qui rerum?
+                </p>
+            </div>
+        </div>
+        <div class="section-subtitle">
+            Bottom of the Page
+        </div>
+    </div>  
+</div>
+{% endblock %}

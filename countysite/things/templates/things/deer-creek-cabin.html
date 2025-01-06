@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Deer Creek Cabin{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-5" style="background-color: #DAB28F;">
+    <div class="container rounded-3 border border-dark shadow-lg p-3 mt-5" style="background-color: #f3e7dc;">
+        <div class="m-3">
+            <div class="section-title my-3">
+                Deer Creek Cabin
+            </div>
+            <div class="section-text">
+                Come take a journey into pioneer history at Deer Creek Cabin where history is personal. 
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/deer_creek/cabin_1_16x9.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <p class="section-text">
+                    In 1991, Beverly McCulloch and her late husband Ron came across a log cabin built in 1829 on a neighboring 
+                    property just south of Plattsburg. They bought the cabin, moved it log by log to their farm and lovingly 
+                    rebuilt it in a grove of trees.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/deer_creek/cabin_2_4x3.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="d-none d-md-block col-md-6 order-first">
+                <p class="section-text">
+                    Reconstruction took three years of hand labor and ingenuity. The McCullochs have long family histories in 
+                    the area, and they outfitted the cabin to preserve as much history as possible. Now Beverly invites visitors 
+                    to relive pioneer life as it was when Andrew Jackson was president.
+                </p>
+            </div>
+            <div class="d-block d-md-none col-12">
+                <p class="section-text">
+                    Reconstruction took three years of hand labor and ingenuity. The McCullochs have long family histories in 
+                    the area, and they outfitted the cabin to preserve as much history as possible. Now Beverly invites visitors 
+                    to relive pioneer life as it was when Andrew Jackson was president.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/deer_creek/cabin_3_4x3.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <p class="section-text">
+                    A retired school teacher, Beverly makes sure each visit is a learning experience with family lore and stories 
+                    of Clinton County history. Inside the one-room cabin she gives hands-on lessons about frontier skills including 
+                    coffee grinding, candle dipping, churning butter and shelling corn cobs. Visitors have come from as far away as 
+                    Plattsburgh, New York, to share in the Deer Creek Cabin experience.
+                </p>
+            </div>
+        </div>
+        <div class="section-subtitle">
+            The cabin is open by appointment only. Call 816-244-2217 or 816-370-2532. Or visit 
+            <a href="www.1829logcabin.com">1829 Log Cabin</a>. Admission is only $3.
+        </div>
+    </div>  
+</div>
+{% endblock %}

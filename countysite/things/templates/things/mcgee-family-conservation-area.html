@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}McGee Family Conservation Area{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-5" style="background-color: #DAB28F;">
+    <div class="container rounded-3 border border-dark shadow-lg p-3 mt-5" style="background-color: #f3e7dc;">
+        <div class="m-3">
+            <div class="section-title my-3">
+                McGee Family Conservation Area
+            </div>
+        </div>
+        
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/mcgee_family_conservation/mcgee_1.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="section-subtitle">
+                    Explore Nature&apos;s Beauty
+                </div>
+                <p class="section-text">
+                    Just south of Plattsburg, the McGee Family Conservation Area offers a peaceful escape 
+                    across 1,000 acres of pastures, woodlands, and stream banks. Originally a family farm, 
+                    this scenic reserve was bequeathed in 2010 by Kansas City businessman Thomas F. McGee, 
+                    Jr., inviting visitors to enjoy the rolling hills, fishing ponds, and Little Platte 
+                    River frontage that showcase the beauty of rural Missouri.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/mcgee_family_conservation/mcgee_2.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="d-none d-md-block col-md-6 order-first">
+                <div class="section-subtitle">
+                    Outdoor Adventure Awaits
+                </div>
+                <p class="section-text">
+                    Anglers and kayakers can access the Little Platte River near the bridge, paddling 
+                    upstream or floating downstream toward Smithville Lake. With crappie, sunfish, catfish, 
+                    and black bass in the waters, it&apos;s an ideal spot for fishing enthusiasts. The area 
+                    also shines in the fall as a prime location for deer and turkey hunting, with 
+                    opportunities for muzzleloader, archery, and firearms in line with state regulations.
+                </p>
+            </div>
+            <div class="d-block d-md-none col-12">
+                <div class="section-subtitle">
+                    Outdoor Adventure Awaits
+                </div>
+                <p class="section-text">
+                    Anglers and kayakers can access the Little Platte River near the bridge, paddling 
+                    upstream or floating downstream toward Smithville Lake. With crappie, sunfish, catfish, 
+                    and black bass in the waters, it&apos;s an ideal spot for fishing enthusiasts. The area 
+                    also shines in the fall as a prime location for deer and turkey hunting, with 
+                    opportunities for muzzleloader, archery, and firearms in line with state regulations.
+                </p>
+                
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/mcgee_family_conservation/mcgee_0.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="section-subtitle">
+                    Experience Rural Missouri
+                </div>
+                <p class="section-text">
+                    Located 1.6 miles south of Plattsburg on Route C, the McGee Family Conservation Area is 
+                    a natural treasure open for all to explore. For more details, call &lpar;816&rpar; 
+                    675-2205 or visit the Missouri Department of Conservation website.
+                </p>
+                <p class="section-text">
+                    Come enjoy a slice of rural tranquility at McGee Family Conservation Area!
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

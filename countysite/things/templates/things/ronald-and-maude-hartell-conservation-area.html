@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Hartell Conservation Area{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-5" style="background-color: #DAB28F;">
+    <div class="container rounded-3 border border-dark shadow-lg p-3 mt-5" style="background-color: #f3e7dc;">
+        <div class="m-3">
+            <div class="section-title my-3">
+                Ronald &amp; Maude Hartell Conservation Area
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/hartell/hartell_1_4x3.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <p class="section-text">
+                    If you&apos;re looking for a unique fishing spot, try the Ronald and Maude Hartell Conservation Area, five miles 
+                    northeast of Plattsburg on 280 Street just off Highway 33. Conceived as a private fishing club in 1947, the 111 
+                    acre site now contains seven lakes and stream frontage on the Little Platte River. The Missouri Department of Conservation  
+                    intensively manages the area with restrictive fishing regulations to provide high quality/trophy bass and bluegill 
+                    fishing. MDC also uses the facility for educational programs for adults and children. It offers an outdoor classroom, 
+                    three disabled-accessible parking lots, a disabled-accessible floating fishing dock and two disabled-accessible privies.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/hartell/hartell_0_4x3.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="d-none d-md-block col-md-6 order-first">
+                <div class="section-subtitle">
+                    Area Hours:
+                </div>
+                <p class="section-subtitle">
+                    Everyday:
+                    04:00 AM - 10:00 PM<br><br>
+                    <a href="https://mdc.mo.gov/discover-nature/places/ronald-maude-hartell-conservation-area" class="btn btn-primary">Visit Hartell</a>
+                </p>
+            </div>
+            <div class="d-block d-md-none col-12">
+                <div class="section-subtitle">
+                    Area Hours:
+                </div>
+                <p class="section-subtitle">
+                    Everyday:<br>
+                    04:00 AM - 10:00 PM<br><br>
+                    <a href="https://mdc.mo.gov/discover-nature/places/ronald-maude-hartell-conservation-area" class="btn btn-primary">Visit Hartell</a>
+                </p> 
+            </div>
+        </div>
+    </div>  
+</div>
+{% endblock %}

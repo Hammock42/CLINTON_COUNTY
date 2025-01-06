@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid m-0 p-0">
+    <section class="hero mb-5">
+        <img src="{% static 'img/bg_up_2.avif' %}" class="img-fluid" alt="...">
+    </section>
+    <div class="container-fluid">
+        <div class="row mb-3">
+            <div class="col justify-content-center">
+                <div class="section-title">
+                    Where To Stay
+                </div>
+                <div class="btn-group d-flex flex-wrap justify-content-center" role="group" aria-label="Basic checkbox toggle button group">
+                    {% for category in categories_list %}
+                        <div class="">
+                            <input type="checkbox" class="btn-check" id="places-btncheck{{ forloop.counter0 }}" value="{{ category.value }}" autocomplete="off" onchange="filterCategories(this.value)" {% if request.GET.categories == category.value %}checked{% endif %}>
+                            <label class="btn btn-outline-secondary btn-lg m-1" for="places-btncheck{{ forloop.counter0 }}">{{ category.name }}</label>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="row p-2">
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <label for="placesCityFilter" class="form-label">Filter by City:</label>
+                        <select id="placesCityFilter" class="form-select" onchange="filterCity(this.value)">
+                            <option value="all">All Cities</option>
+                            {% for city in cities_list %}
+                                <option value="{{ city.value }}" {% if request.GET.city == city.value %}selected{% endif %}>{{ city.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <label for="placesSortFilter" class="form-label">Sort By:</label>
+                        <select id="placesSortFilter" class="form-select" onchange="filterSort(this.value)">
+                            <option value="recommended" {% if selected_sort == 'recommended' %}selected{% endif %}>Recommended</option>
+                            <option value="az" {% if request.GET.sort == 'az' %}selected{% endif %}>Alphabetical &#91;A-Z&#93;</option>
+                            <option value="za" {% if request.GET.sort == 'za' %}selected{% endif %}>Alphabetical &#91;Z-A&#93;</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 p-5" id="placesContainer">
+            {% for place in places %}
+                <div class="col" data-category="{{ place.get_filter_subtypes }}" data-city="{{ place.city }}" data-name="{{ place.name }}" data-featured="{{ place.featured }}">
+                    <div class="card h-100">
+                        {% if place.image %}
+                            <img src="{{ place.image.url }}" class="card-img-top" alt="...">
+                        {% else %}
+                            <img src="{% static 'img/default_img_4x3.avif' %}" class="card-img-top" alt="...">
+                        {% endif %}
+                        <div class="card-body">
+                            <p class="fs-5 card-title fw-bold">{{ place.name }}</p>
+                            {% if place.featured %}
+                                <span class="badge bg-warning text-dark">Featured</span>
+                            {% endif %}
+                            <p class="card-text">{{ place.description }}</p>
+                            <span>
+                                <p class="fw-bold">Address: </p>
+                                <p class="card-text">{{ place.address }}</p>
+                            </span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{% url 'places:place_detail' place.slug %}" class="btn btn-outline-secondary stretched-link">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col">
+                <nav aria-label="Place navigation">
+                    <ul class="pagination justify-content-center">
+                        {% if places.has_previous %}
+                            {% with categories=request.GET.categories city=request.GET.city sort=request.GET.sort %}
+                            <li class="page-item">
+                                <a class="page-link" href="?categories={{ categories }}&city={{ city }}&sort={{ sort }}&page=1" aria-label="First">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="?categories={{ categories }}&city={{ city }}&sort={{ sort }}&page={{ places.previous_page_number }}" aria-label="Previous">
+                                    <span aria-hidden="true">&lsaquo;</span>
+                                </a>
+                            </li>
+                            {% endwith %}
+                        {% endif %}
+                            <li class="page-item pt-1">
+                                <span class="mx-2">Page {{ places.number }} of {{ places.paginator.num_pages }}</span>
+                            </li>
+                        {% if places.has_next %}
+                            {% with categories=request.GET.categories city=request.GET.city sort=request.GET.sort %}
+                            <li class="page-item">
+                                <a class="page-link" href="?categories={{ categories }}&city={{ city }}&sort={{ sort }}&page={{ places.next_page_number }}" aria-label="Next">
+                                    <span aria-hidden="true">&rsaquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="?categories={{ categories }}&city={{ city }}&sort={{ sort }}&page={{ places.paginator.num_pages }}" aria-label="Last">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                            {% endwith %}
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function makeCall(categories, city, sort, page) {
+        let filterData = {
+            categories: categories,
+            city: city,
+            sort: sort,
+            page: page
+        };
+
+        let queryString = Object.keys(filterData).map(key => key + '=' + filterData[key]).join('&');
+        window.location.href = `/places-to-stay/filtered/?${queryString}`;
+    }
+
+    function filterCategories(category) {
+        let selectedCity = "{{ request.GET.city|default:'all' }}";
+        let selectedSort = "{{ request.GET.sort|default:'recommended' }}";
+        let selectedCategories = "{{ request.GET.categories }}" == category ? 'all' : category;
+
+        makeCall(selectedCategories, selectedCity, selectedSort);
+    }
+
+    function filterCity(city) {
+        let selectedCategories = "{{ request.GET.categories|default:'all' }}";
+        let selectedSort = "{{ request.GET.sort|default:'recommended' }}";
+        let selectedCity = city;
+
+        makeCall(selectedCategories, selectedCity, selectedSort);
+
+    }
+
+    function filterSort(sort) {
+        let selectedCategories = "{{ request.GET.categories|default:'all' }}";
+        let selectedCity = "{{ request.GET.city|default:'all' }}";
+        let selectedSort = sort;
+
+        makeCall(selectedCategories, selectedCity, selectedSort);
+    }
+</script>
+{% endblock %}

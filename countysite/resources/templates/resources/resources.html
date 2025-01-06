@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid m-0 p-0">
+    <section class="hero mb-5">
+        <img src="{% static 'img/bg_up_2.avif' %}" class="img-fluid" alt="...">
+    </section>
+    <div class="container-fluid">
+        <div class="row mb-3">
+            <div class="col justify-content-center">
+                <div class="section-title">
+                    Resources
+                </div>
+                <div class="row p-2">
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <label for="resourceCategoryFilter" class="form-label">Category:</label>
+                        <select id="resourceCategoryFilter" class="form-select" onchange="filterResources()">
+                            <option value="all">All Categories</option>
+                            {% for category in categories_list %}
+                                <option value="{{ category.value }}">{{ category.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <label for="resourceSubCategoryFilter" class="form-label">SubCategory:</label>
+                        <select id="resourceSubCategoryFilter" class="form-select" onchange="filterResources()">
+                            <option value="all">All SubCategories</option>
+                            {% for subcategory in subcategories_list %}
+                                <option value="{{ subcategory }}">{{ subcategory }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <label for="resourceCityFilter" class="form-label">Filter by City:</label>
+                        <select id="resourceCityFilter" class="form-select" onchange="filterResources()">
+                            <option value="all">All Cities</option>
+                            {% for city in cities_list %}
+                                <option value="{{ city.value }}">{{ city.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <label for="resourceSortFilter" class="form-label">Sort By:</label>
+                        <select id="resourceSortFilter" class="form-select" onchange="sortResources()">
+                            <option value="recommended">Recommended</option>
+                            <option value="az">Alphabetical &#91;A-Z&#93;</option>
+                            <option value="za">Alphabetical &#91;Z-A&#93;</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-responsive mt-4 wrapper rounded-3">
+                    <table class="table table-scrollable table-hover table-bordered">
+                        <thead class="table-dark">
+                            <tr class="align-middle">
+                                <th scope="col ps-3">Name</th>
+                                <th scope="col ps-3">Address</th>
+                                <th scope="col ps-3">City</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resourceDetails">
+                            {% for resource in resources %}
+                            <tr data-city="{{ resource.city }}" 
+                                data-description="{{ resource.description }}"
+                                data-category="{{ resource.get_filter_types }}"
+                                data-subcategory="{{ resource.get_filter_subtypes }}">
+                                <td class="ps-3">{{ resource.name }}</td>
+                                <td class="ps-3">{{ resource.address }}</td>
+                                <td class="ps-3">{{ resource.city }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function filterResources() {
+        var categoryFilter = document.getElementById("resourceCategoryFilter").value;
+        var subcategoryFilter = document.getElementById("resourceSubCategoryFilter").value;
+        var cityFilter = document.getElementById("resourceCityFilter").value;
+
+        var rows = document.querySelectorAll("#resourceDetails tr");
+        console.log("categoryFilter: " + categoryFilter);
+        console.log("subcategoryFilter: " + subcategoryFilter);
+        console.log("cityFilter: " + cityFilter);
+
+
+        rows.forEach(function(row) {
+            var testCategory = row.dataset.subcategory;
+            var category = row.dataset.category ? row.dataset.category : [];
+            var subcategory = row.dataset.subcategory ? row.dataset.subcategory : [];
+            var city = row.dataset.city;
+
+            console.log("subcategory: " + subcategory);
+            console.log("testCategory: " + testCategory);
+
+            if ((categoryFilter === "all" || category.includes(categoryFilter)) &&
+            (subcategoryFilter === "all" || subcategory.includes(subcategoryFilter)) &&
+            (cityFilter === "all" || city === cityFilter)) {
+            row.style.display = "";
+            } else {
+            row.style.display = "none";
+            }
+        });
+    }
+
+    function sortResources() {
+        var sortOption = document.getElementById("resourceSortFilter").value;
+        var rows = Array.from(document.querySelectorAll("#resourceDetails tr"));
+
+        rows.sort(function(a, b) {
+            var nameA = a.cells[0].textContent.toLowerCase();
+            var nameB = b.cells[0].textContent.toLowerCase();
+
+            if (sortOption === "az") {
+                return nameA.localeCompare(nameB);
+            } else if (sortOption === "za") {
+                return nameB.localeCompare(nameA);
+            } else {
+                return 0; // No sorting for "recommended"
+            }
+        });
+
+        var tbody = document.getElementById("resourceDetails");
+        tbody.innerHTML = "";
+        rows.forEach(function(row) {
+            tbody.appendChild(row);
+        });
+    }
+</script>
+{% endblock %}

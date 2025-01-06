@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Events -| Clinton County, MO{% endblock %}
+
+{% block content %}
+<div class="container-fluid m-0 p-0">
+    <section class="hero mb-5">
+        <img src="{% static 'img/bg_up_2.avif' %}" class="img-fluid" alt="...">
+    </section>
+    <div class="container-fluid">
+        <div class="row mb-3">
+            <div class="col justify-content-center">
+                <div class="section-title">
+                    Events To Enjoy
+                </div>
+                <div class="btn-group d-flex flex-wrap justify-content-center" role="group" aria-label="Basic checkbox toggle button group">
+                    {% for category in categories_list %}
+                        <div class="">
+                            <input type="checkbox" class="btn-check" id="events-btncheck{{ forloop.counter0 }}" value="{{ category.value }}" autocomplete="off" onchange="filterCategories(this.value)" {% if request.GET.categories == category.value %}checked{% endif %}>
+                            <label class="btn btn-outline-secondary btn-lg m-1" for="events-btncheck{{ forloop.counter0 }}">{{ category.name }}</label>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="row p-2">
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <label for="eventsCityFilter" class="form-label">Filter by City:</label>
+                        <select id="eventsCityFilter" class="form-select" onchange="filterCity(this.value)">
+                            <option value="all">All</option>
+                            {% for city in cities_list %}
+                                <option value="{{ city.value }}" {% if request.GET.city == city.value %}selected{% endif %}>{{ city.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <label for="eventsSortFilter" class="form-label">Sort By:</label>
+                        <select id="eventsSortFilter" class="form-select" onchange="filterSort(this.value)">
+                            <option value="recommended" {% if selected_sort == 'recommended' %}selected{% endif %}>Recommended</option>
+                            <option value="upcoming" {% if selected_sort == 'upcoming' %}selected{% endif %}>Upcoming</option>
+                            <option value="past" {% if selected_sort == 'past' %}selected{% endif %}>Past</option>
+                            <option value="az" {% if selected_sort == 'az' %}selected{% endif %}>Alphabetical &#91;A-Z&#93;</option>
+                            <option value="za" {% if selected_sort == 'za' %}selected{% endif %}>Alphabetical &#91;Z-A&#93;</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 p-5" id="eventsContainer">
+            {% for event in events %}
+                <div class="col" data-category="{{ event.get_filter_subtypes }}" data-city="{{ event.city }}" data-name="{{ event.name }}" data-featured="{{ event.featured }}">
+                    <div class="card h-100">
+                        {% if event.image %}
+                            <img src="{{ event.image.url }}" class="card-img-top" alt="...">
+                        {% else %}
+                            <img src="{% static 'img/default_img_4x3.avif' %}" class="card-img-top" alt="...">
+                        {% endif %}
+                        <div class="card-body">
+                            <p class="fs-5 card-title fw-bold">{{ event.name }}</p>
+                            {% if event.featured %}
+                                <span class="badge bg-warning text-dark">Featured</span>
+                            {% endif %}
+                            <p class="card-text">{{ event.city|title }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{% url 'events:event_detail' event.slug %}" class="btn btn-primary stretched-link">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col">
+                <nav aria-label="Event navigation">
+                    <ul class="pagination justify-content-center">
+                        {% if events.has_previous %}
+                            {% with categories=request.GET.categories city=request.GET.city sort=request.GET.sort %}
+                            <li class="page-item">
+                                <a class="page-link" href="?categories={{ categories }}&city={{ city }}&sort={{ sort }}&page=1" aria-label="First">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="?categories={{ categories }}&city={{ city }}&sort={{ sort }}&page={{ events.previous_page_number }}" aria-label="Previous">
+                                    <span aria-hidden="true">&lsaquo;</span>
+                                </a>
+                            </li>
+                            {% endwith %}
+                        {% endif %}
+                            <li class="page-item pt-1">
+                                <span class="mx-2">Page {{ events.number }} of {{ events.paginator.num_pages }}</span>
+                            </li>
+                        {% if events.has_next %}
+                            {% with categories=request.GET.categories city=request.GET.city sort=request.GET.sort %}
+                            <li class="page-item">
+                                <a class="page-link" href="?categories={{ categories }}&city={{ city }}&sort={{ sort }}&page={{ events.next_page_number }}" aria-label="Next">
+                                    <span aria-hidden="true">&rsaquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="?categories={{ categories }}&city={{ city }}&sort={{ sort }}&page={{ events.paginator.num_pages }}" aria-label="Last">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                            {% endwith %}
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function makeCall(categories, city, sort, page) {
+        let filterData = {
+            categories: categories,
+            city: city,
+            sort: sort
+        };
+
+        let queryString = Object.keys(filterData).map(key => key + '=' + filterData[key]).join('&');
+        window.location.href = `/events-to-enjoy/filtered/?${queryString}`;
+    }
+
+    function filterCategories(category) {
+        let selectedCity = "{{ request.GET.city|default:'all' }}";
+        let selectedSort = "{{ request.GET.sort|default:'recommended' }}";
+        let selectedCategories = "{{ request.GET.categories }}" == category ? "all" : category;
+        makeCall(selectedCategories, selectedCity, selectedSort);
+    }
+
+    function filterCity(city) {
+        let selectedCategories = "{{ request.GET.categories|default:'all' }}";
+        let selectedSort = "{{ request.GET.sort|default:'recommended' }}";
+        makeCall(selectedCategories, city, selectedSort);
+    }
+
+    function filterSort(sort) {
+        let selectedCategories = "{{ request.GET.categories|default:'all' }}";
+        let selectedCity = "{{ request.GET.city|default:'all' }}";
+        makeCall(selectedCategories, selectedCity, sort);
+    }
+</script>
+{% endblock %}

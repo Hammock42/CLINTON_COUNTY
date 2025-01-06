@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Abbey{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-5" style="background-color: #DAB28F;">
+    <div class="container rounded-3 border border-dark shadow-lg p-3 mt-5" style="background-color: #f3e7dc;">
+        <div class="m-3">
+            <div class="section-title my-3">
+                Abbey of Benedictines of Mary, Queen of Apostles
+            </div>
+            <div class="section-subtitle">
+                Music and Miracles in a Place of Peace.
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/abbey/abbey_1_4x3.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <p class="section-text">
+                    Few spots on earth offer the kind of spiritual harmony you&apos;ll find at the Abbey of Benedictines of Mary, 
+                    Queen of Apostles. It is a holy spot where faith and serenity meet marvel and curiosity in one of Clinton 
+                    County&apos;s most unusual sites to visit. Surrounded by farms and woods near Gower, Missouri, the Abbey 
+                    welcomes you to attend Mass and stroll the grounds where the convent&apos;s sisters live a life of prayer, 
+                    work and music.
+                </p>
+            </div>
+        </div>
+            <div class="row align-items-center py-4">
+                <div class="col-12 col-md-6">
+                    <img src="{% static 'img/abbey/abbey_2_4x3.avif' %}" alt="" class="img-fluid rounded-3">
+                </div>
+                <div class="d-none d-md-block col-md-6 order-first">
+                    <p class="section-text">
+                        If your timing is right, you will hear the sisters sing liturgical music at Mass that is not only beautiful, 
+                        but also famous. The convent choir was named Billboard's Classical Traditional Artists in 2012 and 2013 for 
+                        its first two albums.
+                    </p>
+                </div>
+                <div class="d-block d-md-none col-12">
+                    <p class="section-text">
+                        If your timing is right, you will hear the sisters sing liturgical music at Mass that is not only beautiful, 
+                        but also famous. The convent choir was named Billboard's Classical Traditional Artists in 2012 and 2013 for 
+                        its first two albums.
+                    </p> 
+                </div>
+            </div>
+            <div class="row align-items-center py-4">
+                <div class="col-12 col-md-6">
+                    <img src="{% static 'img/abbey/abbey_3_1.avif' %}" alt="" class="img-fluid rounded-3 mx-auto d-block">
+                </div>
+                <div class="col-12 col-md-6">
+                    <p class="section-text">
+                        The Abbey gained more national fame in the summer of 2023 for an occurrence that some describe as a miracle. 
+                        The sisters disinterred the body of the Abbey&apos;s founder, Sister Wilhelmina, to transfer it to a newly 
+                        completed place of honor inside the church. When they opened the coffin, they found that the body and its 
+                        clothing were still intact after four years in a grave. That summer more than 15,000 pilgrims came to the 
+                        abbey talking of miracles and searching for grace.
+                    </p>
+                </div>
+            </div>
+            <div class="row align-items-center py-4">
+                <p class="section-text">
+                    Visitors are welcome to view the body of Sister Wilhelmina and experience the peace of the Abbey. For more 
+                    information and Mass times, please visit the <a href="https://benedictinesofmary.org/schedule/">Abbey&apos;s website</a>. 
+                    The sisters request that visitors wear modest attire and respect private areas of the grounds.
+                </p>
+            </div>
+        </div>
+    </div>  
+</div>
+{% endblock %}

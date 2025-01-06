@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Riley-Carmack Museum{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-5" style="background-color: #DAB28F;">
+    <div class="container rounded-3 border border-dark shadow-lg p-3 mt-5" style="background-color: #f3e7dc;">
+        <div class="m-3">
+            <div class="section-title my-3">
+                Clinton County Historical Society Museum
+            </div>
+        </div>
+
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/cchs/cchs_1_3x2.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="section-subtitle">
+                    Peek Inside the Past
+                </div>
+                <p class="section-text">
+                    The Clinton County Historical Society Museum, located in the historic Riley-Carmack House at 
+                    <a href="https://maps.app.goo.gl/i1JXFYidfBz51iA66" target="_blank">308 S Birch Ave</a>, 
+                    offers a unique glimpse into 19th-century life. The museum is open the first Saturday of each month from 10 AM 
+                    to 2 PM, giving visitors the chance to explore exhibits and period furnishings.
+                </p>
+                <p class="section-text">
+                    The home, rumored to have paranormal activity, will soon host special haunted tours, perfect for thrill-seekers. 
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/cchs/cchs_2_3x2.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="d-none d-md-block col-md-6 order-first">
+                <div class="section-subtitle">
+                    Elegance and Charm
+                </div>
+                <p class="section-text">
+                    Original furniture of the Riley home, offering a glimpse into 19th-century life. These beautifully preserved 
+                    pieces tell the story of a bygone era, transporting visitors back to the elegance and charm of the late 1800s.
+                </p>
+                <p class="section-text">
+                    Come see it all at the Clinton County Historical Society Museum!
+                </p>
+            </div>
+            <div class="d-block d-md-none col-12">
+                <div class="section-subtitle">
+                    Elegance and Charm
+                </div>
+                <p class="section-text">
+                    Original furniture of the Riley home, offering a glimpse into 19th-century life. These beautifully preserved 
+                    pieces tell the story of a bygone era, transporting visitors back to the elegance and charm of the late 1800s.
+                </p>
+                <p class="section-text">
+                    Come see it all at the Clinton County Historical Society Museum!
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/cchs/cchs_3_3x2.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="section-subtitle">
+                    Famous Author&apos;s Legacy
+                </div>
+                <p class="section-text">
+                    Photo features author J. Breckenridge Ellis, whose captivating stories made him a literary icon in Clinton County. 
+                    In 1912, his novel &quot;Fran&quot; climbed to number one on the bestseller list in America and was made into a 
+                    silent movie, &quot;The Love Hunger&quot;, in 1919. Several of his works were made into films and stage plays.
+                </p>
+                <p class="section-text">
+                    Visit the museum to explore his life and legacy through rare documents and personal artifacts.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/cchs/cchs_4_3x2.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="d-none d-md-block col-md-6 order-first">
+                <div class="section-subtitle">
+                    Toys and Dolls
+                </div>
+                <p class="section-text">
+                    Discover the enchanting history behind the toy collection at the Clinton County Historical Society Museum! Many 
+                    toys, including the charming doll featured here, were once cherished Christmas gifts from local legend &quot;Santa
+                    Claus&quot; Shaver to children in the community. These artifacts offer a glimpse into the county&apos;s heartwarming 
+                    holiday traditions and are just one of the many treasures waiting for you. 
+                </p>
+                <p class="section-text">
+                    Visit to explore this rich heritage and learn more about Shaver&apos;s legacy.
+                </p>
+            </div>
+            <div class="d-block d-md-none col-12">
+                <div class="section-subtitle">
+                    Toys and Dolls
+                </div>
+                <p class="section-text">
+                    Discover the enchanting history behind the toy collection at the Clinton County Historical Society Museum! Many 
+                    toys, including the charming doll featured here, were once cherished Christmas gifts from local legend &quot;Santa
+                    Claus&quot; Shaver to children in the community. These artifacts offer a glimpse into the county&apos;s heartwarming 
+                    holiday traditions and are just one of the many treasures waiting for you. 
+                </p>
+                <p class="section-text">
+                    Visit to explore this rich heritage and learn more about Shaver&apos;s legacy.
+                </p>
+            </div>
+        </div>
+        <div class="my-4">
+            <div class="section-subtitle">
+                Click to check out our upcoming and annual events: <br>
+                <a href="{% url 'events:event_detail' 'juneteenth' %}">Juneteenth</a><br>
+                <a href="{% url 'coming_soon' %}">Cemetary Tour</a><br>
+                For more info, visit: 
+                <a href="https://clintoncountymohistoricalsociety.org/">Clinton County Historical Society</a>.
+            </div>
+        </div>
+        <div class="row text-center text-lg-start align-items-center">
+            <div class="col-10 col-md-4 mx-auto my-1">
+                <img class="img-fluid rounded-3" src="{% static 'img/cchs/cchs_gallery_0_1x125.avif' %}" alt="">
+            </div>
+            <div class="col-10 mx-auto my-1 d-block d-md-none">
+                <img class="img-fluid rounded-3" src="{% static 'img/cchs/cchs_gallery_1_3x2.avif' %}" alt="">
+            </div>
+            <div class="col-10 mx-auto my-1 d-block d-md-none">
+                <img class="img-fluid rounded-3" src="{% static 'img/cchs/cchs_gallery_2_3x2.avif' %}" alt="">
+            </div>
+            <div class="col col-md-4 mx-auto my-1 d-none d-md-block">
+                <img class="img-fluid rounded-3 my-1" src="{% static 'img/cchs/cchs_gallery_1_3x2.avif' %}" alt="">
+                <img class="img-fluid rounded-3 my-1" src="{% static 'img/cchs/cchs_gallery_2_3x2.avif' %}" alt="">
+            </div>
+            <div class="col-10 col-md-4 mx-auto my-1">
+                <img class="img-fluid rounded-3" src="{% static 'img/cchs/cchs_gallery_3_1x125.avif' %}" alt="">
+            </div>
+        </div>
+    </div>  
+</div>
+{% endblock %}
