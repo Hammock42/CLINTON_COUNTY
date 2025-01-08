@@ -13,12 +13,33 @@
                     Things To Do
                 </div>
                 <div class="btn-group d-flex flex-wrap justify-content-center" role="group" aria-label="Basic checkbox toggle button group">
-                    {% for category in categories_list %}
                     <div>
-                        <input type="checkbox" class="btn-check" id="things-btncheck{{ forloop.counter0 }}" value="{{ category.value }}" autocomplete="off" onchange="filterCategories(this.value)" {% if request.GET.categories == category.value %}checked{% endif %}>
-                        <label class="btn btn-outline-secondary btn-lg m-1" for="things-btncheck{{ forloop.counter0 }}">{{ category.name }}</label>
+                        <button type="button" class="btn {% if request.GET.categories == 'art-culture' %}btn-cc-dk-orange {% else %}btn-cc-dk-orange-outline{% endif %} btn-lg m-1" onclick="filterCategories('art-culture')">Art &amp; Culture</button>
                     </div>
-                    {% endfor %}
+                    <div>
+                        <button type="button" class="btn {% if request.GET.categories == 'beauty-wellness' %}btn-cc-lt-orange {% else %}btn-cc-lt-orange-outline{% endif %} btn-lg m-1" onclick="filterCategories('beauty-wellness')">Beauty &amp; Wellness</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn {% if request.GET.categories == 'family-fun' %}btn-cc-yellow {% else %}btn-cc-yellow-outline{% endif %} btn-lg m-1" onclick="filterCategories('family-fun')">Family Fun</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn {% if request.GET.categories == 'food-drink' %}btn-cc-green {% else %}btn-cc-green-outline{% endif %} btn-lg m-1" onclick="filterCategories('food-drink')">Food &amp; Drink</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn {% if request.GET.categories == 'history' %}btn-cc-turquoise {% else %}btn-cc-turquoise-outline{% endif %} btn-lg m-1" onclick="filterCategories('history')">History</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn {% if request.GET.categories == 'outdoor-adventure' %}btn-cc-blue {% else %}btn-cc-blue-outline{% endif %} btn-lg m-1" onclick="filterCategories('outdoor-adventure')">Outdoor Adventure</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn {% if request.GET.categories == 'recreation' %}btn-cc-accent-blue-70 {% else %}btn-cc-accent-blue-70-outline{% endif %} btn-lg m-1" onclick="filterCategories('recreation')">Recreation</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn {% if request.GET.categories == 'shopping' %}btn-cc-accent-blue-30 {% else %}btn-cc-accent-blue-30-outline{% endif %} btn-lg m-1" onclick="filterCategories('shopping')">Shopping</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn {% if request.GET.categories == 'tours' %}btn-cc-accent-blue-10 {% else %}btn-cc-accent-blue-10-outline{% endif %} btn-lg m-1" onclick="filterCategories('tours')">Tours</button>
+                    </div>
                 </div>
                 <div class="row p-2">
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3">
@@ -43,7 +64,7 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 p-5" id="thingsContainer">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 p-2" id="thingsContainer">
             {% for thing in things %}
                 <div class="col thing_cards" data-category="{{ thing.get_filter_types }}" data-city="{{ thing.city }}" data-name="{{ thing.name }}" data-featured="{{ thing.featured }}">
                     <div class="card h-100">
@@ -53,18 +74,19 @@
                             <img src="{% static 'img/default_img_4x3.avif' %}" class="card-img-top" alt="...">
                         {% endif %}
                         <div class="card-body">
+                            <p class="card-text text-success">{{ thing.city|title }}</p>
                             <p class="fs-5 card-title fw-bold">{{ thing.name }}</p>
                             {% if thing.featured %}
                                 <span class="badge bg-warning text-dark">Featured</span>
                             {% endif %}
-                            <p class="card-text">{{ thing.description }}</p>
-                            <span>
-                                <p class="fw-bold">Address: </p>
-                                <p class="card-text">{{ thing.address }}</p>
-                            </span>
+                            {% if thing.description %}
+                                <p class="card-text">{{ thing.description }}</p>
+                            {% else %}
+                                <p class="card-text">No description available.</p>
+                            {% endif %}
                         </div>
                         <div class="card-footer">
-                            <a href="{% url 'things:thing_detail' thing.slug %}" class="btn btn-primary stretched-link">View Details</a>
+                            <a href="{% url 'things:thing_detail' thing.slug %}" class="btn btn-success stretched-link">View Details</a>
                         </div>
                     </div>
                 </div>

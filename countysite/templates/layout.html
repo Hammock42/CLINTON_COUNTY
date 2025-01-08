@@ -10,13 +10,14 @@
     {% load static %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
-    <link rel="icon" href="{% static 'img/cc_icon.png' %}">
+    <link rel="icon" href="{% static 'icons/logo_icon.png' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'fontawesomefree/css/regular.css' %}" rel="stylesheet" type="text/css">
+    <style>
+      @font-face {
+        font-family: 'raleway';
+        src: local('Raleway'), url('{% static 'fonts/Raleway-VariableFont_wght.ttf' %}') format('truetype');
+      }
+    </style>
   </head>
 <body>
   <div id="layout-container" class="container-fluid p-0">

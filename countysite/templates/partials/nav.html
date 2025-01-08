@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse text-center" id="navbarTogglerMenu">
             <ul class="navbar-nav">
               <li class="nav-item dropdown lvl0 nav-item-no-scroll">
-                <a class="nav-link dropdown-toggle nav-link-no-scroll lh-1 pt-4 d-flex justify-content-center align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle nav-link-no-scroll lh-1 pt-4 d-flex justify-content-center align-items-center"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <div>
                         <span class="first-word lvl1">THINGS</span><br>
                         <span class="non-first-words lvl1">TO DO</span>
@@ -135,6 +135,14 @@
                     </div>
                 </ul>
               </li>
+              <li class="nav-item px-3 nav-item-no-scroll">
+                <a class="nav-link nav-link-no-scroll lh-1 pt-4 d-flex justify-content-center align-items-center" href="{% url 'about' %}">
+                    <div>
+                        <span class="first-word lvl1">WHO</span><br>
+                        <span class="non-first-words lvl1">WE ARE</span>
+                    </div>
+                </a>
+              </li>
             </ul>
         </div>
     </div>
@@ -184,33 +192,31 @@
     const navElRect = navEl.getBoundingClientRect();
 
     dropdowns.forEach(function(dropdown) {
-        dropdown.addEventListener('show.bs.dropdown', function() {
-            var link = dropdown.querySelector('.nav-link');
-            var svgCaret = dropdown.querySelector('.dropdown-caret');
-            var dropdownMenu = dropdown.querySelector('.dropdown-menu');
+        var link = dropdown.querySelector('.nav-link');
+        var svgCaret = dropdown.querySelector('.dropdown-caret');
+        var dropdownMenu = dropdown.querySelector('.dropdown-menu');
+
+        dropdown.addEventListener('mouseenter', function() {
             var rect = dropdown.getBoundingClientRect();
             var offsetLeft = navElRect.left - rect.left;
             var offsetTop = navElRect.bottom - rect.top - 10;
             dropdownMenu.style.left = `${offsetLeft}px`;
             dropdownMenu.style.top = `${offsetTop}px`; // Move the dropdown menu up
-            
+
             if (window.scrollY > 100) {
-                dropdown.classList.add('nav-item-scroll-dropdown-open');
                 link.classList.add('nav-link-scroll-dropdown-open');
                 link.classList.remove('nav-link-scroll');
                 svgCaret.style.transform = 'rotate(180deg)';
             } else {
-                dropdown.classList.add('nav-item-no-scroll-dropdown-open');
                 link.classList.add('nav-link-no-scroll-dropdown-open');
                 link.classList.remove('nav-link-no-scroll');
                 svgCaret.style.transform = 'rotate(180deg)';
             }
+            dropdown.classList.add('show');
+            dropdownMenu.classList.add('show');
         });
 
-        dropdown.addEventListener('hide.bs.dropdown', function() {
-            var link = dropdown.querySelector('.nav-link');
-            var svgCaret = dropdown.querySelector('.dropdown-caret');
-            var dropdownMenu = dropdown.querySelector('.dropdown-menu');
+        dropdown.addEventListener('mouseleave', function() {
             dropdownMenu.style.left = ''; // Reset dropdown menu position
             dropdown.classList.remove('nav-item-scroll-dropdown-open', 'nav-item-no-scroll-dropdown-open');
             link.classList.remove('nav-link-scroll-dropdown-open', 'nav-link-no-scroll-dropdown-open');
@@ -221,9 +227,10 @@
                 link.classList.add('nav-link-no-scroll');
                 svgCaret.style.transform = 'rotate(0deg)';
             }
+            dropdown.classList.remove('show');
+            dropdownMenu.classList.remove('show');
         });
     });
-
 
     // get all elements with contact-border class
     var contactBorders = document.querySelectorAll('.contact-border');

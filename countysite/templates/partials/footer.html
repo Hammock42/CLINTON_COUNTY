@@ -1,3 +1,4 @@
+{% load static %}
 
 <hr class="border-top border-dark" />
 <footer class="container-fluid">
@@ -128,8 +129,8 @@
 <div class="row m-4 p-4">
     <div class="fs-6">
         <div class="flex-filler"></div>
-        <span>&copy; {% now "Y" %} Clinton County Tourism</span>
-        <span class="divider" > | </span>
+        <span>&copy; {% now "Y" %} <img src="{% static 'icons/icon_and_name.png' %}" alt="" style="width: 150px;"></span>
+        <span class="divider px-2" > | </span>
         <span>All Rights Reserved</span>
     </div>
 </div>

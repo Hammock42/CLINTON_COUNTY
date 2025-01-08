@@ -13,12 +13,15 @@
                     Where To Stay
                 </div>
                 <div class="btn-group d-flex flex-wrap justify-content-center" role="group" aria-label="Basic checkbox toggle button group">
-                    {% for category in categories_list %}
-                        <div class="">
-                            <input type="checkbox" class="btn-check" id="places-btncheck{{ forloop.counter0 }}" value="{{ category.value }}" autocomplete="off" onchange="filterCategories(this.value)" {% if request.GET.categories == category.value %}checked{% endif %}>
-                            <label class="btn btn-outline-secondary btn-lg m-1" for="places-btncheck{{ forloop.counter0 }}">{{ category.name }}</label>
-                        </div>
-                    {% endfor %}
+                    <div>
+                        <button type="button" class="btn {% if request.GET.categories == 'airbnb' %}btn-cc-dk-orange {% else %}btn-cc-dk-orange-outline{% endif %} btn-lg m-1" onclick="filterCategories('airbnb')">AirBnB</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn {% if request.GET.categories == 'campground' %}btn-cc-green {% else %}btn-cc-green-outline{% endif %} btn-lg m-1" onclick="filterCategories('campground')">Campground</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn {% if request.GET.categories == 'hotel' %}btn-cc-blue {% else %}btn-cc-blue-outline{% endif %} btn-lg m-1" onclick="filterCategories('hotel')">Hotel</button>
+                    </div>
                 </div>
                 <div class="row p-2">
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3">
@@ -53,15 +56,16 @@
                             <img src="{% static 'img/default_img_4x3.avif' %}" class="card-img-top" alt="...">
                         {% endif %}
                         <div class="card-body">
+                            <p class="card-text text-success">{{ place.city|title }}</p>
                             <p class="fs-5 card-title fw-bold">{{ place.name }}</p>
                             {% if place.featured %}
                                 <span class="badge bg-warning text-dark">Featured</span>
                             {% endif %}
-                            <p class="card-text">{{ place.description }}</p>
-                            <span>
-                                <p class="fw-bold">Address: </p>
-                                <p class="card-text">{{ place.address }}</p>
-                            </span>
+                            {% if place.description %}
+                                <p class="card-text">{{ place.description }}</p>
+                            {% else %}
+                                <p class="card-text">No description available.</p>
+                            {% endif %}
                         </div>
                         <div class="card-footer">
                             <a href="{% url 'places:place_detail' place.slug %}" class="btn btn-outline-secondary stretched-link">View Details</a>

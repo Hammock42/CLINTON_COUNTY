@@ -35,15 +35,15 @@ resource_categories = [
 ]
 
 thing_categories = [
-    {'name': 'Art & Culture', 'value': 'art-culture'},
-    {'name': 'Beauty & Wellness', 'value': 'beauty-wellness'},
-    {'name': 'Family Fun', 'value': 'family-fun'},
-    {'name': 'Food & Drink', 'value': 'food-drink'},
-    {'name': 'History', 'value': 'history'},
-    {'name': 'Outdoor Adventure', 'value': 'outdoor-adventure'},
-    {'name': 'Recreation', 'value': 'recreation'},
-    {'name': 'Shopping', 'value': 'shopping'},
-    {'name': 'Tours', 'value': 'tours'}
+    {'name': 'Art & Culture', 'value': 'art-culture', 'color': '#E87F2B', 'btn': 'btn-cc-dk-orange-outline'},
+    {'name': 'Beauty & Wellness', 'value': 'beauty-wellness', 'color': '#FF9900', 'btn': 'btn-cc-lt-orange-outline'},
+    {'name': 'Family Fun', 'value': 'family-fun', 'color': '#F8C337', 'btn': 'btn-cc-yellow-outline'},
+    {'name': 'Food & Drink', 'value': 'food-drink', 'color': '#3AA433', 'btn': 'btn-cc-green-outline'},
+    {'name': 'History', 'value': 'history', 'color': '#41B6E6', 'btn': 'btn-cc-turquoise-outline'},
+    {'name': 'Outdoor Adventure', 'value': 'outdoor-adventure', 'color': '#323C8F', 'btn': 'btn-cc-blue-outline'},
+    {'name': 'Recreation', 'value': 'recreation', 'color': '#7070B7', 'btn': 'btn-cc-accent-blue-70-outline'},
+    {'name': 'Shopping', 'value': 'shopping', 'color': '#C1C1E0', 'btn': 'btn-cc-accent-blue-30-outline'},
+    {'name': 'Tours', 'value': 'tours', 'color': '#EAEAF4', 'btn': 'btn-cc-accent-blue-10-outline'}
 ]
 
 cities = [
