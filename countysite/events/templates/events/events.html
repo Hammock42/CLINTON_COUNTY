@@ -65,7 +65,7 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 p-5" id="eventsContainer">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 p-2" id="eventsContainer">
             {% for event in events %}
                 <div class="col" data-category="{{ event.get_filter_subtypes }}" data-city="{{ event.city }}" data-name="{{ event.name }}" data-featured="{{ event.featured }}">
                     <div class="card h-100">
