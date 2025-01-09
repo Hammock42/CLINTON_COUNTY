@@ -15,30 +15,11 @@
                     Events To Enjoy
                 </div>
                 <div class="btn-group d-flex flex-wrap justify-content-center" role="group" aria-label="Basic checkbox toggle button group">
+                    {% for category in categories_list %}
                     <div>
-                        <button type="button" class="btn {% if request.GET.categories == 'art-culture' %}btn-cc-dk-orange {% else %}btn-cc-dk-orange-outline{% endif %} btn-lg m-1" onclick="filterCategories('art-culture')">Art &amp; Culture</button>
+                        <button type="button" class="btn {% if request.GET.categories == category.value %}btn-success {% else %}btn-outline-success{% endif %} btn-lg m-1" onclick="filterCategories('{{ category.value }}')">{{ category.name }}</button>
                     </div>
-                    <div>
-                        <button type="button" class="btn {% if request.GET.categories == 'family-fun' %}btn-cc-lt-orange {% else %}btn-cc-lt-orange-outline{% endif %} btn-lg m-1" onclick="filterCategories('family-fun')">Family Fun</button>
-                    </div>
-                    <div>
-                        <button type="button" class="btn {% if request.GET.categories == 'food-drink' %}btn-cc-yellow {% else %}btn-cc-yellow-outline{% endif %} btn-lg m-1" onclick="filterCategories('food-drink')">Food &amp; Drink</button>
-                    </div>
-                    <div>
-                        <button type="button" class="btn {% if request.GET.categories == 'lectures-workshops' %}btn-cc-green {% else %}btn-cc-green-outline{% endif %} btn-lg m-1" onclick="filterCategories('lectures-workshops')">Lectures &amp; Workshops</button>
-                    </div>
-                    <div>
-                        <button type="button" class="btn {% if request.GET.categories == 'music-dance' %}btn-cc-turquoise {% else %}btn-cc-turquoise-outline{% endif %} btn-lg m-1" onclick="filterCategories('music-dance')">Music &amp; Dance</button>
-                    </div>
-                    <div>
-                        <button type="button" class="btn {% if request.GET.categories == 'seasonal-holiday' %}btn-cc-blue {% else %}btn-cc-blue-outline{% endif %} btn-lg m-1" onclick="filterCategories('seasonal-holiday')">Seasonal &amp; Holiday</button>
-                    </div>
-                    <div>
-                        <button type="button" class="btn {% if request.GET.categories == 'sports' %}btn-cc-accent-blue-70 {% else %}btn-cc-accent-blue-70-outline{% endif %} btn-lg m-1" onclick="filterCategories('sports')">Sports</button>
-                    </div>
-                    <div>
-                        <button type="button" class="btn {% if request.GET.categories == 'volunteer' %}btn-cc-accent-blue-30 {% else %}btn-cc-accent-blue-30-outline{% endif %} btn-lg m-1" onclick="filterCategories('volunteer')">Volunteer</button>
-                    </div>
+                    {% endfor %}
                 </div>
                 <div class="row p-2">
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3">
@@ -69,13 +50,33 @@
             {% for event in events %}
                 <div class="col" data-category="{{ event.get_filter_subtypes }}" data-city="{{ event.city }}" data-name="{{ event.name }}" data-featured="{{ event.featured }}">
                     <div class="card h-100">
-                        {% if event.image %}
-                            <img src="{{ event.image.url }}" class="card-img-top" alt="...">
-                        {% else %}
-                            <img src="{% static 'img/default_img_4x3.avif' %}" class="card-img-top" alt="...">
-                        {% endif %}
+                        <div class="bg-success">
+                            {% if event.image %}
+                                <img src="{{ event.image.url }}" class="card-img-top" alt="...">
+                            {% elif event.city == 'cameron' %}
+                                <img src="{% static 'img/maps/cameron_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif event.city == 'gower' %}
+                                <img src="{% static 'img/maps/gower_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif event.city == 'holt' %}
+                                <img src="{% static 'img/maps/holt_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif event.city == 'lathrop' %}
+                                <img src="{% static 'img/maps/lathrop_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif event.city == 'lawson' %}
+                                <img src="{% static 'img/maps/lawson_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif event.city == 'osborn' %}
+                                <img src="{% static 'img/maps/osborn_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif event.city == 'plattsburg' %}
+                                <img src="{% static 'img/maps/plattsburg_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif event.city == 'trimble' %}
+                                <img src="{% static 'img/maps/trimble_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif event.city == 'turney' %}
+                                <img src="{% static 'img/maps/turney_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% else %}
+                                <img src="{% static 'img/maps/cc_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% endif %}
+                        </div>
                         <div class="card-body">
-                            <p class="card-text text-success">{{ event.city|title }}</p>
+                            <p class="card-text text-success fw-bold">{{ event.city|title }}</p>
                             <p class="fs-5 card-title fw-bold">{{ event.name }}</p>
                             {% if event.featured %}
                                 <span class="badge bg-warning text-dark">Featured</span>
@@ -87,14 +88,14 @@
                             {% endif %}
                         </div>
                         <div class="card-footer">
-                            <a href="{% url 'events:event_detail' event.slug %}" class="btn btn-primary stretched-link">View Details</a>
+                            <a href="{% url 'events:event_detail' event.slug %}" class="btn btn-outline-success stretched-link">View Details</a>
                         </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
-        <div class="row">
-            <div class="col">
+        <div class="row mt-3">
+            <div class="col p-3">
                 <nav aria-label="Event navigation">
                     <ul class="pagination justify-content-center">
                         {% if events.has_previous %}

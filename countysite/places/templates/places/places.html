@@ -13,15 +13,11 @@
                     Where To Stay
                 </div>
                 <div class="btn-group d-flex flex-wrap justify-content-center" role="group" aria-label="Basic checkbox toggle button group">
+                    {% for category in categories_list %}
                     <div>
-                        <button type="button" class="btn {% if request.GET.categories == 'airbnb' %}btn-cc-dk-orange {% else %}btn-cc-dk-orange-outline{% endif %} btn-lg m-1" onclick="filterCategories('airbnb')">AirBnB</button>
+                        <button type="button" class="btn {% if request.GET.categories == category.value %}btn-success {% else %}btn-outline-success{% endif %} btn-lg m-1" onclick="filterCategories('{{ category.value }}')">{{ category.name }}</button>
                     </div>
-                    <div>
-                        <button type="button" class="btn {% if request.GET.categories == 'campground' %}btn-cc-green {% else %}btn-cc-green-outline{% endif %} btn-lg m-1" onclick="filterCategories('campground')">Campground</button>
-                    </div>
-                    <div>
-                        <button type="button" class="btn {% if request.GET.categories == 'hotel' %}btn-cc-blue {% else %}btn-cc-blue-outline{% endif %} btn-lg m-1" onclick="filterCategories('hotel')">Hotel</button>
-                    </div>
+                    {% endfor %}
                 </div>
                 <div class="row p-2">
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3">
@@ -50,13 +46,33 @@
             {% for place in places %}
                 <div class="col" data-category="{{ place.get_filter_subtypes }}" data-city="{{ place.city }}" data-name="{{ place.name }}" data-featured="{{ place.featured }}">
                     <div class="card h-100">
-                        {% if place.image %}
-                            <img src="{{ place.image.url }}" class="card-img-top" alt="...">
-                        {% else %}
-                            <img src="{% static 'img/default_img_4x3.avif' %}" class="card-img-top" alt="...">
-                        {% endif %}
+                        <div class="bg-success">
+                            {% if place.image %}
+                                <img src="{{ place.image.url }}" class="card-img-top" alt="...">
+                            {% elif place.city == 'cameron' %}
+                                <img src="{% static 'img/maps/cameron_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif place.city == 'gower' %}
+                                <img src="{% static 'img/maps/gower_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif place.city == 'holt' %}
+                                <img src="{% static 'img/maps/holt_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif place.city == 'lathrop' %}
+                                <img src="{% static 'img/maps/lathrop_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif place.city == 'lawson' %}
+                                <img src="{% static 'img/maps/lawson_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif place.city == 'osborn' %}
+                                <img src="{% static 'img/maps/osborn_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif place.city == 'plattsburg' %}
+                                <img src="{% static 'img/maps/plattsburg_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif place.city == 'trimble' %}
+                                <img src="{% static 'img/maps/trimble_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif place.city == 'turney' %}
+                                <img src="{% static 'img/maps/turney_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% else %}
+                                <img src="{% static 'img/maps/cc_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% endif %}
+                        </div>
                         <div class="card-body">
-                            <p class="card-text text-success">{{ place.city|title }}</p>
+                            <p class="card-text text-success fw-bold">{{ place.city|title }}</p>
                             <p class="fs-5 card-title fw-bold">{{ place.name }}</p>
                             {% if place.featured %}
                                 <span class="badge bg-warning text-dark">Featured</span>
@@ -68,14 +84,14 @@
                             {% endif %}
                         </div>
                         <div class="card-footer">
-                            <a href="{% url 'places:place_detail' place.slug %}" class="btn btn-outline-secondary stretched-link">View Details</a>
+                            <a href="{% url 'places:place_detail' place.slug %}" class="btn btn-outline-success stretched-link">View Details</a>
                         </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
-        <div class="row">
-            <div class="col">
+        <div class="row mt-3">
+            <div class="col p-3">
                 <nav aria-label="Place navigation">
                     <ul class="pagination justify-content-center">
                         {% if places.has_previous %}

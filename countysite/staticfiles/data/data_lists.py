@@ -12,7 +12,7 @@ event_categories = [
 place_categories = [
     {'name': 'AirBnB', 'value': 'airbnb'},
     {'name': 'Campground', 'value': 'campground'},
-    {'name': 'Hotel/Motel', 'value': 'hotel/motel'},
+    {'name': 'Hotel', 'value': 'hotel'},
 ]
 
 resource_categories = [
