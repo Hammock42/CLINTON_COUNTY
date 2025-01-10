@@ -8,9 +8,26 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse text-center" id="navbarTogglerMenu">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav d-lg-none mobile-nav">
+                <li class="nav-item pt-3">
+                    <a class="nav-link" href="{% url 'things:thing_list' %}">THINGS TO DO</a>
+                </li>
+                <li class="nav-item pt-3">
+                    <a class="nav-link" href="{% url 'places:place_list' %}">WHERE TO STAY</a>
+                </li>
+                <li class="nav-item pt-3">
+                    <a class="nav-link" href="{% url 'events:event_list' %}">EVENTS TO ENJOY</a>
+                </li>
+                <li class="nav-item pt-3">
+                    <a class="nav-link" href="{% url 'resources:resource_list' %}">RESOURCES TO USE</a>
+                </li>
+                <li class="nav-item pt-3">
+                    <a class="nav-link" href="{% url 'about' %}">WHO WE ARE</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav d-none d-lg-flex desktop-nav">
               <li class="nav-item dropdown lvl0 nav-item-no-scroll">
-                <a class="nav-link dropdown-toggle nav-link-no-scroll lh-1 pt-4 d-flex justify-content-center align-items-center"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle lh-1 pt-4 nav-link-no-scroll d-flex justify-content-center align-items-center" href="{% url 'things:thing_list' %}" target="_self" role="button" data-bs-hover="dropdown" aria-expanded="false">
                     <div>
                         <span class="first-word lvl1">THINGS</span><br>
                         <span class="non-first-words lvl1">TO DO</span>
@@ -44,7 +61,7 @@
                 </ul>
               </li>
               <li class="nav-item dropdown lvl0 nav-item-no-scroll">
-                <a class="nav-link dropdown-toggle lh-1 pt-4 nav-link-no-scroll d-flex justify-content-center align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle lh-1 pt-4 nav-link-no-scroll d-flex justify-content-center align-items-center" href="{% url 'places:place_list' %}" role="button" data-bs-hover="dropdown" aria-expanded="false">
                     <div>
                         <span class="first-word lvl1">WHERE</span><br>
                         <span class="non-first-words lvl1">TO STAY</span>
@@ -76,7 +93,7 @@
                 </ul>
               </li>
               <li class="nav-item dropdown lvl0 nav-item-no-scroll">
-                <a class="nav-link dropdown-toggle nav-link-no-scroll lh-1 pt-4 d-flex justify-content-center align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle nav-link-no-scroll lh-1 pt-4 d-flex justify-content-center align-items-center" href="{% url 'events:event_list' %}" role="button" data-bs-hover="dropdown" aria-expanded="false">
                     <div>
                         <span class="first-word lvl1">EVENTS</span><br>
                         <span class="non-first-words lvl1">TO ENJOY</span>
@@ -110,7 +127,7 @@
                 </ul>
               </li>
               <li class="nav-item dropdown lvl0 nav-item-no-scroll">
-                <a class="nav-link dropdown-toggle nav-link-no-scroll lh-1 pt-4 d-flex justify-content-center align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle nav-link-no-scroll lh-1 pt-4 d-flex justify-content-center align-items-center" href="{% url 'resources:resource_list' %}" role="button" data-bs-hover="dropdown" aria-expanded="false">
                     <div>
                         <span class="first-word lvl1">RESOURCES</span><br>
                         <span class="non-first-words lvl1">TO USE</span>
@@ -149,8 +166,7 @@
 </nav>
 
 <script>
-    var navLinks = document.querySelectorAll('.nav-link');
-    var navItems = document.querySelectorAll('.nav-item');
+    var navItems = document.querySelectorAll('.desktop-nav .nav-item');
     var navBrand = document.querySelector('.navbar-brand');
     var navEl = document.getElementById('main-navbar');
 
@@ -166,10 +182,6 @@
                 item.classList.add('nav-item-scroll');
                 item.classList.remove('nav-item-no-scroll');
             });
-            navLinks.forEach(function(link) {
-                link.classList.add('nav-link-scroll');
-                link.classList.remove('nav-link-no-scroll');
-            });
         } else {
             navEl.classList.add('bg-grad');
             navEl.classList.remove('bg-light');
@@ -181,70 +193,41 @@
                 item.classList.add('nav-item-no-scroll');
                 item.classList.remove('nav-item-scroll');
             });
-            navLinks.forEach(function(link) {
-                link.classList.add('nav-link-no-scroll');
-                link.classList.remove('nav-link-scroll');
-            });
         }
     });
 
-    var dropdowns = document.querySelectorAll('.dropdown');
-    const navElRect = navEl.getBoundingClientRect();
-
-    dropdowns.forEach(function(dropdown) {
-        var link = dropdown.querySelector('.nav-link');
-        var svgCaret = dropdown.querySelector('.dropdown-caret');
-        var dropdownMenu = dropdown.querySelector('.dropdown-menu');
-
-        dropdown.addEventListener('mouseenter', function() {
-            var rect = dropdown.getBoundingClientRect();
-            var offsetLeft = navElRect.left - rect.left;
-            var offsetTop = navElRect.bottom - rect.top - 10;
+    document.addEventListener('DOMContentLoaded', function() {
+        const navItems = document.querySelectorAll('.desktop-nav .nav-item.dropdown');
+        const navElRect = navEl.getBoundingClientRect();
+    
+        navItems.forEach(item => {
+            const dropdownMenu = item.querySelector('.dropdown-menu');
+            const rect = item.getBoundingClientRect();
+            const offsetLeft = navElRect.left - rect.left;
+            const offsetTop = navElRect.bottom - rect.top - 10;
+    
             dropdownMenu.style.left = `${offsetLeft}px`;
-            dropdownMenu.style.top = `${offsetTop}px`; // Move the dropdown menu up
-
-            if (window.scrollY > 100) {
-                link.classList.add('nav-link-scroll-dropdown-open');
-                link.classList.remove('nav-link-scroll');
-                svgCaret.style.transform = 'rotate(180deg)';
-            } else {
-                link.classList.add('nav-link-no-scroll-dropdown-open');
-                link.classList.remove('nav-link-no-scroll');
-                svgCaret.style.transform = 'rotate(180deg)';
-            }
-            dropdown.classList.add('show');
-            dropdownMenu.classList.add('show');
-        });
-
-        dropdown.addEventListener('mouseleave', function() {
-            dropdownMenu.style.left = ''; // Reset dropdown menu position
-            dropdown.classList.remove('nav-item-scroll-dropdown-open', 'nav-item-no-scroll-dropdown-open');
-            link.classList.remove('nav-link-scroll-dropdown-open', 'nav-link-no-scroll-dropdown-open');
-            if (window.scrollY > 100) {
-                link.classList.add('nav-link-scroll');
-                svgCaret.style.transform = 'rotate(0deg)';
-            } else {
-                link.classList.add('nav-link-no-scroll');
-                svgCaret.style.transform = 'rotate(0deg)';
-            }
-            dropdown.classList.remove('show');
-            dropdownMenu.classList.remove('show');
+            dropdownMenu.style.top = `${offsetTop}px`;
+    
+            item.addEventListener('mouseover', function() {
+                if (dropdownMenu) {
+                    dropdownMenu.classList.add('show');
+                }
+            });
+    
+            item.addEventListener('mouseout', function() {
+                if (dropdownMenu) {
+                    dropdownMenu.classList.remove('show');
+                }
+            });
+    
+            const navLink = item.querySelector('.nav-link');
+            navLink.addEventListener('click', function(event) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#') {
+                    window.location.href = href;
+                }
+            });
         });
     });
-
-    // get all elements with contact-border class
-    var contactBorders = document.querySelectorAll('.contact-border');
-
-    // if screen width is less than 992px, remove border-start class and add border-top class
-    if (window.innerWidth < 992) {
-        contactBorders.forEach(function(element) {
-            element.classList.remove('border-start');
-            element.classList.add('border-top', 'pt-2');
-        });
-    } else {
-        contactBorders.forEach(function(element) {
-            element.classList.remove('border-top', 'pt-2');
-            element.classList.add('border-start');
-        });
-    }
 </script>
