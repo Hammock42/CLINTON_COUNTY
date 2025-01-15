@@ -121,7 +121,7 @@
 }
 @font-face {
     font-family: "raleway";
-    src: local('Raleway'), url('../fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+    src: local('Raleway'), url("../fonts/Raleway-VariableFont_wght.029b34594de6.ttf") format('truetype');
 }
 .small-img {
     width: 100px;

@@ -30,7 +30,6 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     # Third party apps
     'django_bootstrap5',
-    'fontawesomefree',
     'pillow_avif',
     # Project apps
     'events.apps.EventsConfig',
