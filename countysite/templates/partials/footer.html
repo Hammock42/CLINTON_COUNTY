@@ -177,17 +177,3 @@
         <span>All Rights Reserved</span>
     </div>
 </div>
-
-<script>
-    // get resource border
-    var resourceBorder = document.querySelector('.resource-border');
-
-    // if screen width is less than 992px add top-border pt-3
-    if (window.matchMedia("(max-width: 992px)").matches) {
-        resourceBorder.classList.add('pt-5', 'border-top', 'ms-4');
-        resourceBorder.classList.remove('border-start');
-    } else {
-        resourceBorder.classList.remove('pt-5', 'border-top', 'ms-4');
-        resourceBorder.classList.add('border-start');
-    }
-</script>
