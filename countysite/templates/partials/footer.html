@@ -1,125 +1,170 @@
 {% load static %}
-<footer class="container-fluid border-top border-dark">
+<footer class="container-fluid border-top border-dark mt-5 pt-5 ps-4">
     <div class="row w-100">
-        <div class="ms-4 p-4 col-12 col-lg-3">
-            <div class="menu-heading fw-bold">Contact Us</div>
+        <div class="col-12 col-md-3 col-lg-4">
             <ul class="list-group">
+                <li class="list-group-item border-0 fw-bold">
+                    RESOURCES
+                </li>
                 <li class="list-group-item border-0">
                     <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'coming_soon' %}" target="_self">
-                        <span class="first-word ">Email</span>
-                        <span class="non-first-words "> Us</span>
+                        <span class="first-word ">ALL</span>
+                        <span class="non-first-words ">RESOURCES</span>
                     </a>
-                    </li>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'about' %}" target="_self">
+                        <span class="first-word ">WHO</span>
+                        <span class="non-first-words ">WE ARE</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'privacy_policy' %}" target="_self">
+                        <span class="first-word ">PRIVACY</span>
+                        <span class="non-first-words ">POLICY</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'legal_statement' %}" target="_self">
+                        <span class="first-word ">LEGAL</span>
+                        <span class="non-first-words ">STATEMENT</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'django.contrib.sitemaps.views.sitemap' %}" target="_self">
+                        <span class="first-word ">SITE</span>
+                        <span class="non-first-words ">MAP</span>
+                    </a>
+                </li>
                 <li class="list-group-item border-0">
                     <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'coming_soon' %}" target="_self">
-                        <span class="first-word ">Call</span>
-                        <span class="non-first-words ">1 (555) 555-5555</span>
+                        <span class="first-word ">CONTACT</span>
+                        <span class="non-first-words "> US</span>
                     </a>
                 </li>
             </ul>
         </div>
-        <div class="p-4 col-12 col-lg-8 border-dark resource-border">
-            <div class="w-100">
-                <div class="menu-heading fw-bold">Resources</div>
-                <div class="row w-100">
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <ul class="list-group">
-                            <li class="list-group-item border-0">
-                                <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'coming_soon' %}" target="_self">
-                                    <span class="first-word ">ALL</span>
-                                    <span class="non-first-words ">RESOURCES</span>
-                                </a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'about' %}" target="_self">
-                                    <span class="first-word ">WHO</span>
-                                    <span class="non-first-words ">WE ARE</span>
-                                </a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'privacy_policy' %}" target="_self">
-                                    <span class="first-word ">PRIVACY</span>
-                                    <span class="non-first-words ">POLICY</span>
-                                </a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'legal_statement' %}" target="_self">
-                                    <span class="first-word ">LEGAL</span>
-                                    <span class="non-first-words ">STATEMENT</span>
-                                </a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'django.contrib.sitemaps.views.sitemap' %}" target="_self">
-                                    <span class="first-word ">SITE</span>
-                                    <span class="non-first-words ">MAP</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <ul class="list-group">
-                            <li class="list-group-item border-0">
-                                <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://www.cameronmo.com/" target="_blank" rel="noopener noreferrer">
-                                    <span class="first-word ">CITY</span>
-                                    <span class="non-first-words ">OF CAMERON</span>
-                                </a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://www.gowermo.com/" target="_blank" rel="noopener noreferrer">
-                                    <span class="first-word ">CITY</span>
-                                    <span class="non-first-words ">OF GOWER</span>
-                                </a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://www.cityofholt.com/" target="_blank" rel="noopener noreferrer">
-                                    <span class="first-word ">CITY</span>
-                                    <span class="non-first-words ">OF HOLT</span>
-                                </a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://www.cityoflathropmo.org/" target="_blank" rel="noopener noreferrer">
-                                    <span class="first-word ">CITY</span>
-                                    <span class="non-first-words ">OF LATHROP</span>
-                                </a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://lawsonmo.gov/" target="_blank" rel="noopener noreferrer">
-                                    <span class="first-word ">CITY</span>
-                                    <span class="non-first-words ">OF LAWSON</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <ul class="list-group">
-                            <li class="list-group-item border-0">
-                                <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://cityofosborn.com/" target="_blank" rel="noopener noreferrer">
-                                    <span class="first-word ">CITY</span>
-                                    <span class="non-first-words ">OF OSBORN</span>
-                                </a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://www.plattsburg-mo.gov/" target="_blank" rel="noopener noreferrer">
-                                    <span class="first-word ">CITY</span>
-                                    <span class="non-first-words ">OF PLATTSBURG</span>
-                                </a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="http://trimblemissouri.org/" target="_blank" rel="noopener noreferrer">
-                                    <span class="first-word ">CITY</span>
-                                    <span class="non-first-words ">OF TRIMBLE</span>
-                                </a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'coming_soon' %}" target="_blank" rel="noopener noreferrer">
-                                    <span class="first-word ">CITY</span>
-                                    <span class="non-first-words ">OF TURNEY</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div class="col-12 col-md-3 col-lg-4">
+            <ul class="list-group">
+                <li class="list-group-item border-0 fw-bold">
+                    CITIES
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://www.cameronmo.com/" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">CITY</span>
+                        <span class="non-first-words ">OF CAMERON</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://www.gowermo.com/" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">CITY</span>
+                        <span class="non-first-words ">OF GOWER</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://www.cityofholt.com/" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">CITY</span>
+                        <span class="non-first-words ">OF HOLT</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://www.cityoflathropmo.org/" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">CITY</span>
+                        <span class="non-first-words ">OF LATHROP</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://lawsonmo.gov/" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">CITY</span>
+                        <span class="non-first-words ">OF LAWSON</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://cityofosborn.com/" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">CITY</span>
+                        <span class="non-first-words ">OF OSBORN</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://www.plattsburg-mo.gov/" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">CITY</span>
+                        <span class="non-first-words ">OF PLATTSBURG</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="http://trimblemissouri.org/" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">CITY</span>
+                        <span class="non-first-words ">OF TRIMBLE</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'coming_soon' %}" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">CITY</span>
+                        <span class="non-first-words ">OF TURNEY</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <ul class="list-group">
+                <li class="list-group-item border-0 fw-bold">
+                    CHAMBERS
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://cameronmochamber.com/" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">CAMERON</span>
+                        <span class="non-first-words ">CHAMBER OF COMMERCE</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://www.gowerareachamberofcommerce.com/" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">GOWER</span>
+                        <span class="non-first-words ">CHAMBER OF COMMERCE</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'coming_soon' %}" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">HOLT</span>
+                        <span class="non-first-words ">CHAMBER OF COMMERCE</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://www.lathropareachamberofcommerce.org/" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">LATHROP</span>
+                        <span class="non-first-words ">CHAMBER OF COMMERCE</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://lawsonchamberofcommerce.wildapricot.org/" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">LAWSON</span>
+                        <span class="non-first-words ">CHAMBER OF COMMERCE</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'coming_soon' %}" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">OSBORN</span>
+                        <span class="non-first-words ">CHAMBER OF COMMERCE</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://plattsburgchamber.org/" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">PLATTSBURG</span>
+                        <span class="non-first-words ">CHAMBER OF COMMERCE</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'coming_soon' %}" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">TRIMBLE</span>
+                        <span class="non-first-words ">CHAMBER OF COMMERCE</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'coming_soon' %}" target="_blank" rel="noopener noreferrer">
+                        <span class="first-word ">TURNEY</span>
+                        <span class="non-first-words ">CHAMBER OF COMMERCE</span>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </footer>

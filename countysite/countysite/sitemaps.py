@@ -9,6 +9,7 @@ from resources.models import Resource
 class StaticViewSitemap(Sitemap):
     priority = 1.0
     changefreq = 'daily'
+    protocol = 'https'
 
     def items(self):
         return ['index', 'about', 'coming_soon', 'privacy_policy', 'legal_statement', 'events:event_list', 'places:place_list', 'things:thing_list', 'resources:resource_list']
@@ -19,6 +20,7 @@ class StaticViewSitemap(Sitemap):
 class PlaceSitemap(Sitemap):
     changefreq = 'daily'
     priority = 0.8
+    protocol = 'https'
 
     def items(self):
         return Place.objects.all()
@@ -29,6 +31,7 @@ class PlaceSitemap(Sitemap):
 class ThingSitemap(Sitemap):
     changefreq = 'daily'
     priority = 0.8
+    protocol = 'https'
 
     def items(self):
         return Thing.objects.all()
@@ -40,6 +43,7 @@ class ThingSitemap(Sitemap):
 class EventSitemap(Sitemap):
     changefreq = 'daily'
     priority = 0.8
+    protocol = 'https'
 
     def items(self):
         return Event.objects.all()
@@ -50,6 +54,7 @@ class EventSitemap(Sitemap):
 class ResourceSitemap(Sitemap):
     changefreq = 'daily'
     priority = 0.8
+    protocol = 'https'
 
     def items(self):
         return Resource.objects.all()
