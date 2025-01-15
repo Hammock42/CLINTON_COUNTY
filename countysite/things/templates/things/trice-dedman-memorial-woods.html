@@ -1,15 +1,32 @@
 {% extends "layout.html" %}
 {% load static %}
 
-{% block title %}Trice-Dedman Memorial Woods{% endblock %}
+{% block seo %}
+ <title>
+    Trice Dedman Memorial Woods | Clinton County, Missouri
+ </title>
+ <meta name="description" property="og:description" content="Tucked between Lathrop and Plattsburg along Highway 116, the Trice-Dedman Memorial Woods offers a rare glimpse into Nature's past. This 60-acre sanctuary, maintained by the Nature Conservancy, is one of Clinton County's treasurers. It preserves one of the few remaining examples of upland oak woodlands that once covered much of northwest Missouri.">
+ <meta name="keywords" content="Trice Dedman Memorial Woods, Clinton County, Missouri">
+ <meta property="og:title" content="Trice Dedman Memorial Woods | Clinton County, Missouri">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://www.visitclintoncomo.com/things-to-do/trice-dedman-memorial-woods">
+ <meta property="og:image" content="{% static 'img/home_page/pv_river_4x3.avif' %}">
+ <meta property="og:image:width" content="200">
+ <meta property="og:image:height" content="200">
+ <meta property="og:site_name" content="Discover Clinton County, Missouri">
+ <meta property="og:locale" content="en_US">
+ <meta property="og:image:alt" content="Image alt example">
+ <meta property="og:image:type" content="image/avif">
+ <meta name="twitter:card" content="summary">
+{% endblock %}
 
 {% block content %}
 <div class="container-fluid p-5" style="background-color: #f3e7dc;">
     <div class="container p-3 mt-5">
         <div class="m-3">
-            <div class="section-title my-3">
+            <h1 class="section-title my-3" keyword="Trice Dedman Memorial Woods">
                 Trice-Dedman Memorial Woods
-            </div>
+            </h1>
         </div>
 
         <div class="row align-items-center py-4">

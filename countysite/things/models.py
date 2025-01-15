@@ -28,7 +28,7 @@ class Thing(models.Model):
         return str(self.name)
     
     def get_absolute_url(self):
-        return reverse('thing_detail', kwargs={'slug': self.slug})
+        return reverse('things:thing_detail', kwargs={'thing_slug': self.slug})
     
     def get_filter_types(self):
         return ', '.join([filter_type.name for filter_type in self.filter_type_list.all()])

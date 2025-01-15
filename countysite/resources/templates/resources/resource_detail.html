@@ -1,6 +1,42 @@
 {% extends "layout.html" %}
+{% load static %}
+
+{% block seo %}
+ <title>
+    {{ resource.name }} | Clinton County, Missouri
+ </title>
+ <meta name="description" property="og:description" content="{{ resource.description }}">
+ <meta name="keywords" content="{{ resource.get_filter_subtypes|title }}">
+ <meta property="og:title" content="{{ resource.name }} | Clinton County, Missouri">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://www.visitclintoncomo.com/resources-to-use/{{ resource.slug }}">
+ <meta property="og:image" content="{% static 'img/home_page/pv_river_4x3.avif' %}">
+ <meta property="og:image:width" content="200">
+ <meta property="og:image:height" content="200">
+ <meta property="og:site_name" content="Discover Clinton County, Missouri">
+ <meta property="og:locale" content="en_US">
+ <meta property="og:image:alt" content="Image alt example">
+ <meta property="og:image:type" content="image/avif">
+ <meta name="twitter:card" content="summary">
+{% endblock %}
 
 {% block content %}
-    <h1>Resource Detail</h1>
-    <h2>{{ resource.name }}</h2>
+<div class="container-fluid pb-5 m-0 px-0" style="background-color: #DAB28F;">
+    <section class="hero mb-5">
+        <img src="{% static 'img/bg_up_2.avif' %}" class="img-fluid" alt="...">
+        <div class="z-3 position-absolute text-light text-center"></div>
+    </section>
+    <div class="container rounded-3 border border-dark shadow-lg p-3 my-5" style="background-color: #f3e7dc;">
+        <div class="m-3">
+            <div class="section-title my-3">
+                {{ resource.name }}
+            </div>
+        </div>
+        <div>
+            <h3><span class="fw-bold">Description: </span> {{ resource.get_filter_subtypes|title }}</h3>
+            <h3><span class="fw-bold">Address: </span> {{ resource.address|capfirst }}  {{ resource.city|capfirst }}, MO</h3>
+            <h3><span class="fw-bold">Phone: </span> {{ resource.phone_number }}</h3>
+        </div>
+    </div>
+</div>
 {% endblock %}

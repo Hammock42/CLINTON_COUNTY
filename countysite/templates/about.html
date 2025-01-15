@@ -1,7 +1,24 @@
 {% extends "layout.html" %}
 {% load static %}
 
-{% block title %}Who We Are{% endblock %}
+{% block seo %}
+ <title>
+    Who We Are | Clinton County, Missouri
+ </title>
+ <meta name="description" property="og:description" content="Discover the rich history and vibrant community of Clinton County, Missouri. Learn about our agricultural heritage, cultural landmarks, and unique local traditions.">
+ <meta name="keywords" content="Clinton County, Missouri, history, community, agriculture, cultural landmarks, local traditions, pioneers, farming, Cameron, Gower, Lathrop, Plattsburg, Osborn, Turney, Trimble, rural, Kansas City, St. Joseph, mom and pop businesses, church congregations, town festivals, Fourth of July, Juneteenth, farm tours, quilt shows, beef cattle, mule farms, World War I, Paradise Locker Meats, Campo Lindo Farms, Shatto Milk Company, David Rice Atchison, president for a day, Methodist college, Chautauqua assemblies, J. Breckenridge Ellis, Clinton County Historical Society Museum, railroads, Santa Fe Railway, Chicago Burlington and Quincy Railroad, Rock Island Line, Hannibal and St. Joseph Railroad, Depot Museum, Jefferson Highway, Palms to Pines Highway, murals">
+ <meta property="og:title" content="Who We Are | Clinton County, Missouri">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://www.visitclintoncomo.com/about/">
+ <meta property="og:image" content="{% static 'img/home_page/pv_river_4x3.avif' %}">
+ <meta property="og:image:width" content="200">
+ <meta property="og:image:height" content="200">
+ <meta property="og:site_name" content="Discover Clinton County, Missouri">
+ <meta property="og:locale" content="en_US">
+ <meta property="og:image:alt" content="Image alt example">
+ <meta property="og:image:type" content="image/avif">
+ <meta name="twitter:card" content="summary">
+{% endblock %}
 
 {% block content %}
 <div class="container-fluid p-0 m-0" style="background-color: #f3e7dc;">

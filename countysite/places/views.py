@@ -5,7 +5,7 @@ from static.data.data_lists import place_categories, cities
 
 # Create your views here.
 def place_list(request):
-    places_query = Place.objects.all().order_by('?')
+    places_query = Place.objects.all()
     places = filter_featured_places(places_query)
     paginator = Paginator(places, 8)
     page_number = request.GET.get('page')
@@ -28,7 +28,7 @@ def filtered_place_list(request):
     elif selected_sort == 'za':
         places_query = Place.objects.all().order_by('-name')
     else:
-        places_query = Place.objects.all().order_by('?')
+        places_query = Place.objects.all()
     if selected_category != 'all':
         places_query = places_query.filter(filter_subtype_list__name__in=[selected_category])
     if selected_city != 'all':
@@ -51,6 +51,9 @@ def place_detail(request, place_slug):
     context = {
         'place': place
     }
+    if place.internal_page:
+        page = f"places/{place_slug}.html"
+        return render(request, page, context)
     return render(request, 'places/place_detail.html', context)
 
 def filter_featured_places(places):

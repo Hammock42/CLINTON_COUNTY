@@ -25,7 +25,7 @@ class Place(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        return reverse('resource_detail', kwargs={'slug': self.slug})
+        return reverse('places:place_detail', kwargs={'place_slug': self.slug})
     
     def get_filter_types(self):
         return ', '.join([filter_type.name for filter_type in self.filter_type_list.all()])

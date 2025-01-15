@@ -116,12 +116,13 @@
 }
 
 .first-word.lvl1 {
-    font-size: 1.1em;
+    font-size: 1.3em;
     font-weight: 600;
 }
 
-.non-first-word.lvl1 {
-    font-size: 0.7em;
+.non-first-words.lvl1 {
+    font-size: 1.1em;
+    font-weight: 500;
 }
 
 

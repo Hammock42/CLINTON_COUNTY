@@ -6,8 +6,7 @@ from static.data.data_lists import thing_categories, cities
 
 # Create your views here.
 def thing_list(request):
-    things_query = Thing.objects.all().order_by('?')
-    things = filter_featured_things(things_query)
+    things = get_things('recommended', 'all', 'all')
     paginator = Paginator(things, 8)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -25,20 +24,8 @@ def thing_list_filtered(request):
     selected_category = request.GET.get('categories')
     selected_city = request.GET.get('city')
     selected_sort = request.GET.get('sort')
-        
-    if selected_sort == 'az':
-        things_query = Thing.objects.all().order_by('name')
-    elif selected_sort == 'za':
-        things_query = Thing.objects.all().order_by('-name')
-    else:
-        things_query = Thing.objects.all().order_by('?')
-        
-    if selected_category != 'all':
-        things_query = things_query.filter(filter_type_list__name__in=[selected_category])
-    if selected_city != 'all':
-        things_query = things_query.filter(city=selected_city)
-            
-    things = filter_featured_things(things_query)
+           
+    things = get_things(selected_sort, selected_category, selected_city)
     paginator = Paginator(things, 8)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -57,6 +44,19 @@ def filter_featured_things(things):
     non_featured = list(things.filter(featured=False))
     filtered_things = featured + non_featured
     return filtered_things
+
+def get_things(sort_by, category, city):
+    things = Thing.objects.all()
+    if sort_by == 'az':
+        things = things.order_by('name')
+    elif sort_by == 'za':
+        things = things.order_by('-name')
+    if category != 'all':
+        things = things.filter(filter_type_list__name__in=[category])
+    if city != 'all':
+        things = things.filter(city=city)  
+    things = filter_featured_things(things)
+    return things
 
 
 def thing_detail(request, thing_slug):

@@ -25,7 +25,7 @@ class Event(models.Model):
         return self.name
         
     def get_absolute_url(self):
-        return reverse('event_detail', kwargs={'slug': self.slug})
+        return reverse('events:event_detail', kwargs={'event_slug': self.slug})
     
     def get_full_address(self):
         return f'{self.address}, {self.city}, MO'

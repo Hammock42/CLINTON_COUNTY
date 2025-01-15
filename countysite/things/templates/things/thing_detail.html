@@ -1,6 +1,25 @@
 {% extends "layout.html" %}
 {% load static %}
 
+{% block seo %}
+ <title>
+    {{ thing.name }} | Clinton County, Missouri
+ </title>
+ <meta name="description" property="og:description" content="{{ thing.description }}">
+ <meta name="keywords" content="{{ thing.get_filter_subtypes|title }}">
+ <meta property="og:title" content="{{ thing.name }} | Clinton County, Missouri">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://www.visitclintoncomo.com/things-to-do/{{ thing.slug }}">
+ <meta property="og:image" content="{% static 'img/home_page/pv_river_4x3.avif' %}">
+ <meta property="og:image:width" content="200">
+ <meta property="og:image:height" content="200">
+ <meta property="og:site_name" content="Discover Clinton County, Missouri">
+ <meta property="og:locale" content="en_US">
+ <meta property="og:image:alt" content="Image alt example">
+ <meta property="og:image:type" content="image/avif">
+ <meta name="twitter:card" content="summary">
+{% endblock %}
+
 {% block content %}
 <div class="container-fluid pb-5 m-0 px-0" style="background-color: #DAB28F;">
     <section class="hero mb-5">

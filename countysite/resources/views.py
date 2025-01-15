@@ -24,7 +24,21 @@ def resource_list(request):
     return render(request, 'resources/resources.html', context)
 
 def resource_detail(request, resource_slug):
-    resource = Resource.objects.get(slug=resource_slug)
+    resource = None
+    thing = None
+    place = None
+
+    try:
+        resource = Resource.objects.get(slug=resource_slug)
+    except Resource.DoesNotExist:
+        try:
+            resource = Thing.objects.get(slug=resource_slug)
+        except Thing.DoesNotExist:
+            try:
+                resource = Place.objects.get(slug=resource_slug)
+            except Place.DoesNotExist:
+                pass
+
     context = {
         'resource': resource
     }
