@@ -1,15 +1,32 @@
 {% extends "layout.html" %}
 {% load static %}
 
-{% block title %}Riley-Carmack Museum{% endblock %}
+{% block seo %}
+ <title>
+    Clinton County Historical Society Museum | Clinton County, Missouri
+ </title>
+ <meta name="description" property="og:description" content="The Clinton County Historical Society Museum, located in the historic Riley-Carmack House at 308 S Birch Ave, offers a unique glimpse into 19th-century life. The museum is open the first Saturday of each month from 10 AM to 2 PM, giving visitors the chance to explore exhibits and period furnishings.">
+ <meta name="keywords" content="Clinton County Historical Society Museum, Clinton County, Missouri, museum, history, historical society, Riley-Carmack House, 19th-century life, haunted tours, J. Breckenridge Ellis, Santa Claus Shaver, toys, dolls, Christmas gifts, Juneteenth, cemetery tour">
+ <meta property="og:title" content="Clinton County Historical Society Museum | Clinton County, Missouri">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://www.visitclintoncomo.com/things-to-do/clinton-county-historical-society-museum/">
+ <meta property="og:image" content="{% static 'img/home_page/pv_river_4x3.avif' %}">
+ <meta property="og:image:width" content="200">
+ <meta property="og:image:height" content="200">
+ <meta property="og:site_name" content="Discover Clinton County, Missouri">
+ <meta property="og:locale" content="en_US">
+ <meta property="og:image:alt" content="Image alt example">
+ <meta property="og:image:type" content="image/avif">
+ <meta name="twitter:card" content="summary">
+{% endblock %}
 
 {% block content %}
 <div class="container-fluid p-5" style="background-color: #f3e7dc;">
     <div class="container p-3 mt-5">
         <div class="m-3">
-            <div class="section-title my-3">
+            <h1 class="section-title my-3" keywords="Clinton County Historical Society Museum">
                 Clinton County Historical Society Museum
-            </div>
+            </h1>
         </div>
 
         <div class="row align-items-center py-4">
@@ -17,12 +34,12 @@
                 <img src="{% static 'img/cchs/cchs_1_3x2.avif' %}" alt="" class="img-fluid rounded-3">
             </div>
             <div class="col-12 col-md-6">
-                <div class="section-subtitle">
+                <h2 class="section-subtitle">
                     Peek Inside the Past
-                </div>
+                </h2>
                 <p class="section-text">
                     The Clinton County Historical Society Museum, located in the historic Riley-Carmack House at 
-                    <a href="https://maps.app.goo.gl/i1JXFYidfBz51iA66" target="_blank">308 S Birch Ave</a>, 
+                    <a href="https://maps.app.goo.gl/i1JXFYidfBz51iA66" class="text-success link-underline link-underline-opacity-0 link-underline-opacity-75-hover" target="_blank" rel="noopener noreferrer">308 S Birch Ave</a>, 
                     offers a unique glimpse into 19th-century life. The museum is open the first Saturday of each month from 10 AM 
                     to 2 PM, giving visitors the chance to explore exhibits and period furnishings.
                 </p>
@@ -36,9 +53,9 @@
                 <img src="{% static 'img/cchs/cchs_2_3x2.avif' %}" alt="" class="img-fluid rounded-3">
             </div>
             <div class="d-none d-md-block col-md-6 order-first">
-                <div class="section-subtitle">
+                <h2 class="section-subtitle">
                     Elegance and Charm
-                </div>
+                </h2>
                 <p class="section-text">
                     Original furniture of the Riley home, offering a glimpse into 19th-century life. These beautifully preserved 
                     pieces tell the story of a bygone era, transporting visitors back to the elegance and charm of the late 1800s.
@@ -48,9 +65,9 @@
                 </p>
             </div>
             <div class="d-block d-md-none col-12">
-                <div class="section-subtitle">
+                <h2 class="section-subtitle">
                     Elegance and Charm
-                </div>
+                </h2>
                 <p class="section-text">
                     Original furniture of the Riley home, offering a glimpse into 19th-century life. These beautifully preserved 
                     pieces tell the story of a bygone era, transporting visitors back to the elegance and charm of the late 1800s.
@@ -65,9 +82,9 @@
                 <img src="{% static 'img/cchs/cchs_3_3x2.avif' %}" alt="" class="img-fluid rounded-3">
             </div>
             <div class="col-12 col-md-6">
-                <div class="section-subtitle">
+                <h2 class="section-subtitle">
                     Famous Author&apos;s Legacy
-                </div>
+                </h2>
                 <p class="section-text">
                     Photo features author J. Breckenridge Ellis, whose captivating stories made him a literary icon in Clinton County. 
                     In 1912, his novel &quot;Fran&quot; climbed to number one on the bestseller list in America and was made into a 
@@ -83,9 +100,9 @@
                 <img src="{% static 'img/cchs/cchs_4_3x2.avif' %}" alt="" class="img-fluid rounded-3">
             </div>
             <div class="d-none d-md-block col-md-6 order-first">
-                <div class="section-subtitle">
+                <h2 class="section-subtitle">
                     Toys and Dolls
-                </div>
+                </h2>
                 <p class="section-text">
                     Discover the enchanting history behind the toy collection at the Clinton County Historical Society Museum! Many 
                     toys, including the charming doll featured here, were once cherished Christmas gifts from local legend &quot;Santa
@@ -97,9 +114,9 @@
                 </p>
             </div>
             <div class="d-block d-md-none col-12">
-                <div class="section-subtitle">
+                <h2 class="section-subtitle">
                     Toys and Dolls
-                </div>
+                </h2>
                 <p class="section-text">
                     Discover the enchanting history behind the toy collection at the Clinton County Historical Society Museum! Many 
                     toys, including the charming doll featured here, were once cherished Christmas gifts from local legend &quot;Santa
@@ -112,13 +129,13 @@
             </div>
         </div>
         <div class="my-4">
-            <div class="section-subtitle">
+            <p class="section-subtitle">
                 Click to check out our upcoming and annual events: <br>
-                <a href="{% url 'events:event_detail' 'juneteenth' %}">Juneteenth</a><br>
-                <a href="{% url 'coming_soon' %}">Cemetary Tour</a><br>
+                <a href="{% url 'events:event_detail' 'juneteenth' %}" class="btn btn-outline-success btn-lg">Juneteenth</a>
+                <a href="{% url 'events:event_detail' 'cemetery-tours' %}" class="btn btn-outline-success btn-lg">Cemetery Tour</a><br>
                 For more info, visit: 
-                <a href="https://clintoncountymohistoricalsociety.org/">Clinton County Historical Society</a>.
-            </div>
+                <a href="https://clintoncountymohistoricalsociety.org/" class="btn btn-outline-success btn-lg my-3" target="_blank" rel="noopener noreferrer">Clinton County Historical Society</a>.
+            </p>
         </div>
         <div class="row text-center text-lg-start align-items-center">
             <div class="col-10 col-md-4 mx-auto my-1">

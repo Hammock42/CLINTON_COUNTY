@@ -5,8 +5,12 @@
  <title>
     {{ resource.name }} | Clinton County, Missouri
  </title>
- <meta name="description" property="og:description" content="{{ resource.description }}">
- <meta name="keywords" content="{{ resource.get_filter_subtypes|title }}">
+ <meta name="description" property="og:description" content="{{ resource.description }}, Clinton County, Missouri, Resources">
+{% if resource.get_filter_subtypes %}
+ <meta name="keywords" content="{{ resource.get_filter_types|title }}, {{ resource.get_filter_subtypes|title }}, Clinton County, Missouri, Resources">
+{% else %}
+ <meta name="keywords" content="{{ resource.get_filter_types|title }}, Clinton County, Missouri, Resources">
+{% endif %}
  <meta property="og:title" content="{{ resource.name }} | Clinton County, Missouri">
  <meta property="og:type" content="website">
  <meta property="og:url" content="https://www.visitclintoncomo.com/resources-to-use/{{ resource.slug }}">
@@ -28,9 +32,9 @@
     </section>
     <div class="container rounded-3 border border-dark shadow-lg p-3 my-5" style="background-color: #f3e7dc;">
         <div class="m-3">
-            <div class="section-title my-3">
+            <h1 class="section-title my-3">
                 {{ resource.name }}
-            </div>
+            </h1>
         </div>
         <div>
             <h3><span class="fw-bold">Description: </span> {{ resource.get_filter_subtypes|title }}</h3>

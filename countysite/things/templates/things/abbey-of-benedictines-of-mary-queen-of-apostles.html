@@ -1,18 +1,35 @@
 {% extends "layout.html" %}
 {% load static %}
 
-{% block title %}Abbey{% endblock %}
+{% block seo %}
+ <title>
+    Abbey of Benedictines of Mary, Queen of Apostles | Clinton County, Missouri
+ </title>
+ <meta name="description" property="og:description" content="Few spots on earth offer the kind of spiritual harmony you'll find at the Abbey of Benedictines of Mary, Queen of Apostles. It is a holy spot where faith and serenity meet marvel and curiosity in one of Clinton County's most unusual sites to visit.">
+ <meta name="keywords" content="Abbey of Benedictines of Mary, Queen of Apostles, Clinton County, Missouri, Gower, Mass, convent, choir, music, miracles, Sister Wilhelmina, Benedictines of Mary">
+ <meta property="og:title" content="Abbey of Benedictines of Mary, Queen of Apostles | Clinton County, Missouri">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://www.visitclintoncomo.com/things-to-do/abbey-of-benedictines-of-mary-queen-of-apostles/">
+ <meta property="og:image" content="{% static 'img/home_page/pv_river_4x3.avif' %}">
+ <meta property="og:image:width" content="200">
+ <meta property="og:image:height" content="200">
+ <meta property="og:site_name" content="Discover Clinton County, Missouri">
+ <meta property="og:locale" content="en_US">
+ <meta property="og:image:alt" content="Image alt example">
+ <meta property="og:image:type" content="image/avif">
+ <meta name="twitter:card" content="summary">
+{% endblock %}
 
 {% block content %}
 <div class="container-fluid p-5" style="background-color: #f3e7dc;">
     <div class="container p-3 mt-5">
         <div class="m-3">
-            <div class="section-title my-3">
+            <h1 class="section-title my-3" keywords="Abbey of Benedictines of Mary, Queen of Apostles">
                 Abbey of Benedictines of Mary, Queen of Apostles
-            </div>
-            <div class="section-subtitle">
+            </h1>
+            <h2 class="section-subtitle">
                 Music and Miracles in a Place of Peace.
-            </div>
+            </h2>
         </div>
         <div class="row align-items-center py-4">
             <div class="col-12 col-md-6">
@@ -62,9 +79,9 @@
                 </div>
             </div>
             <div class="row align-items-center py-4">
-                <p class="section-text">
+                <p class="section-subtitle">
                     Visitors are welcome to view the body of Sister Wilhelmina and experience the peace of the Abbey. For more 
-                    information and Mass times, please visit the <a href="https://benedictinesofmary.org/schedule/">Abbey&apos;s website</a>. 
+                    information and Mass times, please visit the <a href="https://benedictinesofmary.org/schedule/" class="btn btn-lg btn-outline-success" target="_blank" rel="noopener noreferrer">Abbey&apos;s website</a>. 
                     The sisters request that visitors wear modest attire and respect private areas of the grounds.
                 </p>
             </div>

@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block seo %}
+ <title>
+    Cemetery Tours | Clinton County, Missouri
+ </title>
+ <meta name="description" property="og:description" content="Join our humorous cemetery tours in Plattsburg, hosted by the Clinton County Historical Society. Meet historical figures and enjoy a 'toast with a ghost'. Next tour: October 12, 2025.">
+ <meta name="keywords" content="Cemetery Tours, Clinton County, Missouri, Plattsburg, Clinton County Historical Society, David Rice Atchison, J. Breckenridge Ellis, Oscar Odd McIntyre, ghost, spirits, history, humor, autumn, tour, costume, celebrity, president, author, columnist, lively, family, Cameron, Cameron Historical Society, Depot Museum, Jeff Mitchell, hearse, faux-funeral, procession, unsolved mysteries, residents, late summer, rendezvous, dead, haunted, paranormal, activity, thrill-seekers">
+ <meta property="og:title" content="Cemetery Tours | Clinton County, Missouri">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://www.visitclintoncomo.com/events-to-enjoy/cemetery-tours/">
+ <meta property="og:image" content="{% static 'img/home_page/pv_river_4x3.avif' %}">
+ <meta property="og:image:width" content="200">
+ <meta property="og:image:height" content="200">
+ <meta property="og:site_name" content="Discover Clinton County, Missouri">
+ <meta property="og:locale" content="en_US">
+ <meta property="og:image:alt" content="Image alt example">
+ <meta property="og:image:type" content="image/avif">
+ <meta name="twitter:card" content="summary">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-0 m-0" style="background-color: #f3e7dc;">
+    <section class="hero mb-5">
+        <img src="{% static 'img/cemetery/cemetery_0_3x1.avif' %}" class="img-fluid" alt="...">
+    </section>
+    <div class="container p-3 mt-5">
+        <div class="m-3">
+            <h1 class="section-title my-3">
+                Cemetery Tours
+            </h1>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/cemetery/cemetery_2_4x3.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <p class="section-text">
+                    We&apos;re proud of our history and our ancestors…but we don&apos;t take our pride too seriously. That&apos;s 
+                    why our cemetery tours have a bit of country humor about them. In Plattsburg, the Clinton County Historical 
+                    Society holds an autumn cemetery tour complete with characters in period costume talking about some of our 
+                    celebrity dead. There&apos;s president-for-a-day David Rice Atchison, author J. Breckenridge Ellis and 
+                    newspaper columnist Oscar Odd McIntyre along with local &quot;lively&quot; citizens whose prominent families 
+                    still walk our streets. The tour usually ends with a &quot;toast with a ghost&quot;. Next cemetery tour is 
+                    October 12, 2025. For details: 
+
+                    <a href="https://clintoncountymohistoricalsociety.org" class="btn btn-outline-success btn-lg" target="_blank">Click Here</a>
+                </p>
+            </div>
+            <div class="row align-items-center py-4">
+                <div class="col-12 col-md-6">
+                    <img src="{% static 'img/cemetery/cemetery_3_4x3.avif' %}" alt="" class="img-fluid rounded-3">
+                </div>
+                <div class="d-none d-md-block col-md-6 order-first">
+                    <p class="section-text">
+                        Cameron keeps its own rendezvous with the dead at an annual late summer cemetery tour presented by the 
+                        Cameron Historical Society and Depot Museum. The group says, Visitors &quot;line up behind Jeff 
+                        Mitchell&apos;s hearse at the Depot Museum&quot; and drive to one of Cameron&apos;s cemeteries where 
+                        they &quot;travel in a faux-funeral procession&quot; to hear about the town&apos;s &quot;unsolved 
+                        mysteries involving some of its residents&quot;. For more information: 
+                        <a href="https://www.facebook.com/CameronDepotMuseum" class="btn btn-outline-success btn-lg" target="_blank">Click Here</a>
+                    </p>
+                </div>
+                <div class="d-block d-md-none col-12">
+                    <p class="section-text">
+                        Cameron keeps its own rendezvous with the dead at an annual late summer cemetery tour presented by the 
+                        Cameron Historical Society and Depot Museum. The group says, Visitors &quot;line up behind Jeff 
+                        Mitchell&apos;s hearse at the Depot Museum&quot; and drive to one of Cameron&apos;s cemeteries where 
+                        they &quot;travel in a faux-funeral procession&quot; to hear about the town&apos;s &quot;unsolved 
+                        mysteries involving some of its residents&quot;. For more information: 
+                        <a href="https://www.facebook.com/CameronDepotMuseum" class="btn btn-outline-success btn-lg" target="_blank">Click Here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center text-lg-start align-items-center">
+            <div class="col-12 col-md-6 col-xl-3 mx-auto my-4 d-flex justify-content-center">
+                <img class="img-fluid rounded-3 mx-auto" src="{% static 'img/cemetery/cemetery_4_1x15.avif' %}" alt="">
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 mx-auto my-4 d-flex justify-content-center">
+                <img class="img-fluid rounded-3 mx-auto" src="{% static 'img/cemetery/cemetery_5_1x15.avif' %}" alt="">
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 mx-auto my-4 d-flex justify-content-center">
+                <img class="img-fluid rounded-3" src="{% static 'img/cemetery/cemetery_6_1x15.avif' %}" alt="">
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 mx-auto my-4 d-flex justify-content-center">
+                <img class="img-fluid rounded-3" src="{% static 'img/cemetery/cemetery_7_1x15.avif' %}" alt="">
+            </div>
+        </div>
+    </div> 
+</div>
+{% endblock %}

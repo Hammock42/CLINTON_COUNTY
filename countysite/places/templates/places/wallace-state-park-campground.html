@@ -21,12 +21,12 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid p-5" style="background-color: #f3e7dc;">
+<div class="container-fluid py-5" style="background-color: #f3e7dc;">
     <div class="container p-3 mt-5">
         <div class="m-3">
-            <div class="section-title my-3">
+            <h1 class="section-title my-3">
                 Wallace State Park Campground
-            </div>
+            </h1>
         </div>
     
         <div class="row align-items-center py-4">
@@ -34,9 +34,9 @@
                 <img src="{% static 'img/wallace_state_park/wallace_2_4x3.avif' %}" alt="" class="img-fluid rounded-3">
             </div>
             <div class="col-12 col-md-6">
-                <div class="section-subtitle">
+                <h2 class="section-subtitle">
                     Camping at Wallace State Park
-                </div>
+                </h2>
                 <p class="section-text">
                     The park&apos;s peaceful, family-oriented campgrounds include both basic and electric campsites. Walk-in campsites 
                     are available for those seeking more seclusion. There is also a special-use camping area. Playground equipment is 
@@ -52,71 +52,74 @@
         </div>
         <div class="row align-items-center py-4">
             <div class="col-12">
-                <div class="section-subtitle">
+                <h2 class="section-subtitle">
                     INDIVIDUAL CAMPGROUND INFORMATION
+                </h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Campground</th>
+                                <th>Available Dates</th>
+                                <th>Showers/Water Available</th>
+                                <th>Reservations</th>
+                                <th>Types of Sites</th>
+                                <th>Amenities</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Camp 1 &amp; 2</td>
+                                <td>Year-round</td>
+                                <td>Apr 15 - Oct 31</td>
+                                <td>Apr 15 - Oct 31</td>
+                                <td>Basic, Electric, walk-in</td>
+                                <td>
+                                    <img src="{% static 'icons/Symbol_accessible.avif' %}" alt="">
+                                    <img src="{% static 'icons/Symbol_water.avif' %}" alt="">
+                                    <img src="{% static 'icons/Symbol_frost_free_water.avif' %}" alt="">
+                                    <img src="{% static 'icons/Symbol_restroom.avif' %}" alt="">
+                                    <img src="{% static 'icons/Symbol_showerhouse.avif' %}" alt="">
+                                    <img src="{% static 'icons/Symbol_vault_toilet.avif' %}" alt="">
+                                    <img src="{% static 'icons/Symbol_dump_station.avif' %}" alt="">
+                                    <img src="{% static 'icons/Symbol_woodlot.avif' %}" alt="">
+                                    <img src="{% static 'icons/Symbol_playground.avif' %}" alt="">
+                                    <img src="{% static 'icons/Symbol_amphitheater.avif' %}" alt="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Camp 3 &amp; 4</td>
+                                <td>Apr 15 - Oct 31</td>
+                                <td>Apr 15 - Oct 31</td>
+                                <td>Apr 15 - Oct 31</td>
+                                <td>Basic, Electric*</td>
+                                <td>
+                                    <img src="{% static 'icons/Symbol_accessible.avif' %}" alt="">
+                                    <img src="{% static 'icons/Symbol_water.avif' %}" alt="">
+                                    <img src="{% static 'icons/Symbol_vault_toilet.avif' %}" alt="">
+                                    <img src="{% static 'icons/Symbol_playground.avif' %}" alt="">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Campground</th>
-                            <th>Available Dates</th>
-                            <th>Showers/Water Available</th>
-                            <th>Reservations</th>
-                            <th>Types of Sites</th>
-                            <th>Amenities</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Camp 1 &amp; 2</td>
-                            <td>Year-round</td>
-                            <td>Apr 15 - Oct 31</td>
-                            <td>Apr 15 - Oct 31</td>
-                            <td>Basic, Electric, walk-in</td>
-                            <td>
-                                <img src="{% static 'icons/Symbol_accessible.avif' %}" alt="">
-                                <img src="{% static 'icons/Symbol_water.avif' %}" alt="">
-                                <img src="{% static 'icons/Symbol_frost_free_water.avif' %}" alt="">
-                                <img src="{% static 'icons/Symbol_restroom.avif' %}" alt="">
-                                <img src="{% static 'icons/Symbol_showerhouse.avif' %}" alt="">
-                                <img src="{% static 'icons/Symbol_vault_toilet.avif' %}" alt="">
-                                <img src="{% static 'icons/Symbol_dump_station.avif' %}" alt="">
-                                <img src="{% static 'icons/Symbol_woodlot.avif' %}" alt="">
-                                <img src="{% static 'icons/Symbol_playground.avif' %}" alt="">
-                                <img src="{% static 'icons/Symbol_amphitheater.avif' %}" alt="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Camp 3 &amp; 4</td>
-                            <td>Apr 15 - Oct 31</td>
-                            <td>Apr 15 - Oct 31</td>
-                            <td>Apr 15 - Oct 31</td>
-                            <td>Basic, Electric*</td>
-                            <td>
-                                <img src="{% static 'icons/Symbol_accessible.avif' %}" alt="">
-                                <img src="{% static 'icons/Symbol_water.avif' %}" alt="">
-                                <img src="{% static 'icons/Symbol_vault_toilet.avif' %}" alt="">
-                                <img src="{% static 'icons/Symbol_playground.avif' %}" alt="">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
                 <div>
                     <span>*</span>
                     <span class="section-text">50-amp electric sites available.</span>
                 </div>
                 <div class="btn-group btn-group-lg" role="group" aria-label="Wallace State Park Campground Button Links">
-                    <a href="https://mostateparks.com/sites/mostateparks/files/CampingFees_Wallace_25.pdf" target="_blank" class="btn btn-outline-success">2025 Camping Rates</a>
-                    <a href="https://mostateparks.com/sites/mostateparks/files/Wallace_CG.pdf" target="_blank" class="btn btn-outline-success">See Map</a>
-                    <a href="https://mostateparks.com/page/63050/camping-amenities-symbols-guide" target="_blank" class="btn btn-outline-success">Symbol Guide</a>
+                    <a href="https://mostateparks.com/sites/mostateparks/files/CampingFees_Wallace_25.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success">2025 Camping Rates</a>
+                    <a href="https://mostateparks.com/sites/mostateparks/files/Wallace_CG.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success">See Map</a>
+                    <a href="https://mostateparks.com/page/63050/camping-amenities-symbols-guide" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success">Symbol Guide</a>
                 </div>
+            </div>
             </div>
         </div>
         
         <div class="section-subtitle">
             Come discover the natural beauty of Clinton County at Wallace State Park, <br>where serenity awaits at every turn.
 
-            <a href="https://icampmo1.usedirect.com/MSPWeb/#!park/95" class="btn btn-lg btn-outline-success">Make a Reservation</a>
+            <a href="https://icampmo1.usedirect.com/MSPWeb/#!park/95" class="btn btn-lg btn-outline-success" target="_blank" rel="noopener noreferrer">Make a Reservation</a>
         </div>
     </div>
 </div>

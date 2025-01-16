@@ -1,66 +1,75 @@
 {% extends "layout.html" %}
 {% load static %}
 
-{% block title %}JuneTeenth{% endblock %}
+{% block seo %}
+ <title>
+    Juneteenth | Clinton County, Missouri
+ </title>
+ <meta name="description" property="og:description" content="We celebrate Juneteenth as only a small town can&mdash;a slice of history served with a dollop of neighborliness. We gather on the lawn of the Clinton County Historical Society in Plattsburg to celebrate our commonalities rather than our differences with picnic fare, music and conversations. Costumed Buffalo Soldiers give history lessons. Barbecue, greens and slices of pie lay spread on a makeshift buffet table. Old-time songs and modern jazz float up to the tallest branches of our shade trees. Join us June 14, 2025, for the next party.">
+ <meta name="keywords" content="Juneteenth, Clinton County, Missouri, Plattsburg, Clinton County Historical Society, Buffalo Soldiers, barbecue, greens, pie, music, jazz, shade trees, picnic, history, neighborliness">
+ <meta property="og:title" content="Juneteenth | Clinton County, Missouri">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://www.visitclintoncomo.com/events-to-enjoy/juneteenth/">
+ <meta property="og:image" content="{% static 'img/home_page/pv_river_4x3.avif' %}">
+ <meta property="og:image:width" content="200">
+ <meta property="og:image:height" content="200">
+ <meta property="og:site_name" content="Discover Clinton County, Missouri">
+ <meta property="og:locale" content="en_US">
+ <meta property="og:image:alt" content="Image alt example">
+ <meta property="og:image:type" content="image/avif">
+ <meta name="twitter:card" content="summary">
+{% endblock %}
 
 {% block content %}
-<div class="container-fluid p-5" style="background-color: #f3e7dc;">
+<div class="container-fluid p-0 m-0" style="background-color: #f3e7dc;">
+    <section class="hero mb-5">
+        <img src="{% static 'img/juneteenth/juneteenth_0_3x1.avif' %}" class="img-fluid" alt="...">
+    </section>
     <div class="container p-3 mt-5">
         <div class="m-3">
             <div class="section-title my-3">
-                Temp Title
+                Juneteenth
             </div>
         </div>
         <div class="row align-items-center py-4">
             <div class="col-12 col-md-6">
-                <img src="{% static 'img/default_img.jpg' %}" alt="" class="img-fluid rounded-3">
+                <img src="{% static 'img/juneteenth/juneteenth_1_4x3.avif' %}" alt="" class="img-fluid rounded-3">
             </div>
             <div class="col-12 col-md-6">
-                <div class="section-subtitle">
-                    section title
-                </div>
                 <p class="section-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ea quaerat hic animi, dolores quis facilis totam, labore voluptatum commodi numquam ipsum incidunt! Fugit incidunt unde facere. Harum, qui rerum?
+                    We celebrate Juneteenth as only a small town can&mdash;a slice of history served with a dollop of 
+                    neighborliness. We gather on the lawn of the Clinton County Historical Society in Plattsburg to 
+                    celebrate our commonalities rather than our differences with picnic fare, music and conversations. 
+                    Costumed Buffalo Soldiers give history lessons. Barbecue, greens and slices of pie lay spread on a 
+                    makeshift buffet table. Old-time songs and modern jazz float up to the tallest branches of our shade 
+                    trees. Join us June 14, 2025, for the next party. For more information: 
+                    <a href="https://clintoncountymohistoricalsociety.org" class="btn btn-outline-success btn-lg" target="_blank">Click Here</a>
                 </p>
             </div>
         </div>
-        <div class="row align-items-center py-4">
-            <div class="col-12 col-md-6">
-                <img src="{% static 'img/default_img.jpg' %}" alt="" class="img-fluid rounded-3">
+        <div class="row text-center text-lg-start align-items-center">
+            <div class="col-10 col-md-4 mx-auto my-4 d-flex justify-content-center">
+                <img class="img-fluid rounded-3 mx-auto" src="{% static 'img/juneteenth/juneteenth_6_1x15.avif' %}" alt="">
             </div>
-            <div class="d-none d-md-block col-md-6 order-first">
-                <div class="section-subtitle">
-                    section title
-                </div>
-                <p class="section-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ea quaerat hic animi, dolores quis facilis totam, labore voluptatum commodi numquam ipsum incidunt! Fugit incidunt unde facere. Harum, qui rerum?
-                </p>
+            <div class="col-10 col-md-4 mx-auto my-4 d-flex justify-content-center">
+                <img class="img-fluid rounded-3 mx-auto" src="{% static 'img/juneteenth/juneteenth_7_1x15.avif' %}" alt="">
             </div>
-            <div class="d-block d-md-none col-12">
-                <div class="section-subtitle">
-                    section title
-                </div>
-                <p class="section-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ea quaerat hic animi, dolores quis facilis totam, labore voluptatum commodi numquam ipsum incidunt! Fugit incidunt unde facere. Harum, qui rerum?
-                </p>
+            <div class="col-10 col-md-4 mx-auto my-4 d-flex justify-content-center">
+                <img class="img-fluid rounded-3" src="{% static 'img/juneteenth/juneteenth_8_1x15.avif' %}" alt="">
             </div>
-        </div>
-        <div class="row align-items-center py-4">
-            <div class="col-12 col-md-6">
-                <img src="{% static 'img/default_img.jpg' %}" alt="" class="img-fluid rounded-3">
+            <div class="col-10 col-md-6 mx-auto my-4">
+                <img class="img-fluid rounded-3" src="{% static 'img/juneteenth/juneteenth_2_4x3.avif' %}" alt="">
             </div>
-            <div class="col-12 col-md-6">
-                <div class="section-subtitle">
-                    section title
-                </div>
-                <p class="section-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ea quaerat hic animi, dolores quis facilis totam, labore voluptatum commodi numquam ipsum incidunt! Fugit incidunt unde facere. Harum, qui rerum?
-                </p>
+            <div class="col-10 col-md-6 mx-auto my-4">
+                <img class="img-fluid rounded-3" src="{% static 'img/juneteenth/juneteenth_3_4x3.avif' %}" alt="">
+            </div>
+            <div class="col-10 col-md-6 mx-auto my-4">
+                <img class="img-fluid rounded-3" src="{% static 'img/juneteenth/juneteenth_4_4x3.avif' %}" alt="">
+            </div>
+            <div class="col-10 col-md-6 mx-auto my-4">
+                <img class="img-fluid rounded-3" src="{% static 'img/juneteenth/juneteenth_5_4x3.avif' %}" alt="">
             </div>
         </div>
-        <div class="section-subtitle">
-            Bottom of the Page
-        </div>
-    </div>  
+    </div> 
 </div>
 {% endblock %}
