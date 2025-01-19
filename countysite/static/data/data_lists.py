@@ -54,6 +54,7 @@ cities = [
     {'name': 'Lawson', 'value': 'lawson'},
     {'name': 'Osborn', 'value': 'osborn'},
     {'name': 'Plattsburg', 'value': 'plattsburg'},
+    {'name': 'Stewartsville', 'value': 'stewartsville'},
     {'name': 'Trimble', 'value': 'trimble'},
     {'name': 'Turney', 'value': 'turney'}
 ]
