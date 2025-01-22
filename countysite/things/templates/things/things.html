@@ -99,7 +99,7 @@
                             {% if thing.description %}
                                 <p class="card-text">{{ thing.description }}</p>
                             {% else %}
-                                <p class="card-text">No description available.</p>
+                                <p class="card-text">{{ thing.get_filter_subtypes }}</p>
                             {% endif %}
                         </div>
                         <div class="card-footer">

@@ -33,7 +33,11 @@
             </div>
         </div>
         <div>
-            <h3><span class="fw-bold">Description: </span> {{ thing.get_filter_subtypes|title }}</h3>
+            {% if thing.description %}
+                <h3><span class="fw-bold">Description: </span>{{ thing.description }}</h3>
+            {% else %}
+                <h3><span class="fw-bold">Description: </span> {{ thing.get_filter_subtypes|title }}</h3>
+            {% endif %}
             <h3><span class="fw-bold">Address: </span> {{ thing.address|capfirst }}  {{ thing.city|capfirst }}, MO</h3>
             <h3><span class="fw-bold">Phone: </span> {{ thing.phone_number }}</h3>
         </div>
