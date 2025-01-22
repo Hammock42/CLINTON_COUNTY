@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block seo %}
+ <title>
+    Veterans Memorial Golf Course | Clinton County, Missouri
+ </title>
+ <meta name="description" property="og:description" content="Discover the serene and challenging Veterans Memorial Golf Course in Clinton County, Missouri. Enjoy a relaxing round of golf in a beautiful country setting.">
+ <meta name="keywords" content="Veterans Memorial Golf Course, Cameron, golf, golf course, golfing, golfers, golfers paradise">
+ <meta property="og:title" content="Veterans Memorial Golf Course | Clinton County, Missouri">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://www.visitclintoncomo.com/things-to-do/veterans-memorial-golf-course/">
+ <meta property="og:image" content="{% static 'img/home_page/pv_river_4x3.avif' %}">
+ <meta property="og:image:width" content="200">
+ <meta property="og:image:height" content="200">
+ <meta property="og:site_name" content="Discover Clinton County, Missouri">
+ <meta property="og:locale" content="en_US">
+ <meta property="og:image:alt" content="Image alt example">
+ <meta property="og:image:type" content="image/avif">
+ <meta name="twitter:card" content="summary">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-5" style="background-color: #f3e7dc;">
+    <div class="container p-3 mt-5">
+        <div class="m-3">
+            <h1 class="section-title my-3">
+                Cameron Veterans&apos; Memorial Golf Club
+            </h1>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/golf/golf_1_4x3.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="col-12 col-md-6">
+                <h2 class="section-subtitle">
+                    Golf in the Country
+                </h2>
+                <p class="section-text">
+                    Golf courses seem more at home in the country than in the city. No highway noise in the background. No long lines 
+                    at the tee boxes. No snobs in the pro shop. All of which explains why Cameron Veteran&apos;s Memorial Golf Course 
+                    is such a pleasure to play.<br>
+                    Our course features stimulating layouts without the high greens fees you pay for city courses and tee times are 
+                    easier to acquire.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'img/golf/golf_2_4x3.avif' %}" alt="" class="img-fluid rounded-3">
+            </div>
+            <div class="d-none d-md-block col-md-6 order-first">
+                <p class="section-text">
+                    This course has a motto: &quot;Manage your approach shots and our well-maintained greens will reward those players 
+                    who have mastered the art of putting.&quot; At 5,809 yards from the black tees, the course accommodates wide skill 
+                    levels. Water hazards on most holes add to the challenges. For more information: 
+                    <a href="https://www.camerongolfclub.com/course-info/" class="btn btn-lg btn-outline-success" rel="noopener noreferrer" target="_blank">Click Here</a>
+                </p>
+            </div>
+            <div class="d-block d-md-none col-12">
+                <p class="section-text">
+                    This course has a motto: &quot;Manage your approach shots and our well-maintained greens will reward those players 
+                    who have mastered the art of putting.&quot; At 5,809 yards from the black tees, the course accommodates wide skill 
+                    levels. Water hazards on most holes add to the challenges. For more information: 
+                    <a href="https://www.camerongolfclub.com/course-info/" class="btn btn-lg btn-outline-success" rel="noopener noreferrer" target="_blank">Click Here</a>
+                </p>
+            </div>
+        </div>
+        <p class="section-subtitle">
+            Come play at one of Clinton County&apos;s finest courses and experience golf as it&apos;s meant to be—relaxed, beautiful, and unforgettable!
+        </p>
+    </div>  
+</div>
+{% endblock %}
