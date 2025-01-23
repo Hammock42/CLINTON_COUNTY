@@ -15,6 +15,7 @@ class Place(models.Model):
     internal_page = models.BooleanField(default=False)
     email = models.EmailField(blank=True, null=True)
     image = models.ImageField(upload_to='place_img/', blank=True, null=True)
+    image_alt = models.CharField(max_length=100, blank=True, null=True)
     operation_hours = models.CharField(max_length=100, blank=True, null=True)
     filter_type_list = models.ManyToManyField('things.FilterType', related_name='place_type_filters', blank=True)
     filter_subtype_list = models.ManyToManyField('things.FilterSubType', related_name='place_subtype_filters', blank=True)

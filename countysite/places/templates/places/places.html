@@ -23,7 +23,7 @@
 {% block content %}
 <div class="container-fluid m-0 p-0">
     <section class="hero mb-5">
-        <img src="{% static 'img/bg_up_2.avif' %}" class="img-fluid" alt="...">
+        <img src="{% static 'img/bg_up_2.avif' %}" class="img-fluid" alt="Background image of girl doing cartwheel on hay bales.">
     </section>
     <div class="container-fluid">
         <div class="row mb-3">
@@ -67,27 +67,27 @@
                     <div class="card h-100">
                         <div class="bg-success">
                             {% if place.image %}
-                                <img src="{{ place.image.url }}" class="card-img-top" alt="...">
+                                <img src="{{ place.image.url }}" class="card-img-top" alt="{{ place.image_alt }}">
                             {% elif place.city == 'cameron' %}
-                                <img src="{% static 'img/maps/cameron_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                                <img src="{% static 'img/maps/cameron_map.avif' %}" class="card-img-top bg-success opacity-50" alt="map of Cameron, Missouri.">
                             {% elif place.city == 'gower' %}
-                                <img src="{% static 'img/maps/gower_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                                <img src="{% static 'img/maps/gower_map.avif' %}" class="card-img-top bg-success opacity-50" alt="Map of Gower, Missouri.">
                             {% elif place.city == 'holt' %}
-                                <img src="{% static 'img/maps/holt_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                                <img src="{% static 'img/maps/holt_map.avif' %}" class="card-img-top bg-success opacity-50" alt="Map of Holt, Missouri.">
                             {% elif place.city == 'lathrop' %}
-                                <img src="{% static 'img/maps/lathrop_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                                <img src="{% static 'img/maps/lathrop_map.avif' %}" class="card-img-top bg-success opacity-50" alt="Map of Lathrop, Missouri.">
                             {% elif place.city == 'lawson' %}
-                                <img src="{% static 'img/maps/lawson_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                                <img src="{% static 'img/maps/lawson_map.avif' %}" class="card-img-top bg-success opacity-50" alt="Map of Lawson, Missouri.">
                             {% elif place.city == 'osborn' %}
-                                <img src="{% static 'img/maps/osborn_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                                <img src="{% static 'img/maps/osborn_map.avif' %}" class="card-img-top bg-success opacity-50" alt="Map of Osborn, Missouri.">
                             {% elif place.city == 'plattsburg' %}
-                                <img src="{% static 'img/maps/plattsburg_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                                <img src="{% static 'img/maps/plattsburg_map.avif' %}" class="card-img-top bg-success opacity-50" alt="Map of Plattsburg, Missouri.">
                             {% elif place.city == 'trimble' %}
-                                <img src="{% static 'img/maps/trimble_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                                <img src="{% static 'img/maps/trimble_map.avif' %}" class="card-img-top bg-success opacity-50" alt="Map of Trimble, Missouri.">
                             {% elif place.city == 'turney' %}
-                                <img src="{% static 'img/maps/turney_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                                <img src="{% static 'img/maps/turney_map.avif' %}" class="card-img-top bg-success opacity-50" alt="Map of Turney, Missouri.">
                             {% else %}
-                                <img src="{% static 'img/maps/cc_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                                <img src="{% static 'img/maps/cc_map.avif' %}" class="card-img-top bg-success opacity-50" alt="Map of Clinton County, Missouri.">
                             {% endif %}
                         </div>
                         <div class="card-body">

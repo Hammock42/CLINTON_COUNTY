@@ -15,6 +15,7 @@ class Thing(models.Model):
     internal_page = models.BooleanField(default=False)
     email = models.EmailField(blank=True, null=True)
     image = models.ImageField(upload_to='thing_img/', blank=True, null=True)
+    image_alt = models.CharField(max_length=100, blank=True, null=True)
     operation_hours = models.CharField(max_length=100, blank=True, null=True)
     filter_type_list = models.ManyToManyField('FilterType', related_name='type_filters', blank=True)
     filter_subtype_list = models.ManyToManyField('FilterSubType', related_name='subtype_filters', blank=True)
