@@ -35,58 +35,49 @@
     .mobile-nav .nav-link {
         font-size: 1.2em;
         color: rgba(33, 37, 41, 1);
-        font-weight: 500;
-    }
-    
-    .mobile-nav .nav-item {
         background: rgba(248, 249, 250, 1);
+        font-weight: 500;
+        width: 100%;
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center horizontally */
     }
-    
-    .mobile-nav .nav-item:hover {
+    .mobile-nav .nav-item:hover .nav-link{
         background: rgba(33, 37, 41, 1);
-        .nav-link {
-            color: rgba(248, 249, 250, 1);
-        }
+        color: rgba(248, 249, 250, 1);
     }
 }
 .dropdown-toggle::after {
     display: none;
 }
-.nav-item-no-scroll {
+.nav-item-no-scroll .nav-link{
     background: rgba(0,0,0,0);
-    .nav-link {
-        color: rgba(248, 249, 250, 1);
-        text-shadow: 1px 1px 2px #000000;
-    }
+    color: rgba(248, 249, 250, 1);
+    text-shadow: 1px 1px 2px #000000;
 }
-.nav-item-no-scroll:hover,
-.nav-item-no-scroll-dropdown-open {
+.nav-item-no-scroll:hover .nav-link,
+.nav-item-no-scroll-dropdown-open .nav-link {
     background: rgba(248, 249, 250, 1);
-    .nav-link {
-        color: rgba(33, 37, 41, 1);
-        text-shadow: none;
-        .dropdown-caret {
-            transform: rotate(180deg);
-        }
-    }
+    color: rgba(33, 37, 41, 1);
+    text-shadow: none;
 }
-.nav-item-scroll {
+.nav-item-no-scroll:hover .dropdown-caret,
+.nav-item-no-scroll-dropdown-open .dropdown-caret,
+.nav-item-scroll:hover .dropdown-caret,
+.nav-item-scroll-dropdown-open .dropdown-caret {
+    transform: rotate(180deg);
+}
+.nav-item-scroll .nav-link{
     background: rgba(248, 249, 250, 1);
-    .nav-link {
-        color: rgba(33, 37, 41, 1);
-        text-shadow: none;
-    }
+    color: rgba(33, 37, 41, 1);
+    text-shadow: none;
 }
-.nav-item-scroll:hover,
-.nav-item-scroll-dropdown-open {
+.nav-item-scroll:hover .nav-link,
+.nav-item-scroll-dropdown-open .nav-link {
     background: rgba(33, 37, 41, 1);
-    .nav-link {
-        color: rgba(248, 249, 250, 1);
-        text-shadow: none;
-        .dropdown-caret {
-            transform: rotate(180deg);
-        }
-    }
+    color: rgba(248, 249, 250, 1);
+    text-shadow: none;
 }
 .dropdown-item:hover {
     background: rgba(33, 37, 41, 1);
@@ -116,8 +107,9 @@
     min-height: 100px;
     letter-spacing: 3px;
 }
-.navbar-nav .nav-item {
+.navbar-nav .nav-link {
     min-height: 100px;
+    min-width: 150px;
 }
 @font-face {
     font-family: "raleway";
