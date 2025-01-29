@@ -38,8 +38,27 @@
         </div>
         <div>
             <h3><span class="fw-bold">Description: </span> {{ resource.get_filter_subtypes|title }}</h3>
-            <h3><span class="fw-bold">Address: </span> {{ resource.address|capfirst }}  {{ resource.city|capfirst }}, MO</h3>
-            <h3><span class="fw-bold">Phone: </span> {{ resource.phone_number }}</h3>
+            <h3><span class="fw-bold">Address: </span> {{ resource.address|capfirst }},  {{ resource.city|capfirst }}, MO</h3>
+            {% if resource.phone_number %}
+                <h3><span class="fw-bold">Phone: </span> {{ resource.phone_number }}</h3>
+            {% else %}
+                <h3><span class="fw-bold">Phone: </span> N/A</h3>
+            {% endif %}
+            {% if resource.external_website %}
+                <h3><span class="fw-bold">Website: </span><a href="{{ resource.external_website }}" target="_blank">{{ resource.external_website }}</a></h3>
+            {% else %}
+                <h3><span class="fw-bold">Website: </span> N/A</h3>
+            {% endif %}
+            {% if resource.operation_hours %}
+                <h3><span class="fw-bold">Hours: </span></h3>
+                <h3>
+                    {% for hours in resource.get_operation_hours %}
+                    <span class="ps-3">{{ hours }}</span><br>
+                    {% endfor %}
+                </h3>
+            {% else %}
+                <h3><span class="fw-bold">Hours: </span>N/A</h3>
+            {% endif %}
         </div>
     </div>
 </div>

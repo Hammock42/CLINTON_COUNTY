@@ -40,6 +40,9 @@ class Thing(models.Model):
     def get_full_address(self):
         return f'{self.address}, {self.city}, MO'
     
+    def get_operation_hours(self):
+        return self.operation_hours.split(';')
+    
     
 
 class FilterType(models.Model):

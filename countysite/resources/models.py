@@ -35,3 +35,6 @@ class Resource(models.Model):
     
     def get_full_address(self):
         return f'{self.address}, {self.city}, {self.state}'
+    
+    def get_operation_hours(self):
+        return self.operation_hours.split(';')

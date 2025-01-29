@@ -38,10 +38,24 @@
             {% else %}
                 <h3><span class="fw-bold">Description: </span> {{ thing.get_filter_subtypes|title }}</h3>
             {% endif %}
-            <h3><span class="fw-bold">Address: </span> {{ thing.address|capfirst }}  {{ thing.city|capfirst }}, MO</h3>
-            <h3><span class="fw-bold">Phone: </span> {{ thing.phone_number }}</h3>
+            <h3><span class="fw-bold">Address: </span> {{ thing.address|capfirst }},  {{ thing.city|capfirst }}, MO</h3>
+            {% if thing.phone_number %}
+                <h3><span class="fw-bold">Phone: </span> {{ thing.phone_number }}</h3>
+            {% else %}
+                <h3><span class="fw-bold">Phone: </span> N/A</h3>
+            {% endif %}
+            {% if thing.external_website %}
+                <h3><span class="fw-bold">Website: </span><a href="{{ thing.external_website }}" class="btn btn-outline-primary btn-lg" target="_blank" rel="noopener noreferrer">Visit Website</a></h3>
+            {% else %}
+                <h3><span class="fw-bold">Website: </span> N/A</h3>
+            {% endif %}
             {% if thing.operation_hours %}
-                <h3><span class="fw-bold">Hours: </span>{{ thing.operation_hours }}</h3>
+                <h3><span class="fw-bold">Hours: </span></h3>
+                <h3>
+                    {% for hours in thing.get_operation_hours %}
+                    <span class="ps-3">{{ hours }}</span><br>
+                    {% endfor %}
+                </h3>
             {% else %}
                 <h3><span class="fw-bold">Hours: </span>N/A</h3>
             {% endif %}
