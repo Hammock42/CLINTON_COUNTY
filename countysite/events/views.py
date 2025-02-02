@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Event
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from static.data.data_lists import event_categories, cities
+import datetime
 
 # Create your views here.
 def event_list(request):
@@ -26,8 +27,12 @@ def filtered_event_list(request):
         events = Event.objects.all().order_by('name')
     elif event_sort == 'za':
         events = Event.objects.all().order_by('-name')
+    elif event_sort == 'past':
+        events = Event.objects.all().filter(end_date__lt=datetime.date.today()).order_by('-start_date')
+    elif event_sort == 'upcoming':
+        events = Event.objects.all().filter(end_date__gte=datetime.date.today()).order_by('start_date')
     else:
-        events = Event.objects.all().order_by('?')
+        events = Event.objects.all()
         
     if event_category != 'all':
         events = events.filter(filter_type_list__name__in=[event_category])

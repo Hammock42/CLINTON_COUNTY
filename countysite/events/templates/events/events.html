@@ -51,11 +51,11 @@
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                         <label for="eventsSortFilter" class="form-label">Sort By:</label>
                         <select id="eventsSortFilter" class="form-select" onchange="filterSort(this.value)">
-                            <option value="recommended" {% if selected_sort == 'recommended' %}selected{% endif %}>Recommended</option>
-                            <option value="upcoming" {% if selected_sort == 'upcoming' %}selected{% endif %}>Upcoming</option>
-                            <option value="past" {% if selected_sort == 'past' %}selected{% endif %}>Past</option>
-                            <option value="az" {% if selected_sort == 'az' %}selected{% endif %}>Alphabetical &#91;A-Z&#93;</option>
-                            <option value="za" {% if selected_sort == 'za' %}selected{% endif %}>Alphabetical &#91;Z-A&#93;</option>
+                            <option value="recommended" {% if request.GET.sort == 'recommended' %}selected{% endif %}>Recommended</option>
+                            <option value="upcoming" {% if request.GET.sort == 'upcoming' %}selected{% endif %}>Upcoming</option>
+                            <option value="past" {% if request.GET.sort == 'past' %}selected{% endif %}>Past</option>
+                            <option value="az" {% if request.GET.sort == 'az' %}selected{% endif %}>Alphabetical &#91;A-Z&#93;</option>
+                            <option value="za" {% if request.GET.sort == 'za' %}selected{% endif %}>Alphabetical &#91;Z-A&#93;</option>
                         </select>
                     </div>
                 </div>
@@ -97,6 +97,12 @@
                             <p class="fs-5 card-title fw-bold">{{ event.name }}</p>
                             {% if event.featured %}
                                 <span class="badge bg-warning text-dark">Featured</span>
+                            {% endif %}
+                            {% if event.start_date %}
+                                <p class="card-text"><span class="fw-bold">Start: </span> {{ event.start_date|date:"F j, Y" }}</p>
+                            {% endif %}
+                            {% if event.end_date %}
+                                <p class="card-text"><span class="fw-bold">End: </span> {{ event.end_date|date:"F j, Y" }}</p>
                             {% endif %}
                             {% if event.description %}
                                 <p class="card-text">{{ event.description }}</p>
