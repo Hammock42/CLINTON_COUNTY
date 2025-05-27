@@ -1,8 +1,8 @@
+{% load static %}
 <nav id="main-navbar" class="navbar navbar-expand-lg fixed-top text-center m-0 p-0 bg-grad align-items-center">
     <div class="container-fluid m-0 p-0">
-        <a href="/" class="navbar-brand bg-light lvl0 lh-1 m-0 pt-4">
-            <span class="first-word lvl1">CLINTON</span><br>
-            <span class="non-first-words lvl1">COUNTY, MO</span>
+        <a href="/" class="navbar-brand p-0 m-0">
+            <img src="{% static 'icons/VCCM_Logo_Right.png' %}" alt="" style="width: 120px;">
         </a>
         <button class="col-3 navbar-toggler border border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerMenu" aria-controls="navbarTogglerMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -141,17 +141,12 @@
 
 <script>
     var navItems = document.querySelectorAll('.desktop-nav .nav-item');
-    var navBrand = document.querySelector('.navbar-brand');
     var navEl = document.getElementById('main-navbar');
 
     window.addEventListener('scroll', function() {
         if (window.scrollY > 100) {
             navEl.classList.add('bg-light');
             navEl.classList.remove('bg-grad');
-            navBrand.classList.add('text-light');
-            navBrand.classList.add('bg-dark');
-            navBrand.classList.remove('text-dark');
-            navBrand.classList.remove('bg-light');
             navItems.forEach(function(item) {
                 item.classList.add('nav-item-scroll');
                 item.classList.remove('nav-item-no-scroll');
@@ -159,10 +154,6 @@
         } else {
             navEl.classList.add('bg-grad');
             navEl.classList.remove('bg-light');
-            navBrand.classList.add('text-dark');
-            navBrand.classList.add('bg-light');
-            navBrand.classList.remove('text-light');
-            navBrand.classList.remove('bg-dark');
             navItems.forEach(function(item) {
                 item.classList.add('nav-item-no-scroll');
                 item.classList.remove('nav-item-scroll');
