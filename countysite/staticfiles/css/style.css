@@ -18,11 +18,6 @@
         background: rgba(248, 249, 250, 1) !important;
     }
 
-    .navbar-brand {
-        background: rgba(248, 249, 250, 1) !important;
-        color: rgba(33, 37, 41, 1) !important;
-    }
-
     .first-word.lvl1 {
         font-size: 1.1em;
         font-weight: 500;
@@ -103,7 +98,7 @@
 }
 .navbar-brand {
     margin: 0;
-    width: 200px;
+    width: 150px;
     min-height: 100px;
     letter-spacing: 3px;
 }
