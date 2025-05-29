@@ -40,6 +40,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
     path('coming_soon/', views.coming_soon, name='coming_soon'),
+    path('contact/', views.contact, name='contact'),
     path('legal_statement/', views.legal_statement, name='legal_statement'),
     path('privacy_policy/', views.privacy_policy, name='privacy_policy'),
     path('events-to-enjoy/', include('events.urls')),

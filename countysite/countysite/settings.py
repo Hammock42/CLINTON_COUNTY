@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-g2to+5el36c@2moctlxk*j#&ng$6*$xmld3(i(8t!vzph2tv-*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['www.visitclintoncomo.com', 'hammock42.pythonanywhere.com', '.vercel.app', 'localhost', 'testserver']
 
@@ -142,3 +142,8 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+
+# django_project/settings.py
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+DEFAULT_FROM_EMAIL = "connect@clintoncoinitiative.org"
+NOTIFY_EMAIL = "hamadhamdi13831@gmail.com"

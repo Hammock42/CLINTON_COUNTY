@@ -1,134 +1,134 @@
 {% load static %}
-<nav id="main-navbar" class="navbar navbar-expand-lg fixed-top text-center m-0 p-0 bg-grad align-items-center">
+<nav id="main-navbar" class="navbar navbar-expand-lg fixed-top text-center m-0 p-0 bg-grad align-items-center" role="navigation" aria-label="Main Navigation">
     <div class="container-fluid m-0 p-0">
-        <a href="/" class="navbar-brand bg-light p-0 m-0">
-            <img class="d-none d-md-block mx-auto" src="{% static 'icons/VCCM_Logo_Left.png' %}" alt="" style="width: 120px;">
-            <img class="float-start d-block d-md-none" src="{% static 'icons/VCCM_Logo_Left.png' %}" alt="" style="width: 120px;">
+        <a href="/" class="navbar-brand bg-light p-0 m-0" aria-label="Go to home page">
+            <img class="d-none d-md-block mx-auto" src="{% static 'icons/VCCM_Logo_Left.png' %}" alt="Visit Clinton County, Missouri logo" style="width: 120px;">
+            <img class="float-start d-block d-md-none" src="{% static 'icons/VCCM_Logo_Left.png' %}" alt="Visit Clinton County, Missouri logo" style="width: 120px;">
         </a>
-        <button class="col-3 navbar-toggler border border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerMenu" aria-controls="navbarTogglerMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="col-3 navbar-toggler border border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerMenu" aria-controls="navbarTogglerMenu" aria-expanded="false" aria-label="Toggle navigation bar" aria-haspopup="true">
+            <span class="navbar-toggler-icon" aria-label="navigation bar toggler icon"></span>
         </button>
-        <div class="collapse navbar-collapse text-center" id="navbarTogglerMenu">
+        <div class="collapse navbar-collapse text-center" id="navbarTogglerMenu" aria-label="Main Navigation Menu Items">
             <ul class="navbar-nav d-lg-none mobile-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'things:thing_list' %}">THINGS TO DO</a>
+                    <a class="nav-link" href="{% url 'things:thing_list' %}" aria-label="Go to Things to do page">THINGS TO DO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'places:place_list' %}">WHERE TO STAY</a>
+                    <a class="nav-link" href="{% url 'places:place_list' %}" aria-label="Go to Where to stay page">WHERE TO STAY</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'events:filtered_event_list' %}?categories=all&city=all&sort=upcoming">EVENTS TO ENJOY</a>
+                    <a class="nav-link" href="{% url 'events:filtered_event_list' %}?categories=all&city=all&sort=upcoming" aria-label="Go to Events to enjoy page">EVENTS TO ENJOY</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'resources:resource_list' %}">RESOURCES TO USE</a>
+                    <a class="nav-link" href="{% url 'resources:resource_list' %}" aria-label="Go to Resources to use page">RESOURCES TO USE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'about' %}">WHO WE ARE</a>
+                    <a class="nav-link" href="{% url 'about' %}" aria-label="Go to Who we are page">WHO WE ARE</a>
                 </li>
             </ul>
             <ul class="navbar-nav d-none d-lg-flex desktop-nav">
               <li class="nav-item dropdown lvl0 nav-item-no-scroll">
-                <a class="nav-link dropdown-toggle lh-1 nav-link-no-scroll d-flex justify-content-center align-items-center" href="{% url 'things:thing_list' %}" target="_self" role="button" data-bs-hover="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle lh-1 nav-link-no-scroll d-flex justify-content-center align-items-center" href="{% url 'things:thing_list' %}" target="_self" role="button" data-bs-hover="dropdown" aria-expanded="false" aria-haspopup="true">
                     <div>
                         <span class="first-word lvl1">THINGS</span><br>
                         <span class="non-first-words lvl1">TO DO</span>
                     </div>
-                    <svg class="dropdown-caret ms-2" fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="dropdown-caret ms-2" fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-label="dropdown caret icon">
                         <path d="M128,188a11.96187,11.96187,0,0,1-8.48535-3.51465l-80-80a12.0001,12.0001,0,0,1,16.9707-16.9707L128,159.0293l71.51465-71.51465a12.0001,12.0001,0,0,1,16.9707,16.9707l-80,80A11.96187,11.96187,0,0,1,128,188Z"/>
                     </svg>
                 </a>
                 <ul class="dropdown-menu p-4 bg-light">
                     <div class="row">
                         <div class="col-12 col-lg-5">
-                            <li><a class="dropdown-item" href="{% url 'things:thing_list' %}" target="_self">ALL THINGS TO DO</a></li>
-                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=art-culture&city=all&sort=recommended" target="_self">ART &amp; CULTURE</a></li>
-                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=beauty-wellness&city=all&sort=recommended" target="_self">BEAUTY &amp; WELLNESS</a></li>
-                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=family-fun&city=all&sort=recommended" target="_self">FAMILY FUN</a></li>
-                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=food-drink&city=all&sort=recommended" target="_self">FOOD &amp; DRINK</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list' %}" target="_self" aria-label="Go to All things to do page">ALL THINGS TO DO</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=art-culture&city=all&sort=recommended" target="_self" aria-label="Go to art and culture things to do page">ART &amp; CULTURE</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=beauty-wellness&city=all&sort=recommended" target="_self" aria-label="Go to beauty and wellness things to do page">BEAUTY &amp; WELLNESS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=family-fun&city=all&sort=recommended" target="_self" aria-label="Go to family fun things to do page">FAMILY FUN</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=food-drink&city=all&sort=recommended" target="_self" aria-label="Go to food and drink things to do page">FOOD &amp; DRINK</a></li>
                         </div>
                         <div class="col-12 col-lg-5">
-                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=history&city=all&sort=recommended" target="_self">HISTORY &amp; MUSEUMS</a></li>
-                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=outdoor-adventure&city=all&sort=recommended" target="_self">OUTDOOR ADVENTURE</a></li>
-                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=recreation&city=all&sort=recommended" target="_self">RECREATION</a></li>
-                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=shopping&city=all&sort=recommended" target="_self">SHOPPING</a></li>
-                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=tours&city=all&sort=recommended" target="_self">TOURS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=history&city=all&sort=recommended" target="_self" aria-label="Go to history and museums things to do page">HISTORY &amp; MUSEUMS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=outdoor-adventure&city=all&sort=recommended" target="_self" aria-label="Go to outdoor adventure things to do page">OUTDOOR ADVENTURE</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=recreation&city=all&sort=recommended" target="_self" aria-label="Go to recreation things to do page">RECREATION</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=shopping&city=all&sort=recommended" target="_self" aria-label="Go to shopping things to do page">SHOPPING</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=tours&city=all&sort=recommended" target="_self" aria-label="Go to tours things to do page">TOURS</a></li>
                         </div>
                     </div>
                 </ul>
               </li>
               <li class="nav-item dropdown lvl0 nav-item-no-scroll">
-                <a class="nav-link dropdown-toggle lh-1 nav-link-no-scroll d-flex justify-content-center align-items-center" href="{% url 'places:place_list' %}" role="button" data-bs-hover="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle lh-1 nav-link-no-scroll d-flex justify-content-center align-items-center" href="{% url 'places:place_list' %}" role="button" data-bs-hover="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Go to Where to stay page">
                     <div>
                         <span class="first-word lvl1">WHERE</span><br>
                         <span class="non-first-words lvl1">TO STAY</span>
                     </div>
-                    <svg class="dropdown-caret ms-2" fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="dropdown-caret ms-2" fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-label="dropdown caret icon">
                         <path d="M128,188a11.96187,11.96187,0,0,1-8.48535-3.51465l-80-80a12.0001,12.0001,0,0,1,16.9707-16.9707L128,159.0293l71.51465-71.51465a12.0001,12.0001,0,0,1,16.9707,16.9707l-80,80A11.96187,11.96187,0,0,1,128,188Z"/>
                     </svg>
                 </a>
                 <ul class="dropdown-menu p-4">
                     <div class="row">
                         <div class="col-12 col-lg-5">
-                            <li><a class="dropdown-item" href="{% url 'places:place_list' %}">ALL PLACES</a></li>
-                            <li><a class="dropdown-item" href="{% url 'places:filtered_place_list' %}?categories=campground&city=all&sort=recommended">CAMPGROUNDS</a></li>
-                            <li><a class="dropdown-item" href="{% url 'places:filtered_place_list' %}?categories=hotel/motel&city=all&sort=recommended">HOTEL</a></li>
-                            <li><a class="dropdown-item" href="{% url 'places:filtered_place_list' %}?categories=vacation-rentals&city=all&sort=recommended">VACATION RENTALS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'places:place_list' %}" aria-label="Go to where to stay page">ALL PLACES</a></li>
+                            <li><a class="dropdown-item" href="{% url 'places:filtered_place_list' %}?categories=campground&city=all&sort=recommended" aria-label="Go to campgrounds where to stay page">CAMPGROUNDS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'places:filtered_place_list' %}?categories=hotel/motel&city=all&sort=recommended" aria-label="Go to hotels where to stay page">HOTEL</a></li>
+                            <li><a class="dropdown-item" href="{% url 'places:filtered_place_list' %}?categories=vacation-rentals&city=all&sort=recommended" aria-label="Go to vacation rentals where to stay page">VACATION RENTALS</a></li>
                         </div>
                     </div>
                 </ul>
               </li>
               <li class="nav-item dropdown lvl0 nav-item-no-scroll">
-                <a class="nav-link dropdown-toggle nav-link-no-scroll lh-1 d-flex justify-content-center align-items-center" href="{% url 'events:filtered_event_list' %}?categories=all&city=all&sort=upcoming" role="button" data-bs-hover="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle nav-link-no-scroll lh-1 d-flex justify-content-center align-items-center" href="{% url 'events:filtered_event_list' %}?categories=all&city=all&sort=upcoming" role="button" data-bs-hover="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Go to Events to enjoy page">
                     <div>
                         <span class="first-word lvl1">EVENTS</span><br>
                         <span class="non-first-words lvl1">TO ENJOY</span>
                     </div>
-                    <svg class="dropdown-caret ms-2" fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="dropdown-caret ms-2" fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-label="dropdown caret icon">
                         <path d="M128,188a11.96187,11.96187,0,0,1-8.48535-3.51465l-80-80a12.0001,12.0001,0,0,1,16.9707-16.9707L128,159.0293l71.51465-71.51465a12.0001,12.0001,0,0,1,16.9707,16.9707l-80,80A11.96187,11.96187,0,0,1,128,188Z"/>
                     </svg>
                 </a>
                 <ul class="dropdown-menu p-4">
                     <div class="row">
                         <div class="col-12 col-lg-5">
-                            <li><a class="dropdown-item" href="{% url 'events:event_list' %}">ALL EVENTS</a></li>
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=all&city=all&sort=upcoming" target="_self">UPCOMING EVENTS</a></li>
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=art-culture&city=all&sort=upcoming" target="_self">ART &amp; CULTURE</a></li>
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=family-fun&city=all&sort=upcoming" target="_self">FAMILY FUN</a></li>
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=food-drink&city=all&sort=upcoming" target="_self">FOOD &amp; DRINK</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:event_list' %}" aria-label="Go to Events to enjoy page">ALL EVENTS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=all&city=all&sort=upcoming" target="_self" aria-label="Go to upcoming Events to enjoy page">UPCOMING EVENTS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=art-culture&city=all&sort=upcoming" target="_self" aria-label="Go to art and culture Events to enjoy page">ART &amp; CULTURE</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=family-fun&city=all&sort=upcoming" target="_self" aria-label="Go to family fun Events to enjoy page">FAMILY FUN</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=food-drink&city=all&sort=upcoming" target="_self" aria-label="Go to food and drink Events to enjoy page">FOOD &amp; DRINK</a></li>
                         </div>
                         <div class="col-12 col-lg-5">
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=lectures-workshops&city=all&sort=upcoming" target="_self">LECTURES &amp; WORKSHOPS</a></li>
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=music-dance&city=all&sort=upcoming" target="_self">MUSIC &amp; DANCE</a></li>
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=seasonal-holiday&city=all&sort=upcoming" target="_self">SEASONAL &amp; HOLIDAY</a></li>
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=sports&city=all&sort=upcoming" target="_self">SPORTS</a></li>
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=volunteer&city=all&sort=upcoming" target="_self">VOLUNTEER</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=lectures-workshops&city=all&sort=upcoming" target="_self" aria-label="Go to lecture and workshop Events to enjoy page">LECTURES &amp; WORKSHOPS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=music-dance&city=all&sort=upcoming" target="_self" aria-label="Go to music and dance Events to enjoy page">MUSIC &amp; DANCE</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=seasonal-holiday&city=all&sort=upcoming" target="_self" aria-label="Go to seasonal and holiday Events to enjoy page">SEASONAL &amp; HOLIDAY</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=sports&city=all&sort=upcoming" target="_self" aria-label="Go to sport Events to enjoy page">SPORTS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=volunteer&city=all&sort=upcoming" target="_self" aria-label="Go to volunteer Events to enjoy page">VOLUNTEER</a></li>
                         </div>
                     </div>
                 </ul>
               </li>
               <li class="nav-item dropdown lvl0 nav-item-no-scroll">
-                <a class="nav-link dropdown-toggle nav-link-no-scroll lh-1 d-flex justify-content-center align-items-center" href="{% url 'resources:resource_list' %}" role="button" data-bs-hover="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle nav-link-no-scroll lh-1 d-flex justify-content-center align-items-center" href="{% url 'resources:resource_list' %}" role="button" data-bs-hover="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Go to Resources to use page">
                     <div>
                         <span class="first-word lvl1">RESOURCES</span><br>
                         <span class="non-first-words lvl1">TO USE</span>
                     </div>
-                    <svg class="dropdown-caret ms-2" fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="dropdown-caret ms-2" fill="currentColor" width="20px" height="20px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-label="dropdown caret icon">
                         <path d="M128,188a11.96187,11.96187,0,0,1-8.48535-3.51465l-80-80a12.0001,12.0001,0,0,1,16.9707-16.9707L128,159.0293l71.51465-71.51465a12.0001,12.0001,0,0,1,16.9707,16.9707l-80,80A11.96187,11.96187,0,0,1,128,188Z"/>
                     </svg>
                 </a>
                 <ul class="dropdown-menu p-4">
                     <div class="row">
                         <div class="col-12 col-lg-10">
-                            <li><a class="dropdown-item" href="{% url 'resources:resource_list' %}">ALL RESOURCES</a></li>
-                            <li><a class="dropdown-item" href="{% url 'about' %}">WHO WE ARE</a></li>
-                            <li><a class="dropdown-item" href="{% url 'privacy_policy' %}">PRIVACY POLICY</a></li>
-                            <li><a class="dropdown-item" href="{% url 'legal_statement' %}">LEGAL STATEMENT</a></li>
+                            <li><a class="dropdown-item" href="{% url 'resources:resource_list' %}" aria-label="Go to all resources to use page">ALL RESOURCES</a></li>
+                            <li><a class="dropdown-item" href="{% url 'about' %}" aria-label="Go to who we are page">WHO WE ARE</a></li>
+                            <li><a class="dropdown-item" href="{% url 'privacy_policy' %}" aria-label="Go to privacy policy page">PRIVACY POLICY</a></li>
+                            <li><a class="dropdown-item" href="{% url 'legal_statement' %}" aria-label="Go to legal statement page">LEGAL STATEMENT</a></li>
                         </div>
                     </div>
                 </ul>
               </li>
               <li class="nav-item nav-item-no-scroll">
-                <a class="nav-link nav-link-no-scroll lh-1 d-flex justify-content-center align-items-center" href="{% url 'about' %}">
+                <a class="nav-link nav-link-no-scroll lh-1 d-flex justify-content-center align-items-center" href="{% url 'about' %}" aria-label="Go to Who we are page" aria-haspopup="false" aria-expanded="false">
                     <div>
                         <span class="first-word lvl1">WHO</span><br>
                         <span class="non-first-words lvl1">WE ARE</span>
