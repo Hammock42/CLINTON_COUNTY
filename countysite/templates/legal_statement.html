@@ -20,8 +20,12 @@
  <meta name="twitter:card" content="summary">
 {% endblock %}
 
+{% block skiplink %}
+<a href="#legal-statement-content" class="visually-hidden-focusable skip-link">Skip main navigation</a>
+{% endblock skiplink %}
+
 {% block content %}
-<div class="container mt-5 pt-5">
+<div id="legal-statement-content" class="container mt-5 pt-5">
     <h1 keywords="legal, statement">Legal Statement</h1>
     <h2 keyword="disclaimer">1. Disclaimers</h2>
     <h3>1.1. Disclaimers</h3>

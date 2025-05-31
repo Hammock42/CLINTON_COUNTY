@@ -20,8 +20,12 @@
  <meta name="twitter:card" content="summary">
 {% endblock %}
 
+{% block skiplink %}
+<a href="#places-content" class="visually-hidden-focusable skip-link">Skip main navigation</a>
+{% endblock skiplink %}
+
 {% block content %}
-<div class="container-fluid m-0 p-0">
+<div id="places-content" class="container-fluid m-0 p-0">
     <section class="hero mb-5">
         <img src="{% static 'img/bg_up_2.avif' %}" class="img-fluid" alt="Background image of girl doing cartwheel on hay bales.">
     </section>

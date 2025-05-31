@@ -1,10 +1,18 @@
 {% extends "layout.html" %}
 {% load static %}
 
-{% block title %}Contact Us{% endblock %}
+{% block seo %}
+<title>Contact Us - Clinton County Initiative</title>
+<meta name="description" content="Get in touch with the Clinton County Initiative. We are here to answer your questions and assist you with any inquiries.">
+<meta name="keywords" content="contact, Clinton County Initiative, community support, assistance, inquiries">
+{% endblock seo %}
+
+{% block skiplink %}
+<a href="#contact-content" class="visually-hidden-focusable skip-link">Skip main navigation</a>
+{% endblock skiplink %}
 
 {% block content %}
-<div class="container-fluid p-0 m-0" style="background-color: #f3e7dc;">
+<div id="contact-content" class="container-fluid p-0 m-0" style="background-color: #f3e7dc;">
     <section class="hero mb-5">
         <img src="{% static 'img/who_we_are_bg_3x1.avif' %}" class="img-fluid" alt="Background collage of images for the Clinton County Initiative.">
     </section>

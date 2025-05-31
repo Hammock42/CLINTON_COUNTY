@@ -21,9 +21,11 @@
   </head>
 <body>
   <div id="layout-container" class="container-fluid p-0">
+    {% block skiplink %}
+    {% endblock skiplink %}
     {% include 'partials/nav.html' %}
     {% block content %}
-    {% endblock %}
+    {% endblock content %}
   </div>
   {% include 'partials/footer.html' %}
 <!--fluid-container-->

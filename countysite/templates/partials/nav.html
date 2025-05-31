@@ -11,16 +11,16 @@
         <div class="collapse navbar-collapse text-center" id="navbarTogglerMenu" aria-label="Main Navigation Menu Items">
             <ul class="navbar-nav d-lg-none mobile-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'things:thing_list' %}" aria-label="Go to Things to do page">THINGS TO DO</a>
+                    <a class="nav-link" href="{% url 'things:thing_list' %}" aria-label="Go to things to do page">THINGS TO DO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'places:place_list' %}" aria-label="Go to Where to stay page">WHERE TO STAY</a>
+                    <a class="nav-link" href="{% url 'places:place_list' %}" aria-label="Go to where to stay page">WHERE TO STAY</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'events:filtered_event_list' %}?categories=all&city=all&sort=upcoming" aria-label="Go to Events to enjoy page">EVENTS TO ENJOY</a>
+                    <a class="nav-link" href="{% url 'events:filtered_event_list' %}?categories=all&city=all&sort=upcoming" aria-label="Go to events to enjoy page">EVENTS TO ENJOY</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'resources:resource_list' %}" aria-label="Go to Resources to use page">RESOURCES TO USE</a>
+                    <a class="nav-link" href="{% url 'resources:resource_list' %}" aria-label="Go to resources to use page">RESOURCES TO USE</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'about' %}" aria-label="Go to Who we are page">WHO WE ARE</a>
@@ -40,7 +40,7 @@
                 <ul class="dropdown-menu p-4 bg-light">
                     <div class="row">
                         <div class="col-12 col-lg-5">
-                            <li><a class="dropdown-item" href="{% url 'things:thing_list' %}" target="_self" aria-label="Go to All things to do page">ALL THINGS TO DO</a></li>
+                            <li><a class="dropdown-item" href="{% url 'things:thing_list' %}" target="_self" aria-label="Go to things to do page">ALL THINGS TO DO</a></li>
                             <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=art-culture&city=all&sort=recommended" target="_self" aria-label="Go to art and culture things to do page">ART &amp; CULTURE</a></li>
                             <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=beauty-wellness&city=all&sort=recommended" target="_self" aria-label="Go to beauty and wellness things to do page">BEAUTY &amp; WELLNESS</a></li>
                             <li><a class="dropdown-item" href="{% url 'things:thing_list_filtered' %}?categories=family-fun&city=all&sort=recommended" target="_self" aria-label="Go to family fun things to do page">FAMILY FUN</a></li>
