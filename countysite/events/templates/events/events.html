@@ -73,7 +73,7 @@
                     <div class="card h-100">
                         <div class="bg-success">
                             {% if event.image %}
-                                <img src="{{ event.image.url }}" class="card-img-top" alt="...">
+                                <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.image_alt}}">
                             {% elif event.city == 'cameron' %}
                                 <img src="{% static 'img/maps/cameron_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
                             {% elif event.city == 'gower' %}

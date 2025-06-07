@@ -17,7 +17,7 @@
                     <a class="nav-link" href="{% url 'places:place_list' %}" aria-label="Go to where to stay page">WHERE TO STAY</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'events:filtered_event_list' %}?categories=all&city=all&sort=upcoming" aria-label="Go to events to enjoy page">EVENTS TO ENJOY</a>
+                    <a class="nav-link" href="{% url 'events:filtered_event_list' %}?categories=all&city=all&sort=upcoming" aria-label="Go to upcoming events to enjoy page">EVENTS TO ENJOY</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'resources:resource_list' %}" aria-label="Go to resources to use page">RESOURCES TO USE</a>
@@ -28,7 +28,7 @@
             </ul>
             <ul class="navbar-nav d-none d-lg-flex desktop-nav">
               <li class="nav-item dropdown lvl0 nav-item-no-scroll">
-                <a class="nav-link dropdown-toggle lh-1 nav-link-no-scroll d-flex justify-content-center align-items-center" href="{% url 'things:thing_list' %}" target="_self" role="button" data-bs-hover="dropdown" aria-expanded="false" aria-haspopup="true">
+                <a class="nav-link dropdown-toggle lh-1 nav-link-no-scroll d-flex justify-content-center align-items-center" href="{% url 'things:thing_list' %}" target="_self" role="button" data-bs-hover="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Go to things to do page">
                     <div>
                         <span class="first-word lvl1">THINGS</span><br>
                         <span class="non-first-words lvl1">TO DO</span>
@@ -57,7 +57,7 @@
                 </ul>
               </li>
               <li class="nav-item dropdown lvl0 nav-item-no-scroll">
-                <a class="nav-link dropdown-toggle lh-1 nav-link-no-scroll d-flex justify-content-center align-items-center" href="{% url 'places:place_list' %}" role="button" data-bs-hover="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Go to Where to stay page">
+                <a class="nav-link dropdown-toggle lh-1 nav-link-no-scroll d-flex justify-content-center align-items-center" href="{% url 'places:place_list' %}" role="button" data-bs-hover="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Go to where to stay page">
                     <div>
                         <span class="first-word lvl1">WHERE</span><br>
                         <span class="non-first-words lvl1">TO STAY</span>
@@ -78,7 +78,7 @@
                 </ul>
               </li>
               <li class="nav-item dropdown lvl0 nav-item-no-scroll">
-                <a class="nav-link dropdown-toggle nav-link-no-scroll lh-1 d-flex justify-content-center align-items-center" href="{% url 'events:filtered_event_list' %}?categories=all&city=all&sort=upcoming" role="button" data-bs-hover="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Go to Events to enjoy page">
+                <a class="nav-link dropdown-toggle nav-link-no-scroll lh-1 d-flex justify-content-center align-items-center" href="{% url 'events:filtered_event_list' %}?categories=all&city=all&sort=upcoming" role="button" data-bs-hover="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Go to upcoming events to enjoy page">
                     <div>
                         <span class="first-word lvl1">EVENTS</span><br>
                         <span class="non-first-words lvl1">TO ENJOY</span>
@@ -91,17 +91,17 @@
                     <div class="row">
                         <div class="col-12 col-lg-5">
                             <li><a class="dropdown-item" href="{% url 'events:event_list' %}" aria-label="Go to All Events to enjoy page">ALL EVENTS</a></li>
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=all&city=all&sort=upcoming" target="_self" aria-label="Go to upcoming Events to enjoy page">UPCOMING EVENTS</a></li>
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=art-culture&city=all&sort=upcoming" target="_self" aria-label="Go to art and culture Events to enjoy page">ART &amp; CULTURE</a></li>
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=family-fun&city=all&sort=upcoming" target="_self" aria-label="Go to family fun Events to enjoy page">FAMILY FUN</a></li>
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=food-drink&city=all&sort=upcoming" target="_self" aria-label="Go to food and drink Events to enjoy page">FOOD &amp; DRINK</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=all&city=all&sort=upcoming" target="_self" aria-label="Go to upcoming events to enjoy page">UPCOMING EVENTS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=art-culture&city=all&sort=upcoming" target="_self" aria-label="Go to art and culture events to enjoy page">ART &amp; CULTURE</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=family-fun&city=all&sort=upcoming" target="_self" aria-label="Go to family fun events to enjoy page">FAMILY FUN</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=food-drink&city=all&sort=upcoming" target="_self" aria-label="Go to food and drink events to enjoy page">FOOD &amp; DRINK</a></li>
                         </div>
                         <div class="col-12 col-lg-5">
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=lectures-workshops&city=all&sort=upcoming" target="_self" aria-label="Go to lecture and workshop Events to enjoy page">LECTURES &amp; WORKSHOPS</a></li>
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=music-dance&city=all&sort=upcoming" target="_self" aria-label="Go to music and dance Events to enjoy page">MUSIC &amp; DANCE</a></li>
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=seasonal-holiday&city=all&sort=upcoming" target="_self" aria-label="Go to seasonal and holiday Events to enjoy page">SEASONAL &amp; HOLIDAY</a></li>
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=sports&city=all&sort=upcoming" target="_self" aria-label="Go to sport Events to enjoy page">SPORTS</a></li>
-                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=volunteer&city=all&sort=upcoming" target="_self" aria-label="Go to volunteer Events to enjoy page">VOLUNTEER</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=lectures-workshops&city=all&sort=upcoming" target="_self" aria-label="Go to lecture and workshop events to enjoy page">LECTURES &amp; WORKSHOPS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=music-dance&city=all&sort=upcoming" target="_self" aria-label="Go to music and dance events to enjoy page">MUSIC &amp; DANCE</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=seasonal-holiday&city=all&sort=upcoming" target="_self" aria-label="Go to seasonal and holiday events to enjoy page">SEASONAL &amp; HOLIDAY</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=sports&city=all&sort=upcoming" target="_self" aria-label="Go to sport events to enjoy page">SPORTS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events:filtered_event_list' %}?categories=volunteer&city=all&sort=upcoming" target="_self" aria-label="Go to volunteer events to enjoy page">VOLUNTEER</a></li>
                         </div>
                     </div>
                 </ul>

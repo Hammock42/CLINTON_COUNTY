@@ -15,6 +15,7 @@ class Event(models.Model):
     address = models.CharField(max_length=200)
     city = models.CharField(max_length=20, blank=True, null=True)
     image = models.ImageField(upload_to='event_img/', blank=True, null=True)
+    image_alt = models.CharField(max_length=100, blank=True, null=True)
     filter_type_list = models.ManyToManyField('things.FilterType', related_name='event_type_filters', blank=True)
     external_link = models.URLField(blank=True)
     internal_page = models.BooleanField(default=False)
