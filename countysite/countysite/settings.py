@@ -1,8 +1,6 @@
 from pathlib import Path
 import os
-from dotenv import load_dotenv
-# Load environment variables from .env file
-load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,12 +10,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG')
+DEBUG = os.getenv('DJANGO_DEBUG')
 
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
 
 
 # Application definition
@@ -149,8 +147,8 @@ STORAGES = {
 
 # django_project/settings.py
 EMAIL_BACKEND = os.getenv("DJANGO_EMAIL_BACKEND")
-EMAIL_HOST = os.environ.get("DJANGO_EMAIL_HOST")
-EMAIL_HOST_USER = os.environ.get("DJANGO_EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.environ.get("DJANGO_EMAIL_HOST_PASSWORD")
+EMAIL_HOST = os.getenv("DJANGO_EMAIL_HOST")
+EMAIL_HOST_USER = os.getenv("DJANGO_EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("DJANGO_EMAIL_HOST_PASSWORD")
 EMAIL_USE_TLS = os.getenv("DJANGO_USE_TLS")
 EMAIL_PORT = os.getenv("DJANGO_EMAIL_PORT")  # Default to 587 if not set
