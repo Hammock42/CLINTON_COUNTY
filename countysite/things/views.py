@@ -68,3 +68,6 @@ def thing_detail(request, thing_slug):
         page = f"things/{thing_slug}.html"
         return render(request, page, context)
     return render(request, 'things/thing_detail.html', context)
+
+def thing_template_page(request):
+    return render(request, 'things/thing_template.html')

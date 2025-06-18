@@ -108,7 +108,7 @@
 }
 @font-face {
     font-family: "raleway";
-    src: local('Raleway'), url('../fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+    src: local('Raleway'), url("../fonts/Raleway-VariableFont_wght.029b34594de6.ttf") format('truetype');
 }
 .small-img {
     width: 100px;
@@ -169,15 +169,10 @@ img.hover-shadow {
     min-height: 300px;
 }
 .business-icons {
-    margin-top: -60px;
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
+    width: 50px;
+    height: 50px;
 }
 .business-card:hover {
     transform: scale(1.0);
     box-shadow: 0 0 0 0;
-}
-.business-card-group {
-    margin-top: -40px;
 }

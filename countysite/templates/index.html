@@ -82,7 +82,7 @@
             <a href="{% url 'things:thing_detail' 'shatto-milk-company' %}" target="_self"  class="col-10 col-md-3 rounded p-2" aria-label="Go to Shatto Milk Company onsite things to do page">
                 <img src="{% static 'img/home_page/cow_4x3.avif'%}" class="hover-shadow rounded w-100" alt="Young girl petting a cow." title="Shatto Milk Company" loading="lazy">
             </a>
-            <a href="{% url 'coming_soon' %}"  class="col-10 col-md-3 rounded p-2 disabled" aria-label="Not available, Go to coming soon page" target="_self" aria-disabled="true">
+            <a href="{% url 'things:thing_template_page' %}"  class="col-10 col-md-3 rounded p-2 disabled" aria-label="Not available, Go to coming soon page" target="_self" aria-disabled="true">
                 <img src="{% static 'img/home_page/f_fest_0377_4x3.avif'%}" class="hover-shadow rounded w-100" alt="Young boy holding a frog and frog jumping trophy." title="Friendship Festival" loading="lazy">
             </a>
             <a href="{% url 'events:event_detail' 'main-street-wine-stroll' %}" target="_self"  class="col-10 col-md-3 rounded p-2" aria-label="Go to Main Street Wine Stroll onsite event page">

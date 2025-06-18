@@ -168,3 +168,16 @@ img.hover-shadow {
 .card-img-top {
     min-height: 300px;
 }
+.business-icons {
+    margin-top: -60px;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+}
+.business-card:hover {
+    transform: scale(1.0);
+    box-shadow: 0 0 0 0;
+}
+.business-card-group {
+    margin-top: -40px;
+}
