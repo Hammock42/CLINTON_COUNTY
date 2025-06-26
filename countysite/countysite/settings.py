@@ -10,10 +10,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+SECRET_KEY = "django-insecure-g2to+5el36c@2moctlxk*j#&ng$6*$xmld3(i(8t!vzph2tv-*"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DJANGO_DEBUG')
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.visitclintoncomo.com', 'hammock42.pythonanywhere.com', 'localhost', 'testserver']
 
