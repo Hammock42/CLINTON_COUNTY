@@ -178,6 +178,10 @@ img.hover-shadow {
     width: 70px;
     height: 70px;
 }
+.link-icons:hover {
+    transform: scale(1.0);
+    box-shadow: 0 0 0 0;
+}
 .business-card:hover {
     transform: scale(1.0);
     box-shadow: 0 0 0 0;
