@@ -174,10 +174,9 @@ img.hover-shadow {
     height: 100px;
     background-color: #fff;
 }
-.business-icons {
+.link-icons {
     width: 70px;
     height: 70px;
-    background-color: #fff;
 }
 .business-card:hover {
     transform: scale(1.0);
