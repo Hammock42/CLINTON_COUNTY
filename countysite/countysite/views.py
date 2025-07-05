@@ -12,13 +12,13 @@ def about(request):
     return render(request, 'about.html')
 
 def coming_soon(request):
-    return render(request, 'coming_soon.html')
+    return render(request, 'coming-soon.html')
 
 def privacy_policy(request):
-    return render(request, 'privacy_policy.html')
+    return render(request, 'privacy-policy.html')
 
 def legal_statement(request):
-    return render(request, 'legal_statement.html')
+    return render(request, 'legal-statement.html')
 
 def contact(request):
     if request.method == 'POST':
