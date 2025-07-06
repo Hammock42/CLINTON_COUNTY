@@ -5,11 +5,11 @@
  <title>
     {{ resource.name }} | Clinton County, Missouri
  </title>
- <meta name="description" property="og:description" content="{{ resource.description }}, Clinton County, Missouri, Resources">
+ <meta name="description" property="og:description" content="{{ resource.name }}, Clinton County, Missouri, Resources">
 {% if resource.get_filter_subtypes %}
- <meta name="keywords" content="{{ resource.get_filter_types|title }}, {{ resource.get_filter_subtypes|title }}, Clinton County, Missouri, Resources">
+ <meta name="keywords" content="{{ resource.name }}, {{ resource.get_filter_types|title }}, {{ resource.get_filter_subtypes|title }}, Clinton County, Missouri, Resources">
 {% else %}
- <meta name="keywords" content="{{ resource.get_filter_types|title }}, Clinton County, Missouri, Resources">
+ <meta name="keywords" content="{{ resource.name }}, {{ resource.get_filter_types|title }}, Clinton County, Missouri, Resources">
 {% endif %}
  <meta property="og:title" content="{{ resource.name }} | Clinton County, Missouri">
  <meta property="og:type" content="website">

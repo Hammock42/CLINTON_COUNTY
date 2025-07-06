@@ -6,7 +6,7 @@
     {{ thing.name }} | Clinton County, Missouri
  </title>
  <meta name="description" property="og:description" content="{{ thing.name }} is a {{ thing.get_filter_subtypes|title }} located in {{ thing.city|capfirst }}, Missouri. Discover more about this attraction, including its address, phone number, and hours of operation.">
- <meta name="keywords" content="{{ thing.get_filter_subtypes|title }}">
+ <meta name="keywords" content="{{ thing.name }}, {{ thing.get_filter_subtypes|title }}, {{ thing.city|capfirst }}, Clinton County, Missouri, attractions, things to do, tourism">
  <meta property="og:title" content="{{ thing.name }} | Clinton County, Missouri">
  <meta property="og:type" content="website">
  <meta property="og:url" content="https://www.visitclintoncomo.com/things-to-do/{{ thing.slug }}">
@@ -33,9 +33,9 @@
     </section>
     <div class="container rounded-3 border border-dark shadow-lg p-3 my-5 bg-light">
         <div class="m-3">
-            <div class="section-title my-3">
+            <h1 class="section-title my-3">
                 {{ thing.name }}
-            </div>
+            </h1>
         </div>
         <div>
             {% if thing.description %}
