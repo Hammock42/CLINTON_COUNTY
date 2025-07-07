@@ -2,8 +2,8 @@
 <nav id="main-navbar" class="navbar navbar-expand-lg fixed-top text-center m-0 p-0 bg-grad align-items-center" role="navigation" aria-label="Main Navigation">
     <div class="container-fluid m-0 p-0">
         <a href="/" class="navbar-brand bg-light p-0 m-0" aria-label="Go to home page">
-            <img class="d-none d-md-block mx-auto" src="{% static 'icons/VCCM_Logo_left_transparent_150x100.avif' %}" alt="Visit Clinton County, Missouri logo" style="width: 120px;">
-            <img class="float-start d-block d-md-none" src="{% static 'icons/VCCM_Logo_left_transparent_150x100.avif' %}" alt="Visit Clinton County, Missouri logo" style="width: 120px;">
+            <img class="d-none d-md-block mx-auto" src="{% static 'icons/VCCM_Logo_left_transparent_150x100.avif' %}" alt="Visit Clinton County, Missouri logo">
+            <img class="float-start d-block d-md-none" src="{% static 'icons/VCCM_Logo_left_transparent_150x100.avif' %}" alt="Visit Clinton County, Missouri logo">
         </a>
         <button class="col-3 navbar-toggler border border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerMenu" aria-controls="navbarTogglerMenu" aria-expanded="false" aria-label="Toggle navigation bar" aria-haspopup="true">
             <span class="navbar-toggler-icon" aria-label="navigation bar toggler icon"></span>
@@ -140,3 +140,60 @@
     </div>
 </nav>
 
+<script>
+    var navItems = document.querySelectorAll('.desktop-nav .nav-item');
+    var navEl = document.getElementById('main-navbar');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navEl.classList.add('bg-light');
+            navEl.classList.remove('bg-grad');
+            navItems.forEach(function(item) {
+                item.classList.add('nav-item-scroll');
+                item.classList.remove('nav-item-no-scroll');
+            });
+        } else {
+            navEl.classList.add('bg-grad');
+            navEl.classList.remove('bg-light');
+            navItems.forEach(function(item) {
+                item.classList.add('nav-item-no-scroll');
+                item.classList.remove('nav-item-scroll');
+            });
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const navItems = document.querySelectorAll('.desktop-nav .nav-item.dropdown');
+        const navElRect = navEl.getBoundingClientRect();
+    
+        navItems.forEach(item => {
+            const dropdownMenu = item.querySelector('.dropdown-menu');
+            const rect = item.getBoundingClientRect();
+            const offsetLeft = navElRect.left - rect.left;
+            const offsetTop = navElRect.bottom - rect.top - 10;
+    
+            dropdownMenu.style.left = `${offsetLeft}px`;
+            dropdownMenu.style.top = `${offsetTop}px`;
+    
+            item.addEventListener('mouseover', function() {
+                if (dropdownMenu) {
+                    dropdownMenu.classList.add('show');
+                }
+            });
+    
+            item.addEventListener('mouseout', function() {
+                if (dropdownMenu) {
+                    dropdownMenu.classList.remove('show');
+                }
+            });
+    
+            const navLink = item.querySelector('.nav-link');
+            navLink.addEventListener('click', function(event) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#') {
+                    window.location.href = href;
+                }
+            });
+        });
+    });
+</script>
