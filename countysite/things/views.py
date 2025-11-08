@@ -41,9 +41,11 @@ def thing_list_filtered(request):
 
 def filter_featured_things(things):
     featured = list(things.filter(featured=True))
-    non_featured = list(things.filter(featured=False))
-    filtered_things = featured + non_featured
+    custom_card = list(things.filter(featured=False, custom_card=True))
+    non_featured = list(things.filter(featured=False, custom_card=False))
+    filtered_things = featured + custom_card + non_featured
     return filtered_things
+
 
 def get_things(sort_by, category, city):
     things = Thing.objects.all()

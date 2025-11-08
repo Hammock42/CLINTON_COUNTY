@@ -13,6 +13,7 @@ class Thing(models.Model):
     phone_number = models.CharField(max_length=15, blank=True, null=True)
     external_website = models.URLField(blank=True, null=True)
     internal_page = models.BooleanField(default=False)
+    custom_card = models.BooleanField(default=False)
     email = models.EmailField(blank=True, null=True)
     image = models.ImageField(upload_to='thing_img/', blank=True, null=True)
     image_alt = models.CharField(max_length=100, blank=True, null=True)
