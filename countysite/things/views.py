@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Thing, FilterType
+from resources.models import Resource
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from static.data.data_lists import thing_categories, cities
@@ -48,7 +49,7 @@ def filter_featured_things(things):
 
 
 def get_things(sort_by, category, city):
-    things = Thing.objects.all()
+    things = Resource.objects.filter(things_page=True)
     if sort_by == 'az':
         things = things.order_by('name')
     elif sort_by == 'za':
@@ -62,7 +63,7 @@ def get_things(sort_by, category, city):
 
 
 def thing_detail(request, thing_slug):
-    thing = Thing.objects.get(slug=thing_slug)
+    thing = Resource.objects.get(slug=thing_slug)
     context = {
         'thing': thing
     }
@@ -70,6 +71,3 @@ def thing_detail(request, thing_slug):
         page = f"things/{thing_slug}.html"
         return render(request, page, context)
     return render(request, 'things/thing_detail.html', context)
-
-def thing_template_page(request):
-    return render(request, 'things/thing_template.html')

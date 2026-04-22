@@ -5,21 +5,26 @@ from django.utils.text import slugify
 class Resource(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
+    things_page = models.BooleanField(default=False)
+    places_page = models.BooleanField(default=False)
     featured = models.BooleanField(default=False)
+    internal_page = models.BooleanField(default=False)
+    custom_card = models.BooleanField(default=False)
     description = models.TextField(blank=True, null=True)
     address = models.CharField(max_length=100, blank=True, null=True)
     city = models.CharField(max_length=20, blank=True, null=True)
     state = models.CharField(max_length=2, default='MO')
     phone_number = models.CharField(max_length=15, blank=True, null=True)
     external_website = models.URLField(blank=True, null=True)
-    internal_page = models.BooleanField(default=False)
     email = models.EmailField(blank=True, null=True)
     image = models.ImageField(upload_to='resource_img/', blank=True, null=True)
+    image_alt = models.CharField(max_length=100, blank=True, null=True)
     operation_hours = models.CharField(max_length=100, blank=True, null=True)
     filter_type_list = models.ManyToManyField('things.FilterType', related_name='resource_type_filters', blank=True)
     filter_subtype_list = models.ManyToManyField('things.FilterSubType', related_name='resource_subtype_filters', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    
 
     def __str__(self):
         return self.name
@@ -37,4 +42,5 @@ class Resource(models.Model):
         return f'{self.address}, {self.city}, {self.state}'
     
     def get_operation_hours(self):
-        return self.operation_hours.split(';')
+        if self.operation_hours:
+            return self.operation_hours.split(';')
