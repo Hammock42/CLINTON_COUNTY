@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from .models import Thing, FilterType
 from resources.models import Resource
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 

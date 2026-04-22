@@ -3,157 +3,195 @@
 
 {% block seo %}
  <title>
-    Resources | Clinton County, Missouri
+    Resources To Use | Clinton County, Missouri
  </title>
  <meta name="description" property="og:description" content="Resources to use in Clinton County, Missouri">
- <meta name="keywords" content="resources, services, businesses, clinton county, missouri">
- <meta property="og:title" content="Resources | Clinton County, Missouri">
+ <meta name="keywords" content="resources to use, activities, attractions, clinton county, missouri">
+ <meta property="og:title" content="Resource To Use | Clinton County, Missouri">
  <meta property="og:type" content="website">
  <meta property="og:url" content="https://www.visitclintoncomo.com/resources-to-use/">
- <meta property="og:image" content="{% static 'img/home_page/pv_river_4x3.avif' %}">
+ <meta property="og:image" content="{% static 'icons/VCCM_Logo_Left.png' %}">
  <meta property="og:image:width" content="200">
  <meta property="og:image:height" content="200">
  <meta property="og:site_name" content="Discover Clinton County, Missouri">
  <meta property="og:locale" content="en_US">
- <meta property="og:image:alt" content="Image alt example">
- <meta property="og:image:type" content="image/avif">
+ <meta property="og:image:alt" content="Visit Clinton County, Missouri Logo">
+ <meta property="og:image:type" content="image/png">
  <link rel="canonical" href="https://www.visitclintoncomo.com/resources-to-use/">
  <meta name="twitter:card" content="summary">
 {% endblock %}
 
 {% block skiplink %}
-<a href="#resources-content" class="visually-hidden-focusable skip-link">Skip main navigation</a>
+<a href="#resources-to-do-content" class="visually-hidden-focusable skip-link">Skip main navigation</a>
 {% endblock skiplink %}
 
 {% block content %}
-<div id="resources-content" class="container-fluid m-0 p-0">
+<div id="resources-to-use-content" class="container-fluid m-0 p-0">
     <section class="hero mb-5">
         <img src="{% static 'img/bg_up_2.avif' %}" class="img-fluid" alt="Background image of girl doing cartwheel on hay bales.">
     </section>
     <div class="container-fluid">
         <div class="row mb-3">
             <div class="col justify-content-center">
-                <h1 class="section-title" keywords="resources, services, businesses, clinton county, missouri">
-                    Clinton County Resource Directory
-                </h1>
+                <div class="section-title">
+                    Resources To Use
+                </div>
+                <div class="btn-group d-flex flex-wrap justify-content-center" role="group" aria-label="Basic checkbox toggle button group">
+                    {% for category in categories_list %}
+                    <div>
+                        <button type="button" class="btn {% if request.GET.categories == category.value %}btn-success {% else %}btn-outline-success{% endif %} btn-lg m-1" onclick="filterCategories('{{ category.value }}')">{{ category.name }}</button>
+                    </div>
+                    {% endfor %}
+                </div>
                 <div class="row p-2">
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                        <label for="resourceCategoryFilter" class="form-label">Category:</label>
-                        <select id="resourceCategoryFilter" class="form-select" onchange="filterResources()">
-                            <option value="all">All Categories</option>
-                            {% for category in categories_list %}
-                                <option value="{{ category.value }}">{{ category.name }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                        <label for="resourceSubCategoryFilter" class="form-label">SubCategory:</label>
-                        <select id="resourceSubCategoryFilter" class="form-select" onchange="filterResources()">
-                            <option value="all">All SubCategories</option>
-                            {% for subcategory in subcategories_list %}
-                                <option value="{{ subcategory }}">{{ subcategory }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                        <label for="resourceCityFilter" class="form-label">Filter by City:</label>
-                        <select id="resourceCityFilter" class="form-select" onchange="filterResources()">
+                        <label for="cityFilter" class="form-label">Filter by City:</label>
+                        <select id="cityFilter" class="form-select" onchange="filterCity(this.value)">
                             <option value="all">All Cities</option>
                             {% for city in cities_list %}
-                                <option value="{{ city.value }}">{{ city.name }}</option>
+                                <option value="{{ city.value }}" {% if request.GET.city == city.value %}selected{% endif %}>{{ city.name }}</option>
                             {% endfor %}
                         </select>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                        <label for="resourceSortFilter" class="form-label">Sort By:</label>
-                        <select id="resourceSortFilter" class="form-select" onchange="sortResources()">
-                            <option value="recommended">Recommended</option>
-                            <option value="az">Alphabetical &#91;A-Z&#93;</option>
-                            <option value="za">Alphabetical &#91;Z-A&#93;</option>
+                        <label for="sortFilter" class="form-label">Sort By:</label>
+                        <select id="sortFilter" class="form-select" onchange="filterSort(this.value)">
+                            <option value="recommended" {% if selected_sort == 'recommended' %}selected{% endif %}>Recommended</option>
+                            <option value="az" {% if request.GET.sort == 'az' %}selected{% endif %}>Alphabetical &#91;A-Z&#93;</option>
+                            <option value="za" {% if request.GET.sort == 'za' %}selected{% endif %}>Alphabetical &#91;Z-A&#93;</option>
                         </select>
                     </div>
                 </div>
-                <div class="table-responsive mt-4 wrapper rounded-3" style="max-height: 500px; overflow-y: auto;">
-                    <table class="table table-scrollable table-hover table-bordered table-striped">
-                        <thead class="table-dark">
-                            <tr class="align-middle">
-                                <th scope="col ps-3">Name</th>
-                                <th scope="col ps-3">Address</th>
-                                <th scope="col ps-3">City</th>
-                            </tr>
-                        </thead>
-                        <tbody id="resourceDetails">
-                            {% for resource in resources %}
-                            <tr data-city="{{ resource.city }}" 
-                                data-description="{{ resource.description }}"
-                                data-category="{{ resource.get_filter_types }}"
-                                data-subcategory="{{ resource.get_filter_subtypes }}">
-                                <td class="ps-3"><a href="{% url 'resources:resource_detail' resource.slug %}">{{ resource.name }}</a></td>
-                                <td class="ps-3">{{ resource.address }}</td>
-                                <td class="ps-3">{{ resource.city }}</td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 p-2" id="resourcesContainer">
+            {% for resource in resources %}
+                <div class="col thing_cards" data-category="{{ resource.get_filter_types }}" data-city="{{ resource.city }}" data-name="{{ resource.name }}" data-featured="{{ resource.featured }}">
+                    <div class="card h-100">
+                        <div class="bg-success">
+                            {% if resource.image %}
+                                <img src="{{ resource.image.url }}" class="card-img-top" alt="{{ resource.image_alt }}">
+                            {% elif resource.city == 'cameron' %}
+                                <img src="{% static 'img/maps/cameron_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif resource.city == 'gower' %}
+                                <img src="{% static 'img/maps/gower_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif resource.city == 'holt' %}
+                                <img src="{% static 'img/maps/holt_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif resource.city == 'lathrop' %}
+                                <img src="{% static 'img/maps/lathrop_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif resource.city == 'lawson' %}
+                                <img src="{% static 'img/maps/lawson_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif resource.city == 'osborn' %}
+                                <img src="{% static 'img/maps/osborn_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif resource.city == 'plattsburg' %}
+                                <img src="{% static 'img/maps/plattsburg_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif resource.city == 'trimble' %}
+                                <img src="{% static 'img/maps/trimble_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% elif resource.city == 'turney' %}
+                                <img src="{% static 'img/maps/turney_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% else %}
+                                <img src="{% static 'img/maps/cc_map.avif' %}" class="card-img-top bg-success opacity-50" alt="...">
+                            {% endif %}
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text text-success fw-bold">{{ resource.city|title }}</p>
+                            <p class="fs-5 card-title fw-bold">{{ resource.name }}</p>
+                            {% if resource.featured %}
+                                <span class="badge bg-warning text-dark">Featured</span>
+                            {% endif %}
+                            {% if resource.description %}
+                                <p class="card-text">{{ resource.description }}</p>
+                            {% else %}
+                                <p class="card-text">{{ resource.get_filter_subtypes|title }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="card-footer">
+                            <a href="{% url 'resources:resource_detail' resource.slug %}" class="btn btn-outline-success stretched-link">View Details</a>
+                        </div>
+                    </div>
                 </div>
+            {% endfor %}
+        </div>
+        <div class="row mt-3">
+            <div class="col p-3">
+                <nav aria-label="resources navigation">
+                    <ul class="pagination justify-content-center">
+                        {% if resources.has_previous %}
+                            {% with categories=request.GET.categories city=request.GET.city sort=request.GET.sort %}
+                            <li class="page-item">
+                                <a class="page-link" href="?categories={{ categories }}&city={{ city }}&sort={{ sort }}&page=1" aria-label="First">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="?categories={{ categories }}&city={{ city }}&sort={{ sort }}&page={{ resources.previous_page_number }}" aria-label="Previous">
+                                    <span aria-hidden="true">&lsaquo;</span>
+                                </a>
+                            </li>
+                            {% endwith %}
+                        {% endif %}
+                            <li class="page-item pt-1">
+                                <span class="mx-2">Page {{ resources.number }} of {{ resources.paginator.num_pages }}</span>
+                            </li>
+                        {% if resources.has_next %}
+                            {% with categories=request.GET.categories city=request.GET.city sort=request.GET.sort %}
+                            <li class="page-item">
+                                <a class="page-link" href="?categories={{ categories }}&city={{ city }}&sort={{ sort }}&page={{ resources.next_page_number }}" aria-label="Next">
+                                    <span aria-hidden="true">&rsaquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="?categories={{ categories }}&city={{ city }}&sort={{ sort }}&page={{ resources.paginator.num_pages }}" aria-label="Last">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                            {% endwith %}
+                        {% endif %}
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-    function filterResources() {
-        var categoryFilter = document.getElementById("resourceCategoryFilter").value;
-        var subcategoryFilter = document.getElementById("resourceSubCategoryFilter").value;
-        var cityFilter = document.getElementById("resourceCityFilter").value;
+    function makeCall(categories, city, sort, page) {
+        let filterData = {
+            categories: categories,
+            city: city,
+            sort: sort
+        };
 
-        var rows = document.querySelectorAll("#resourceDetails tr");
-        console.log("categoryFilter: " + categoryFilter);
-        console.log("subcategoryFilter: " + subcategoryFilter);
-        console.log("cityFilter: " + cityFilter);
-
-
-        rows.forEach(function(row) {
-            var testCategory = row.dataset.subcategory;
-            var category = row.dataset.category ? row.dataset.category : [];
-            var subcategory = row.dataset.subcategory ? row.dataset.subcategory : [];
-            var city = row.dataset.city;
-
-            console.log("subcategory: " + subcategory);
-            console.log("testCategory: " + testCategory);
-
-            if ((categoryFilter === "all" || category.includes(categoryFilter)) &&
-            (subcategoryFilter === "all" || subcategory.includes(subcategoryFilter)) &&
-            (cityFilter === "all" || city === cityFilter)) {
-            row.style.display = "";
-            } else {
-            row.style.display = "none";
-            }
-        });
+        let queryString = Object.keys(filterData).map(key => key + '=' + filterData[key]).join('&');
+        window.location.href = `/resources-to-use/filtered/?${queryString}`;
     }
 
-    function sortResources() {
-        var sortOption = document.getElementById("resourceSortFilter").value;
-        var rows = Array.from(document.querySelectorAll("#resourceDetails tr"));
+    function filterCategories(category) {
+        let selectedCity = "{{ request.GET.city|default:'all' }}";
+        let selectedSort = "{{ request.GET.sort|default:'recommended' }}";
+        let selectedCategories = "{{ request.GET.categories }}" == category ? 'all' : category;
 
-        rows.sort(function(a, b) {
-            var nameA = a.cells[0].textContent.toLowerCase();
-            var nameB = b.cells[0].textContent.toLowerCase();
-
-            if (sortOption === "az") {
-                return nameA.localeCompare(nameB);
-            } else if (sortOption === "za") {
-                return nameB.localeCompare(nameA);
-            } else {
-                return 0; // No sorting for "recommended"
-            }
-        });
-
-        var tbody = document.getElementById("resourceDetails");
-        tbody.innerHTML = "";
-        rows.forEach(function(row) {
-            tbody.appendChild(row);
-        });
+        makeCall(selectedCategories, selectedCity, selectedSort);
     }
+
+    function filterCity(city) {
+        let selectedCategories = "{{ request.GET.categories|default:'all' }}";
+        let selectedSort = "{{ request.GET.sort|default:'recommended' }}";
+        let selectedCity = city;
+
+        makeCall(selectedCategories, selectedCity, selectedSort);
+
+    }
+
+    function filterSort(sort) {
+        let selectedCategories = "{{ request.GET.categories|default:'all' }}";
+        let selectedCity = "{{ request.GET.city|default:'all' }}";
+        let selectedSort = sort;
+
+        makeCall(selectedCategories, selectedCity, selectedSort);
+    }
+
 </script>
 {% endblock %}
