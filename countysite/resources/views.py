@@ -23,12 +23,18 @@ def resource_detail(request, resource_slug):
     resource = Resource.objects.get(slug=resource_slug)
     
     if resource.things_page:
+        context = {
+            'thing': resource
+        }
         if resource.internal_page:
             template = f"things/{resource.slug}.html"
         else:
             template = 'things/thing_detail.html'
         
     elif resource.places_page:
+        context = {
+            'place': resource
+        }
         if resource.internal_page:
             template = f"places/{resource.slug}.html"
         else:
@@ -36,9 +42,9 @@ def resource_detail(request, resource_slug):
         
     else:
         template = 'resources/resource_detail.html'
+        context = {
+            'resource': resource
+        }
         
-    context = {
-        'resource': resource
-    }
         
     return render(request, template, context)
