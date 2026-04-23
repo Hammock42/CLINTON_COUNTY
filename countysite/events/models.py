@@ -19,6 +19,7 @@ class Event(models.Model):
     filter_type_list = models.ManyToManyField('things.FilterType', related_name='event_type_filters', blank=True)
     external_link = models.URLField(blank=True)
     internal_page = models.BooleanField(default=False)
+    internal_url = models.CharField(max_length=30, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

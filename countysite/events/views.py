@@ -56,7 +56,7 @@ def event_detail(request, event_slug):
         'event': event
     }
     if event.internal_page:
-        page = f"events/{event_slug}.html"
+        page = f"events/{event.internal_url}.html"
         return render(request, page, context)
     return render(request, 'events/event_detail.html', context)
 

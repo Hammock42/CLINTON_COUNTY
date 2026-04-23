@@ -3,7 +3,7 @@
 
 {% block seo %}
  <title>
-    Juneteenth | Clinton County, Missouri
+    {{ event.name }}  | Clinton County, Missouri
  </title>
  <meta name="description" property="og:description" content="We celebrate Juneteenth as only a small town can&mdash;a slice of history served with a dollop of neighborliness. We gather on the lawn of the Clinton County Historical Society in Plattsburg to celebrate our commonalities rather than our differences with picnic fare, music and conversations. Costumed Buffalo Soldiers give history lessons. Barbecue, greens and slices of pie lay spread on a makeshift buffet table. Old-time songs and modern jazz float up to the tallest branches of our shade trees. Join us June 14, 2025, for the next party.">
  <meta name="keywords" content="Juneteenth, Clinton County, Missouri, Plattsburg, Clinton County Historical Society, Buffalo Soldiers, barbecue, greens, pie, music, jazz, shade trees, picnic, history, neighborliness">
@@ -33,7 +33,7 @@
     <div class="container py-3 mt-5">
         <div class="m-3">
             <div class="section-title my-3">
-                Juneteenth
+                {{ event.name }} 
             </div>
         </div>
         <div class="row align-items-center py-4">
@@ -47,7 +47,7 @@
                     celebrate our commonalities rather than our differences with picnic fare, music and conversations. 
                     Costumed Buffalo Soldiers give history lessons. Barbecue, greens and slices of pie lay spread on a 
                     makeshift buffet table. Old-time songs and modern jazz float up to the tallest branches of our shade 
-                    trees. Join us June 14, 2025, for the next party. For more information: 
+                    trees. Join us {{ event.start_date }}, for the next party. For more information: 
                     <a href="https://clintoncountymohistoricalsociety.org" class="btn btn-outline-success btn-lg" target="_blank">Click Here</a>
                 </p>
             </div>
