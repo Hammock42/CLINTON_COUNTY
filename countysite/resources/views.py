@@ -85,3 +85,13 @@ def resource_detail(request, resource_slug):
         
         
     return render(request, template, context)
+
+def resource_directory(request):
+    resources = Resource.objects.all()
+    context = {
+        'resources': resources,
+        'categories_list': resource_categories,
+        'subcategories_list': subcategories,
+        'cities_list': cities
+    }
+    return render(request, 'resources/resources_directory.html', context)

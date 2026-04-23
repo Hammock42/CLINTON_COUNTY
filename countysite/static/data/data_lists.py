@@ -16,22 +16,33 @@ place_categories = [
 ]
 
 resource_categories = [
-    {'name': 'Art', 'value': 'art'},
-    {'name': 'Auto & Vehicle', 'value': 'auto-vehicle'},
+    {'name': 'Art & Media', 'value': 'art'},
+    {'name': 'Automotive', 'value': 'auto-vehicle'},
     {'name': 'Beauty & Wellness', 'value': 'beauty-wellness'},
     {'name': 'Building & Remodeling', 'value': 'building-remodeling'},
-    {'name': 'Education', 'value': 'education'},
+    {'name': 'Education & Childcare', 'value': 'education'},
     {'name': 'Financial', 'value': 'financial'},
     {'name': 'Food & Drink', 'value': 'food-drink'},
-    {'name': 'Government', 'value': 'government'},
+    {'name': 'Funeral', 'value': 'funeral'},
     {'name': 'Health', 'value': 'health'},
     {'name': 'History', 'value': 'history'},
+    {'name': 'Home & Office', 'value': 'retail'},
+    {'name': 'Insurance', 'value': 'insurance'},
+    {'name': 'Lawn & Garden', 'value': 'lawn'},
+    {'name': 'Legal', 'value': 'legal'},
     {'name': 'Lodging', 'value': 'lodging'},
+    {'name': 'Pets & Animals', 'value': 'pets'},
+    {'name': 'Public Services & Saftey', 'value': 'government'},
+    {'name': 'Real Estate', 'value': 'real-estate'},
     {'name': 'Recreation', 'value': 'recreation'},
     {'name': 'Religious', 'value': 'religious'},
-    {'name': 'Retail', 'value': 'retail'},
+    {'name': 'Senior Services', 'value': 'senior'},
     {'name': 'Services', 'value': 'services'},
-    {'name': 'Shopping', 'value': 'shopping'}
+    {'name': 'Shopping', 'value': 'shopping'},
+    {'name': 'Travel', 'value': 'travel'},
+    {'name': 'Utilities', 'value': 'utilities'},
+    {'name': 'Venues', 'value': 'venues'},
+    {'name': 'Veterans', 'value': 'veterens'},
 ]
 
 thing_categories = [
