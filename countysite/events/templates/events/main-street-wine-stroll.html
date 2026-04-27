@@ -77,8 +77,37 @@
                 </p>
             </div>
         </div>
+        <div class="row align-items-center py-4">
+            <div class="col-12 col-md-6"><table class="table table-bordered section-text table-hover rounded-3 overflow-hidden">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Date</th>
+                            <td>{{ event.start_date }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Time</th>
+                            <td>{{ event.schedule }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Location</th>
+                            <td colspan="3">
+                                {{ event.address }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Buy Tickets</th>
+                            <td colspan="3"><a href="{{ event.external_link }}" class="btn btn-lg btn-outline-success" target="_blank" rel="noopener noreferrer">Click Here</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
         <p class="section-subtitle">
             Come stroll with us in Plattsburg and enjoy the best of small-town charm, great drinks, and good company!
+        </p>
+        <p class="section-subtitle">
+
         </p>
     </div>  
 </div>
