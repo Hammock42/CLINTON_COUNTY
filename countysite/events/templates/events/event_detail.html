@@ -44,6 +44,9 @@
             {% if event.end_date %}
             <h3><span class="fw-bold">End Date:</span> {{ event.end_date|date:"F j, Y" }}</h3>
             {% endif %}
+            {% if event.schedule %}
+            <h3><span class="fw-bold">Schedule:</span> {{ event.schedule }}</h3>
+            {% endif %}
             {% if event.description %}
             <h3><span class="fw-bold">Description:</span><br><span class="p-3">{{ event.description }}</span></h3>
             {% else %}
